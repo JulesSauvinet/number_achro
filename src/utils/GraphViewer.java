@@ -3,7 +3,6 @@ package utils;
 import graphmodel.ColoredVertex;
 import org.jgraph.JGraph;
 import org.jgraph.graph.*;
-import org.jgrapht.Graph;
 import org.jgrapht.graph.ListenableUndirectedGraph;
 
 import javax.swing.*;
@@ -41,7 +40,7 @@ public class GraphViewer{
         for (Object v : g.vertexSet()){
             ColoredVertex cv = (ColoredVertex) v;
 
-            cells[i] = createVertex(cv.getName(), 400, 400, 400, 400,
+            cells[i] = createVertex(cv.getName(), 30, 30, 30, 30,
                     ((ColoredVertex) v).getC(), true);
             i++;
 
@@ -62,19 +61,17 @@ public class GraphViewer{
             cells[i] = edge;
 
             // Set Arrow Style for edge
-            GraphConstants.setLineEnd(edge.getAttributes(),GraphConstants.ARROW_NONE);
+            GraphConstants.setLineEnd(edge.getAttributes(),GraphConstants.ARROW_LINE);
             GraphConstants.setEndFill(edge.getAttributes(), true);
             i++;
         }
 
-        // Insert the cells via the cache, so they get selected
         graph.getGraphLayoutCache().insert(cells);
 
         JFrame frame = new JFrame();
 
-        JPanel jp = new JPanel();
-        jp.setPreferredSize(DEFAULT_SIZE);// changed it to preferredSize, Thanks!
-        jp.add(new JScrollPane(graph));
+        JScrollPane jp = new JScrollPane(graph);
+        jp.setPreferredSize(DEFAULT_SIZE);
         frame.getContentPane().add(jp);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
