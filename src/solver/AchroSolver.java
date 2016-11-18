@@ -27,28 +27,6 @@ public class AchroSolver {
 
         Integer maxDegree = 0;
 
-        Integer[][] matAdj = new Integer[nbVertexes][nbVertexes];
-
-        //Construction d'une matrice d'adjacence
-        int i1 = 0, i2 = 0;
-        for (Object v1 :g.getNodeSet()){
-            ColoredNode s1 = (ColoredNode) v1;
-            for (Object v2 :g.getNodeSet()) {
-                ColoredNode s2 = (ColoredNode) v2;
-                if (s1.hasEdgeBetween(s2)){
-                    matAdj[i1][i2] = 1;
-                }
-                else{
-                    matAdj[i1][i2] = 0;
-                }
-                i2++;
-            }
-            i2=0;
-            i1++;
-        }
-
-
-        System.out.println(Arrays.deepToString(matAdj));
         //Pour respecter la contrainte de coloration propre
         for (Object v :g.getNodeSet()){
             ColoredNode s = (ColoredNode) v;
@@ -62,30 +40,60 @@ public class AchroSolver {
         int N = nbVertexes;
 
 
-        for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
+        for (int k = bInfNbAchro; k <= bInfNbAchro/*bSupNbAchro*/; k++){
             Model model = new Model("All complete coloring of size " + k);
             //le numéro des sommets
             IntVar[] I = model.intVarArray("id domain",N,1, N, false);
             //le domaine des couleurs
-            IntVar[] C = model.intVarArray("color vertex domain",N,1, k, false);
-            //le domaines des arêtes
-            //BoolVar[] V = model.boolVarArray("edges domain",nbEdges);
+            IntVar[] C = model.intVarArray("color vertex domain",N,0, k, false);
+            //le domaines des arêtes, inutile?
+            IntVar[] A = model.intVarArray("edges domain",nbEdges,0, 1, false);
 
             //les contraintes
             model.allDifferent(I).post();
 
+            Integer[][] matAdj = new Integer[nbVertexes][nbVertexes];
+
+            //Construction d'une matrice d'adjacence
+            int i1 = 0, i2 = 0, idx=0;
+            for (Object v1 :g.getNodeSet()){
+                ColoredNode s1 = (ColoredNode) v1;
+                for (Object v2 :g.getNodeSet()) {
+                    ColoredNode s2 = (ColoredNode) v2;
+                    if (s1.hasEdgeBetween(s2)){
+                        matAdj[i1][i2] = 1;
+                        //model.arithm(A[idx], "==", 1).post();
+                    }
+                    else{
+                        matAdj[i1][i2] = 0;
+                       // model.arithm(A[idx], "==", 0).post();
+                    }
+
+                    i2++;
+                    idx++;
+                }
+                i2=0;
+                i1++;
+            }
+
+            //les sommets adjacents n'ont pas la même couleur => couleur prore
             for (int i = 0; i < N ; i++) {
+                model.arithm(C[i], "!=", 1).post();
                 for (int j = 0; j < N; j++) {
-                    //OK de faire pas CSP les aretes?
                     if ((i != j) && (matAdj[i][j] == 1))
                         model.arithm(C[i], "!=", C[j]).post();
                 }
             }
 
+            //test d'élimination du couleur
+            for (int i = 0; i < N ; i++) {
+                model.arithm(C[i], "!=", 1).post();
+            }
+
             //BoolVar a = model.boolVar("a");
             //Pour chaque paire de couleur
 
-            LogOp cnf = null;
+            /*LogOp cnf = null;
             for (int c1 = 0; c1 < k; c1++) {
                 for (int c2 = 0; c2 < k; c2++) {
                     //la clause pour la paire de couleur
@@ -122,7 +130,7 @@ public class AchroSolver {
                     if (cl != null)
                      model.addClauses(cl);
                 }
-            }
+            }*/
 
             Solver solver = model.getSolver();
             //TODO regarder les stratégies
@@ -131,14 +139,15 @@ public class AchroSolver {
             if(solver.solve()){
                 System.out.println("All complete coloring of number achromatic :" + k);
                 for (int i = 0; i < N - 1; i++) {
-                    System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[C[i].getValue()%16]);
+                    System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[C[i].getValue()]);
                     //g.getNode(i).addAttribute("ui.class", "color" + i);
-                    g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[C[i].getValue()%16]+";");
+                    g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[C[i].getValue()]+";");
                 }
                 g.display();
             }
             //TODO donner toutes les solutions??! ou c'est juste une permutation?
             //TODO REMOVE
+            return;
         }
 
 
