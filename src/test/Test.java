@@ -4,6 +4,7 @@ import org.chocosolver.solver.Model;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.search.strategy.Search;
 import org.chocosolver.solver.variables.IntVar;
+import org.graphstream.graph.Graph;
 import org.jgrapht.ListenableGraph;
 import org.jgrapht.graph.ListenableUndirectedGraph;
 import utils.GraphReader;
@@ -19,9 +20,10 @@ public class Test {
     // http://www.csplib.orgt/Problems/prob007/
     public static void main (String[] args) throws IOException {
         //testSolver1();
-        ListenableUndirectedGraph g = null;
+        Graph g = null;
         g = GraphReader.buildGraphFromFile("clebsh");
-        GraphViewer.showGraph(g);
+        //GraphViewer.showGraph(g);
+        g.display();
     }
 
     public static void testSolver1(){

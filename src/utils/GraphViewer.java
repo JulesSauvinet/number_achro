@@ -1,8 +1,6 @@
 package utils;
 
 import graphmodel.ColoredVertex;
-import org.jgraph.JGraph;
-import org.jgraph.graph.*;
 import org.jgrapht.graph.ListenableUndirectedGraph;
 
 import javax.swing.*;
@@ -16,10 +14,11 @@ import java.util.HashMap;
 public class GraphViewer{
     private final Color DEFAULT_BG_COLOR = Color.decode( "#FAFBFF" );
     private static final Dimension DEFAULT_SIZE = new Dimension( 830, 620 );
-    public static HashMap<String,DefaultGraphCell> cellsMap = new HashMap();
+   //public static HashMap<String,DefaultGraphCell> cellsMap = new HashMap();
 
 
     //TODO refaire tout
+    /*
     public static void showGraph(ListenableUndirectedGraph g) {
         // Construct Model and Graph
         GraphModel model = new DefaultGraphModel();
@@ -108,6 +107,6 @@ public class GraphViewer{
         cell.addPort();
 
         return cell;
-    }
+    }*/
 }
 
