@@ -4,18 +4,11 @@ import graphmodel.ColoredNode;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.constraints.Constraint;
-import org.chocosolver.solver.constraints.nary.cnf.LogOp;
 import org.chocosolver.solver.search.strategy.Search;
-import org.chocosolver.solver.variables.BoolVar;
 import org.chocosolver.solver.variables.IntVar;
-import org.chocosolver.solver.variables.SetVar;
-import org.chocosolver.solver.variables.impl.SetVarImpl;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 import utils.ColorMapping;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by jules on 16/11/2016.
@@ -43,11 +36,10 @@ public class AchroSolver {
         for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
             Model model = new Model("All complete coloring of size " + k);
             //les contraintes
-            IntVar[] B = model.intVarArray("is the vertex has the color c",nbVertexes, 0,k, false);
+            IntVar[] B = model.intVarArray("the vertex associated with the index has the color c",nbVertexes, 0,k-1, false);
+
 
             Integer[][] matAdj = new Integer[N][N];
-
-
             //Construction d'une matrice d'adjacence
             int i1 = 0, i2 = 0;
             for (Node v1 :g.getNodeSet()){
@@ -77,7 +69,7 @@ public class AchroSolver {
                 }
             }
 
-
+            //coloration complete
             int idxN1 = 0;
             int idxN2 = 0;
             Constraint contrainte4 = null;
@@ -139,9 +131,9 @@ public class AchroSolver {
                 System.out.println("All complete coloring of number achromatic :" + k);
                 for (int i = 0; i < N ; i++) {
                     int color = B[i].getValue();
-                    System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[color]);
+                    System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[color%32]);
                     //g.getNode(i).addAttribute("ui.class", "color" + i);
-                    g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color]+";");
+                    g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
                 }
                 g.display();
             }
@@ -150,40 +142,6 @@ public class AchroSolver {
                 return;
             }
             //TODO donner toutes les solutions??! ou c'est juste une permutation?
-        }
-
-
-
-    }
-
-    public static void testSolver1(){
-        int N = 100;
-        // 1. Modelling part
-        Model model = new Model("all-interval series of size "+ N);
-        // 1.a declare the variables
-        IntVar[] S = model.intVarArray("s", N, 0, N - 1, false);
-        IntVar[] V = model.intVarArray("V", N - 1, 1, N - 1, false);
-        // 1.b post the constraints
-        for (int i = 0; i < N - 1; i++) {
-            model.distance(S[i + 1], S[i], "=", V[i]).post();
-        }
-        model.allDifferent(S).post();
-        model.allDifferent(V).post();
-        S[1].gt(S[0]).post();
-        V[1].gt(V[N - 2]).post();
-
-        // 2. Solving part
-        Solver solver = model.getSolver();
-        // 2.a define a search strategy
-        solver.setSearch(Search.minDomLBSearch(S));
-        if(solver.solve()){
-            System.out.printf("All interval series of size %d%n", N);
-            for (int i = 0; i < N - 1; i++) {
-                System.out.printf("%d <%d> ",
-                        S[i].getValue(),
-                        V[i].getValue());
-            }
-            System.out.printf("%d", S[N - 1].getValue());
         }
     }
 }
