@@ -1,6 +1,10 @@
 package graphmodel;
 
+import org.graphstream.graph.Graph;
+import org.graphstream.graph.NodeFactory;
+import org.graphstream.graph.implementations.AdjacencyListGraph;
 import org.graphstream.graph.implementations.SingleGraph;
+import utils.GraphReader;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -8,14 +12,24 @@ import java.util.HashMap;
 /**
  * Created by jules on 18/11/2016.
  */
-public class GraphModel {
+public class ColoredGraph extends SingleGraph {
 
-    public SingleGraph g;
     public HashMap<String, Color> vertexColoring;
 
-    public GraphModel(SingleGraph g) {
-        this.g = g;
-        for (Object v : g.getNodeSet()){
+    public ColoredGraph(String name) {
+        super(name);
+
+        setNodeFactory(new NodeFactory<ColoredNode>() {
+            public ColoredNode newInstance(String id, Graph graph) {
+                return new ColoredNode(graph, id) ;
+            }
+        });
+
+
+    }
+
+    public void setDefaultColors(){
+        for (Object v : this.getNodeSet()){
             String s = (String) v;
             vertexColoring.put(s,Color.black);
         }
@@ -23,14 +37,6 @@ public class GraphModel {
 
     public void setColor(String vertex, Color c){
         vertexColoring.put(vertex,c);
-    }
-
-    public SingleGraph getG() {
-        return g;
-    }
-
-    public void setG(SingleGraph g) {
-        this.g = g;
     }
 
     public HashMap<String, Color> getVertexColoring() {

@@ -1,53 +1,53 @@
 package graphmodel;
 
+import org.graphstream.graph.Graph;
+import org.graphstream.graph.implementations.SingleGraph;
+import org.graphstream.graph.implementations.SingleNode;
+
 import java.awt.*;
 
 /**
  * Created by jules on 16/11/2016.
  */
-public class ColoredVertex {
-    public String name;
-    public Color c = Color.black;
+public class ColoredNode extends SingleNode{
+
+    protected Color c = Color.black;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ColoredVertex that = (ColoredVertex) o;
+        ColoredNode that = (ColoredNode) o;
 
-        return name.equals(that.name);
+        return id.equals(that.id);
 
     }
 
     @Override
     public int hashCode() {
-        return name.hashCode();
+        return id.hashCode();
     }
 
-    public ColoredVertex(String name, Color c) {
-        this.name = name;
+    public ColoredNode(SingleGraph graph, String name, Color c) {
+        super(graph, name);
         this.c = c;
+
+    }
+
+
+    public ColoredNode(Graph graph, String name) {
+        super((SingleGraph)graph, name);
+        this.c = Color.black;
     }
 
     @Override
     public String toString() {
-        return "ColoredVertex{" +
-                "name='" + name + '\'' +
+        return "ColoredNode{" +
+                "id='" + id + '\'' +
                 '}';
     }
 
-    public ColoredVertex(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Color getC() {
         return c;
