@@ -11,7 +11,6 @@ import org.jgrapht.ListenableGraph;
 import org.jgrapht.graph.ListenableUndirectedGraph;
 import solver.AchroSolver;
 import utils.GraphReader;
-import utils.GraphViewer;
 
 import java.io.IOException;
 
@@ -20,13 +19,15 @@ import java.io.IOException;
  * Created by jules on 16/11/2016.
  */
 public class Test {
-    // http://www.csplib.orgt/Problems/prob007/
     public static void main (String[] args) throws IOException {
+
         //AchroSolver.testSolver1();
         ColoredGraph g = new ColoredGraph("clebsh");
         GraphReader.buildGraphFromFile(g, "clebsh");
-        g.display();
-
+        g.setUiProps();
+        //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
+        //g.display();
         AchroSolver.solve(g);
+        g.display();
     }
 }

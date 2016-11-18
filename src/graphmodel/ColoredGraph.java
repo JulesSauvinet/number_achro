@@ -28,6 +28,12 @@ public class ColoredGraph extends SingleGraph {
 
     }
 
+    public void setUiProps() {
+        System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
+        //this.addAttribute("ui.stylesheet", "graph { fill-color: red; }");
+        this.addAttribute("ui.stylesheet", "node { size: 18px; }");
+    }
+
     public void setDefaultColors(){
         for (Object v : this.getNodeSet()){
             String s = (String) v;
@@ -46,4 +52,6 @@ public class ColoredGraph extends SingleGraph {
     public void setVertexColoring(HashMap<String, Color> vertexColoring) {
         this.vertexColoring = vertexColoring;
     }
+
+
 }

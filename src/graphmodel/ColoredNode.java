@@ -29,12 +29,6 @@ public class ColoredNode extends SingleNode{
         return id.hashCode();
     }
 
-    public ColoredNode(SingleGraph graph, String name, Color c) {
-        super(graph, name);
-        this.c = c;
-
-    }
-
 
     public ColoredNode(Graph graph, String name) {
         super((SingleGraph)graph, name);
