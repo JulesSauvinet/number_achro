@@ -1,11 +1,15 @@
 package solver;
 
+import graphmodel.ColoredNode;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.search.strategy.Search;
 import org.chocosolver.solver.variables.IntVar;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
+import utils.ColorMapping;
+
+import java.util.Arrays;
 
 /**
  * Created by jules on 16/11/2016.
@@ -17,19 +21,81 @@ public class AchroSolver {
         Integer nbEdges = g.getEdgeCount();
         Integer nbVertexes = g.getNodeCount();
 
+        Integer maxDegree = 0;
+
+        Integer[][] matAdj = new Integer[nbVertexes][nbVertexes];
+
+        //Construction d'une matrice d'adjacence
+        int i1 = 0, i2 = 0;
+        for (Object v1 :g.getNodeSet()){
+            ColoredNode s1 = (ColoredNode) v1;
+            for (Object v2 :g.getNodeSet()) {
+                ColoredNode s2 = (ColoredNode) v2;
+                if (s1.hasEdgeBetween(s2)){
+                    matAdj[i1][i2] = 1;
+                }
+                else{
+                    matAdj[i1][i2] = 0;
+                }
+                i2++;
+            }
+            i2=0;
+            i1++;
+        }
+
+
+        System.out.println(Arrays.deepToString(matAdj));
         //Pour respecter la contrainte de coloration propre
         for (Object v :g.getNodeSet()){
-            String s = (String) v;
+            ColoredNode s = (ColoredNode) v;
+            if (s.getDegree() > maxDegree)
+                maxDegree = s.getDegree();
         }
+
+
+        bInfNbAchro = maxDegree;
+
+        int N = nbVertexes;
+
 
         for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
-
             Model model = new Model("All complete coloring of size " + k);
+            //le numéro des sommets
+            IntVar[] I = model.intVarArray("id domain",N,1, N, false);
+            //le domaine des couleurs
+            IntVar[] C = model.intVarArray("color vertex domain",N,1, N, false);
+            //le domaines des arêtes
+            //IntVar[] V = model.intVarArray("edges domain",nbEdges,0, 1, false);
 
-            IntVar[] C = model.intVarArray("color domain",nbVertexes,1, nbVertexes, false);
-            IntVar[] V = model.intVarArray("color domain",nbVertexes,1, nbVertexes, false);
+            //les contraintes
+            model.allDifferent(I).post();
 
+            for (int i = 0; i < N ; i++) {
+                for (int j = 0; j < N; j++) {
+                    if ((i != j) && (matAdj[i][j] == 1))
+                        model.arithm(C[i], "!=", C[j]).post();
+                }
+            }
+
+            Solver solver = model.getSolver();
+            //TODO regarder les stratégies
+            solver.setSearch(Search.minDomLBSearch(C));
+
+            if(solver.solve()){
+                System.out.println("All complete coloring of number achromatic :" + k);
+                for (int i = 0; i < N - 1; i++) {
+                    System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[C[i].getValue()%16]);
+                    //g.getNode(i).addAttribute("ui.class", "color" + i);
+                    g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[i%16]+";");
+                }
+                g.display();
+            }
+            //TODO REMOVE
+            return;
         }
+
+
+
     }
 
     public static void testSolver1(){
