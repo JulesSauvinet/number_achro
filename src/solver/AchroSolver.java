@@ -6,19 +6,26 @@ import org.chocosolver.solver.Model;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.constraints.Constraint;
 import org.chocosolver.solver.constraints.nary.cnf.LogOp;
+import org.chocosolver.solver.variables.SetVar;
 import org.chocosolver.solver.variables.impl.FixedBoolVarImpl;
 import org.chocosolver.solver.constraints.IIntConstraintFactory;
 import org.chocosolver.solver.search.strategy.Search;
 import org.chocosolver.solver.variables.BoolVar;
 import org.chocosolver.solver.variables.IntVar;
 import org.chocosolver.solver.variables.impl.BoolVarImpl;
+import org.chocosolver.solver.variables.impl.SetVarImpl;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 import utils.ColorMapping;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
+
+import static org.chocosolver.solver.constraints.extension.TuplesFactory.arithm;
 
 /**
  * Created by jules on 16/11/2016.
@@ -45,39 +52,37 @@ public class AchroSolver {
         int N = nbVertexes;
 
 
-        for (int k = bInfNbAchro; k <= bInfNbAchro/*bSupNbAchro*/; k++){
+        for (int k = 4/*bInfNbAchro*/; k <= 4/*bInfNbAchro/*bSupNbAchro*/; k++){
             Model model = new Model("All complete coloring of size " + k);
             //le numéro des sommets
-            IntVar[] I = model.intVarArray("id domain",N,1, N, false);
+            //IntVar[] I = model.intVarArray("id domain",N,1, N, false);
             //le domaine des couleurs
             IntVar[] C = model.intVarArray("color vertex domain",N,0, k-1, false);
             //le domaines des arêtes, inutile?
-            IntVar[] A = model.intVarArray("edges domain",N*N,0, 1, false);
+            IntVar[] A = model.intVarArray("edges domain",nbEdges,0, k*(k-1), false);
 
             //System.out.println("A.size " + A.length);
             //les contraintes
-            model.allDifferent(I).post();
+            BoolVar[] B = model.boolVarArray("is the vertex has the color c",nbEdges*k);
+            //model.allDifferent(I).post();
 
-            Integer[][] matAdj = new Integer[nbVertexes][nbVertexes];
+            Integer[][] matAdj = new Integer[N][N];
 
 
             //Construction d'une matrice d'adjacence
-            int i1 = 0, i2 = 0, idx=0;
+            int i1 = 0, i2 = 0;
             for (Node v1 :g.getNodeSet()){
                 ColoredNode s1 = (ColoredNode) v1;
                 for (Node v2 :g.getNodeSet()) {
                     ColoredNode s2 = (ColoredNode) v2;
                     if (s1.hasEdgeBetween(s2)){
                         matAdj[i1][i2] = 1;
-                        //model.arithm(A[idx], "==", 1).post();
                     }
                     else{
                         matAdj[i1][i2] = 0;
-                        //model.arithm(A[idx], "==", 0).post();
                     }
 
                     i2++;
-                    idx++;
                 }
                 i2=0;
                 i1++;
@@ -85,13 +90,20 @@ public class AchroSolver {
             //Constraint c = IIntConstraintFactory.arithm(, "==", );
             //model.
             //les sommets adjacents n'ont pas la même couleur => couleur prore
+
+
             for (int i = 0; i < N ; i++) {
                 for (int j = 0; j < N; j++) {
                     if ((i != j) && (matAdj[i][j] == 1))
                         model.arithm(C[i], "!=", C[j]).post();
                 }
             }
+            //model.allDifferentUnderCondition(C,)
 
+            /*for (int i = 0; i < k*(k-1) ; i++) {
+                model.member(i, A);
+                model.arithm(C[i], "!=", C[j]).post();
+            }*/
             //test d'élimination du couleur
             //for (int i = 0; i < N ; i++) {
             //    model.arithm(C[i], "!=", 1).post();
@@ -120,42 +132,92 @@ public class AchroSolver {
              Fin Pour
              */
 
+            //qu'une couleur par noeud, atttention au moins deux couleurs!!
+            for (int i = 0; i < N ; i++) {
+                for (int c=0;c<k;c++){
+                    for(int g2 = 0; g2 < k; g2++){
+                        if(g2 != c) {
+                            Constraint constr = model.arithm(B[(i * k) + c], "!=", B[(i * k) + g2]);
+                            model.ifThen(B[(i * k) + c], constr);
+                        }
+                    }
+                }
+            }
+
+            //coloration propre
+            for (int i = 0; i < N-1 ; i++) { // pour chaque noeud
+                for (int j = i+1; j < N ; j++) { // pour chaque couleur
+                    for (int c=0; c<k;c++) {
+                        if (matAdj[i][j]==1) {
+                            Constraint constr = model.arithm(B[(i*k)+c], "!=", B[(j*k)+c]);
+                            model.ifThen(B[(i*k)+c], constr);
+                        }
+                    }
+                }
+            }
+
+            for (int i=0; i<N;i++){
+                BoolVar[] BTemp = new BoolVar[k];
+                for (int coul=0; coul<k;coul++) {
+                    BTemp[coul]=B[i*k+coul];
+                }
+                model.notAllEqual(BTemp).post();
+            }
+
+            /*for(int i = 0; i < N-1; i++) {
+                for(int j = i+1; j < N-1; j++) {
+                    for(int l = 0; l < k; l++) {
+                        if(matAdj[i][j] == 1) {
+                            model.ifThen(B[i+l],model.arithm(B[i+l], "!=", B[j+l]));
+                        }
+                    }
+                }
+            }*/
+
+
+            int idxN1 = 0;
+            int idxN2 = 0;
             LogOp contrainte4 = null;
             for (int c1 = 0; c1 < k; c1++) {
                 LogOp contrainte3 = null;
                 for (int c2 = 0; c2 < k; c2++) {
                     LogOp contrainte2 = null;
+                    idxN1=0;
                     for (Node n1 : g.getNodeSet()) {
                         LogOp contrainte1= null;
-                        Iterator<Node> itNode = n1.getNeighborNodeIterator();
-                        while (itNode.hasNext()){
-                            Node n2 = itNode.next();
-                            BoolVar c1n1 = model.boolVar(""+c1+n1);
-                            // creation de la contrainte
-                            //model.arithm(C[i], "!=", 1).post();
+                        idxN2=0;
+                        for (Node n2 : g.getNodeSet()) {
+                            if (matAdj[idxN1][idxN2]==1) {
+                                /*Constraint constraint1 = model.arithm(C[idxN1], "=", c1);
+                                Constraint constraint2 = model.arithm(C[idxN2], "=", c2);
 
-                            BoolVar c2n2 = model.boolVar(""+c2+n2);
-                            if (!n1.equals(n2)) {
-                                LogOp conj = LogOp.and(c1n1,c2n2);
-                                if (contrainte1 == null){
-                                    contrainte1 = conj;
-                                }
-                                else {
-                                    contrainte1= LogOp.or(contrainte1,conj);
-                                }
+                                BoolVar c1n1 = constraint1.reify();
+                                // creation de la contrainte
+                                BoolVar c2n2 = constraint2.reify();*/
 
+                                BoolVar c1n1 =B[idxN1*c1];
+                                BoolVar c2n2 =B[idxN2*c2];
+
+                                if (!n1.equals(n2)) {
+                                    LogOp conj = LogOp.and(B[idxN1*c1], B[idxN2*c2]);
+                                    if (contrainte1 == null) {
+                                        contrainte1 = conj;
+                                    } else {
+                                        contrainte1 = LogOp.or(contrainte1, conj);
+                                    }
+                                }
                             }
-
+                            idxN2++;
                         }
                         if (contrainte1 != null){
                             if (contrainte2 == null){
                                 contrainte2 = contrainte1;
                             }
                             else {
-                                contrainte2= LogOp.and(contrainte2,contrainte1);
+                                contrainte2= LogOp.or(contrainte2,contrainte1);
                             }
                         }
-
+                        idxN1++;
                     }
                     if (contrainte2 != null){
                         if (contrainte3 == null){
@@ -183,20 +245,28 @@ public class AchroSolver {
 
             Solver solver = model.getSolver();
             //TODO regarder les stratégies
-            solver.setSearch(Search.minDomLBSearch(C));
+            //solver.setSearch(Search.minDomLBSearch(C));
 
             if(solver.solve()){
                 System.out.println("All complete coloring of number achromatic :" + k);
-                for (int i = 0; i < N - 1; i++) {
-                    System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[C[i].getValue()]);
+                for (int i = 0; i < N ; i++) {
+                    int color = 0;
+                    for (int c=0;c<k;c++){
+                        System.out.println(B[(i*k)+c].getValue());
+                        if (B[(i*k)+c].getValue() == 1){
+                            color = c;
+                        }
+                    }
+                    System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[color]);
                     //g.getNode(i).addAttribute("ui.class", "color" + i);
-                    g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[C[i].getValue()]+";");
+                    g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color]+";");
                 }
                 g.display();
             }
+            else {
+                System.out.println("il n'y a pas de solutions");
+            }
             //TODO donner toutes les solutions??! ou c'est juste une permutation?
-            //TODO REMOVE
-            return;
         }
 
 
