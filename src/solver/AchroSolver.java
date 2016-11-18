@@ -4,6 +4,7 @@ import graphmodel.ColoredNode;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.search.strategy.Search;
+import org.chocosolver.solver.variables.BoolVar;
 import org.chocosolver.solver.variables.IntVar;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
@@ -65,13 +66,21 @@ public class AchroSolver {
             //le domaine des couleurs
             IntVar[] C = model.intVarArray("color vertex domain",N,1, N, false);
             //le domaines des arêtes
-            //IntVar[] V = model.intVarArray("edges domain",nbEdges,0, 1, false);
+            //BoolVar[] V = model.boolVarArray("edges domain",nbEdges);
 
             //les contraintes
             model.allDifferent(I).post();
 
             for (int i = 0; i < N ; i++) {
                 for (int j = 0; j < N; j++) {
+                    //OK de faire pas CSP les aretes?
+                    if ((i != j) && (matAdj[i][j] == 1))
+                        model.arithm(C[i], "!=", C[j]).post();
+                }
+            }
+            for (int i = 0; i < N ; i++) {
+                for (int j = 0; j < N; j++) {
+                    //OK de faire pas CSP les aretes?
                     if ((i != j) && (matAdj[i][j] == 1))
                         model.arithm(C[i], "!=", C[j]).post();
                 }
@@ -86,10 +95,11 @@ public class AchroSolver {
                 for (int i = 0; i < N - 1; i++) {
                     System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[C[i].getValue()%16]);
                     //g.getNode(i).addAttribute("ui.class", "color" + i);
-                    g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[i%16]+";");
+                    g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[C[i].getValue()%16]+";");
                 }
                 g.display();
             }
+            //TODO donner toutes les solutions??! ou c'est juste une permutation?
             //TODO REMOVE
             return;
         }
