@@ -1,6 +1,7 @@
 package solver;
 
 import graphmodel.ColoredNode;
+import org.chocosolver.sat.SatFactory;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.search.strategy.Search;
@@ -16,7 +17,7 @@ import java.util.Arrays;
  * Created by jules on 16/11/2016.
  */
 public class AchroSolver {
-    public static void solve(SingleGraph g){
+    public void solve(SingleGraph g){
         Integer bSupNbAchro = g.getNodeSet().size();
         Integer bInfNbAchro = 0;
         Integer nbEdges = g.getEdgeCount();
@@ -80,9 +81,7 @@ public class AchroSolver {
             }
             for (int i = 0; i < N ; i++) {
                 for (int j = 0; j < N; j++) {
-                    //OK de faire pas CSP les aretes?
-                    if ((i != j) && (matAdj[i][j] == 1))
-                        model.arithm(C[i], "!=", C[j]).post();
+                    //model.addClauses(and(nand(nor(a, b), or(c, d)), e), model);
                 }
             }
 

@@ -27,7 +27,8 @@ public class Test {
         g.setUiProps();
         //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
         //g.display();
-        AchroSolver.solve(g);
+        AchroSolver solver = new AchroSolver();
+        solver.solve(g);
         g.display();
     }
 }
