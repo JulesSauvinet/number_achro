@@ -1,6 +1,5 @@
 package utils;
 
-import graphmodel.ColoredVertex;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
 
@@ -12,13 +11,12 @@ import java.util.Scanner;
  * Created by jules on 16/11/2016.
  */
 public class GraphReader {
-    public static Graph buildGraphFromFile(String fileName) throws IOException {
+    public static void buildGraphFromFile(Graph g, String fileName) throws IOException {
 
         if (fileName == null)
             fileName = "data_raw/clebsh.txt";
 
         String[] fileSplit = fileName.split("/");
-        Graph g = new SingleGraph(fileSplit[fileSplit.length-1]);
         int nbVertex = 0;
         int nbEdges = 0;
 
@@ -51,7 +49,6 @@ public class GraphReader {
         }
 
         scanner.close();
-        return g;
     }
 
 }
