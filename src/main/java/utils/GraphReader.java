@@ -11,7 +11,7 @@ import java.util.Scanner;
  * Created by jules on 16/11/2016.
  */
 public class GraphReader {
-    public static void buildGraphFromFile(Graph g, String fileName) throws IOException {
+    public static void buildGraphFromFile(Graph g, String fileName) throws IOException, NullPointerException {
 
         if (fileName == null)
             fileName = "data_raw/clebsh.txt";
@@ -21,7 +21,7 @@ public class GraphReader {
         int nbEdges = 0;
 
         ClassLoader classLoader = GraphReader.class.getClassLoader();
-        File file = new File(classLoader.getResource(fileName).getFile());
+        File file = new File(classLoader.getResource(fileName).getFile()); // Throws NullPointerException if file does not exist
 
         Scanner scanner = new Scanner(file);
 

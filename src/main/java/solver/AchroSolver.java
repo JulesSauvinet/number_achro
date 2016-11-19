@@ -14,7 +14,13 @@ import utils.ColorMapping;
  * Created by jules on 16/11/2016.
  */
 public class AchroSolver {
-    public void solve(SingleGraph g){
+
+    /**
+     *
+     * @param g
+     * @return achromatic number
+     */
+    public int solve(SingleGraph g){
         Integer bSupNbAchro = g.getNodeSet().size();
         Integer bInfNbAchro = 0;
         Integer nbEdges = g.getEdgeCount();
@@ -135,13 +141,14 @@ public class AchroSolver {
                     //g.getNode(i).addAttribute("ui.class", "color" + i);
                     g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
                 }
-                g.display();
+//                g.display();
             }
             else {
-                System.out.println("il n'y a pas de solutions");
-                return;
+                System.out.println("No higher solution for this graph");
+                return k - 1;
             }
             //TODO donner toutes les solutions??! ou c'est juste une permutation?
         }
+	return 0;
     }
 }
