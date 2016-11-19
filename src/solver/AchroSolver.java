@@ -4,6 +4,7 @@ import graphmodel.ColoredNode;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.constraints.Constraint;
+import org.chocosolver.solver.exception.ContradictionException;
 import org.chocosolver.solver.search.strategy.Search;
 import org.chocosolver.solver.variables.IntVar;
 import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
@@ -38,25 +39,37 @@ public class AchroSolver {
         for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
             Model model = new Model("All complete coloring of size " + k);
             //les contraintes
-            IntVar[] B = model.intVarArray("the vertex associated with the index has the color c",nbVertexes, 0,k-1, false);
+            IntVar[] B = model.intVarArray("the vertex associated with the index has the color c",nbVertexes, 0,k-1, true);
 
+            for (Node v1 :g.getNodeSet()){
+
+            }
+
+            //IntVar[] CNS = model.intVarArray("the nValues of the vertexes",nbVertexes, 0,k-1, true);
 
             Integer[][] matAdj = new Integer[N][N];
             //Construction d'une matrice d'adjacence
-            int i1 = 0, i2 = 0;
+            int i1 = 0, i2 = 0, i3=0;
             for (Node v1 :g.getNodeSet()){
                 ColoredNode s1 = (ColoredNode) v1;
+                IntVar[] CN = model.intVarArray("the color of the neighbours",v1.getDegree(), 0,k-1, true);
+                i3=0;
                 for (Node v2 :g.getNodeSet()) {
+
                     ColoredNode s2 = (ColoredNode) v2;
                     if (s1.hasEdgeBetween(s2)){
+                        //CN[i3] = B[i2]; i3++;
                         matAdj[i1][i2] = 1;
                     }
                     else{
                         matAdj[i1][i2] = 0;
                     }
-
                     i2++;
                 }
+                //OPTI 2 NE SERT A RIEN
+                IntVar nValues = new FixedIntVarImpl("nValuesi",v1.getDegree(),model);
+                model.atMostNValues(CN, nValues,true).post();
+                model.setObjective(Model.MAXIMIZE,nValues);
                 i2=0;
                 i1++;
             }
@@ -134,6 +147,13 @@ public class AchroSolver {
             Solver solver = model.getSolver();
             //TODO regarder les stratégies
             solver.setSearch(Search.defaultSearch(model));//minDomLBSearch(C));
+
+            //PROPAGATION
+            try {
+                solver.propagate();
+            } catch (ContradictionException e) {
+                e.printStackTrace();
+            }
             //solver.
             if(solver.solve()){
                 //TODO find all the complete coloring and display all the solutions
