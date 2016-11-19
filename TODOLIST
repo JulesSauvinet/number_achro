@@ -16,3 +16,5 @@ Optimiser le solveur :
 - trouver la recherche optimale : setSearch
 - créer une classe de stratégie de recherche
 - faire de l'apprentissage : setLearner?
+-> https://media.readthedocs.org/pdf/choco-solver/latest/choco-solver.pdf
+A partir de page 20

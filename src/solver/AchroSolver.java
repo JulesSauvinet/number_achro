@@ -6,8 +6,10 @@ import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.constraints.Constraint;
 import org.chocosolver.solver.search.strategy.Search;
 import org.chocosolver.solver.variables.IntVar;
+import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
+import scala.collection.immutable.Stream;
 import utils.ColorMapping;
 
 /**
@@ -123,6 +125,12 @@ public class AchroSolver {
                 }
             }
 
+            //OPTI 1
+            IntVar nValues  = new FixedIntVarImpl("nValues",k,model);
+            //model.atLeastNValues(B,nValues,false).post();
+            model.atMostNValues(B,nValues,false).post();
+            model.setObjective(Model.MAXIMIZE, nValues);
+
             Solver solver = model.getSolver();
             //TODO regarder les stratégies
             solver.setSearch(Search.defaultSearch(model));//minDomLBSearch(C));
@@ -139,7 +147,7 @@ public class AchroSolver {
                 //clebshLayout(g);
                 solver.showSolutions();
                 solver.showStatistics();
-                //g.display();
+                g.display();
             }else if(solver.hasEndedUnexpectedly()){
                 if (k>bInfNbAchro) {
                     int nbachro = k-1;
