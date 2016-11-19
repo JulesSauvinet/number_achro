@@ -20,7 +20,7 @@ import java.io.IOException;
  */
 public class Test {
 
-    static String GRAPHNAME = "k4";
+    static String GRAPHNAME = "k3";
     public static void main (String[] args) throws IOException {
 
         //AchroSolver.testSolver1();
