@@ -23,12 +23,12 @@ public class Test {
 
         //AchroSolver.testSolver1();
         ColoredGraph g = new ColoredGraph("clebsh");
-        GraphReader.buildGraphFromFile(g, "clebsh");
+        GraphReader.buildGraphFromFile(g, "data_raw/clebsh.txt");
         g.setUiProps();
         //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
         //g.display();
         AchroSolver solver = new AchroSolver();
         solver.solve(g);
-        //g.display();
+        g.display();
     }
 }
