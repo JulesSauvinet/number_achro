@@ -7,8 +7,10 @@ package test;
 
 import graphmodel.ColoredGraph;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.ArrayList;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import solver.AchroSolver;
@@ -21,18 +23,38 @@ import utils.GraphReader;
 public class TestSolver {
     
     private static final String resourcePath = "data_raw/";
+    private static final ArrayList<TestResult> summary = new ArrayList<>();
+    
+    @After
+    public void displaySummary(){
+	for (TestResult a : summary) {
+	    System.out.println(a.toString());
+	}
+    }
     
     public void testGraphFile(String filename, int expectedAchromaticNumber){
 	try {
+	    // Setup graph
 	    ColoredGraph g = new ColoredGraph(filename);
 	    GraphReader.buildGraphFromFile(g, resourcePath + filename);
 	    g.setUiProps();
 	    AchroSolver solver = new AchroSolver();
-	    int achromaticNumber = solver.solve(g);
+	    
+	    
+	    Instant startTime = Instant.now(); // Measure duration
+	    
+	    int achromaticNumber = solver.solve(g); // Start solver
 	    Assert.assertEquals("Achromatic number differs from expected value", expectedAchromaticNumber, achromaticNumber);
+	    
+	    Instant stopTime = Instant.now(); // Measure duration
+	    Duration timeElapsed = Duration.between(startTime, stopTime);
+	    
+	    summary.add(new TestResult(timeElapsed.toMillis(), filename, g.getNodeCount())); // Log results
 	} catch (IOException | NullPointerException ex) {
 	    Assert.fail("File not found : " + resourcePath + filename);
 	}
+	
+	
     }
     
     @Test

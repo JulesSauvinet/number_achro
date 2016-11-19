@@ -28,7 +28,8 @@ public class Test {
         //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
         //g.display();
         AchroSolver solver = new AchroSolver();
-        solver.solve(g);
+        int achroNumber = solver.solve(g);
+	System.out.println("Achromatic number : " + achroNumber);
         g.display();
     }
 }

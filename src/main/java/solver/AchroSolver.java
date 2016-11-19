@@ -144,7 +144,7 @@ public class AchroSolver {
 //                g.display();
             }
             else {
-                System.out.println("No higher solution for this graph");
+//                System.out.println("No higher solution for this graph");
                 return k - 1;
             }
             //TODO donner toutes les solutions??! ou c'est juste une permutation?
