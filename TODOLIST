@@ -1,0 +1,18 @@
+TODO
+
+La visualisation :
+- éviter les superpositions d'arètes ***
+- changer le design ?
+
+Le benchmark :
+- trouver un ensemble de fichier de graphe
+- faire un algo pour le formater dans notre format texte de description de graphe OU changer l'algo de parsing
+- notre algo ne permet pas de traiter de gros graphes donc beaucoup de petit graphe et les gros graphes ne sont pas visualisables
+- faire des statistiques sur les resultats (temps d'exécution etc..)
+- connaître les nombres achromatiques des graphes au préalable? au moins savoir s'il admettre une coloration complète
+
+Optimiser le solveur :
+- possibilité SAT pour faire de la réification de contrainte, de la relax, de la propagation?
+- trouver la recherche optimale : setSearch
+- créer une classe de stratégie de recherche
+- faire de l'apprentissage : setLearner?
