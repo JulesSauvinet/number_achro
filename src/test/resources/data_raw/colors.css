@@ -1,0 +1,38 @@
+node {
+    fill-color: grey;
+    size: 10px;
+    stroke-mode: plain;
+    stroke-color: black;
+    stroke-width: 1px;
+}
+node.color1 {
+    fill-color: red;
+}
+node.color2 {
+    fill-color: cyan;
+}
+node.color3 {
+     fill-color: yellow;
+}
+node.color4 {
+    fill-color: green;
+}
+node.color5 {
+    fill-color: blue;
+}
+node.color6 {
+    fill-color: lightblue;
+}
+node.color7 {
+    fill-color: purple;
+}
+node.color8 {
+    fill-color: pink;
+}
+node.color9 {
+     fill-color: orange;
+}
+node.color10 {
+    fill-color: magenta;
+}
+/*TODO plus de couleurs? ou autre moyens avec le css*/
