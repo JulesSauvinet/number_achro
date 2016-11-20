@@ -191,13 +191,17 @@ public class AchroSolver {
                 return;
             }
             else {
-                if (k>bInfNbAchro) {
+                if (k>bInfNbAchro && hasBeenComplete) {
                     int nbachro = k-1;
                     System.out.println("Le nombre achromatique du graphe est " +
                             "egal a " + nbachro);
                     return;
                 }
                 else if (hasBeenComplete){
+                    System.out.println("le graphe n'admet pas de coloration complete");
+                    return;
+                }
+                else if (k==bSupNbAchro){
                     System.out.println("le graphe n'admet pas de coloration complete");
                     return;
                 }
