@@ -20,18 +20,18 @@ import java.io.IOException;
  */
 public class Test {
 
-    static String GRAPHNAME = "clebsh";
+    static String GRAPHNAME = "ks/k9";
     public static void main (String[] args) throws IOException {
 
         //AchroSolver.testSolver1();
         ColoredGraph g = new ColoredGraph(GRAPHNAME);
-        GraphReader.buildGraphFromFile(g, "data_raw/" + GRAPHNAME);
+        GraphReader.buildGraphFromFile(g,  GRAPHNAME);
         g.setUiProps();
         //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
         //g.display();
         AchroSolver solver = new AchroSolver();
         int achroNumber = solver.solve(g);
-	System.out.println("Achromatic number : " + achroNumber);
+        System.out.println("Achromatic number : " + achroNumber);
         g.display();
     }
 }
