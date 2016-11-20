@@ -30,8 +30,6 @@ public class AchroSolver {
         Integer nbEdges = g.getEdgeCount();
         Integer nbVertexes = g.getNodeCount();
 
-
-
         //Determination des bornes pour k, le nombre achromatique
         //La borne sup est le nombre de noeud (grossier)
         Integer bSupNbAchro = g.getNodeSet().size();
@@ -55,26 +53,9 @@ public class AchroSolver {
             //les contraintes
             IntVar[] B = model.intVarArray("the vertex associated with the index has the color c",N, 0,k-1, true);
 
-
             //Construction d'une matrice d'adjacence
-            Integer[][] matAdj = new Integer[N][N];
-            int i1 = 0, i2 = 0, i3=0;
-            for (Node v1 :g.getNodeSet()){
-                ColoredNode s1 = (ColoredNode) v1;
-                for (Node v2 :g.getNodeSet()) {
-
-                    ColoredNode s2 = (ColoredNode) v2;
-                    if (s1.hasEdgeBetween(s2)){
-                        matAdj[i1][i2] = 1;
-                    }
-                    else{
-                        matAdj[i1][i2] = 0;
-                    }
-                    i2++;
-                }
-                i2=0;
-                i1++;
-            }
+            int[][] matAdj = Toolkit.getAdjacencyMatrix(g);
+            //community?
 
             //Petite OPTI on a la droit?
             // car pas toutes les solutions avec ça et puis quand la taille augmente ca devient négligeable
@@ -167,7 +148,9 @@ public class AchroSolver {
             long time = System.currentTimeMillis();
             //TODO regarder les stratégies
             //solver.setSearch(Search.defaultSearch(model));//minDomLBSearch(C));
-            solver.setSearch(Search.activityBasedSearch(B));
+            //solver.setSearch(Search.activityBasedSearch(B));
+            //Vraiment mieux
+            solver.setSearch(Search.domOverWDegSearch(B));
 
             //PROPAGATION de contrainte
             try {
@@ -204,23 +187,19 @@ public class AchroSolver {
                 if (runtime >= TIME_LIMIT){
                     if (k>bInfNbAchro && hasBeenComplete) {
                         int nbachro = k-1;
-                        System.out.println("Le solveur n'a pas pu trouver de solutions dans le temps limite de " + (TIME_LIMIT)
-                                + " secondes, " +
-                                "le nombre achromatique est " +
-                                "au moins egal a " + nbachro);
+                        System.out.print("Le solveur n'a pas pu trouver de solutions dans le temps limite de " + (TIME_LIMIT) + " secondes, ");
+                        System.out.println("le nombre achromatique est " + "au moins egal a " + nbachro);
                         return k - 1;
                     }
                     else{
-                        System.out.println("Le solveur n'a pas pu determiner s'il existait une coloration complete" +
-                                " en " + (TIME_LIMIT) +" secondes");
+                        System.out.println("Le solveur n'a pas pu determiner s'il existait une coloration complete" + " en " + (TIME_LIMIT) +" secondes");
                         return -1;
                     }
                 }
                 else {
                     if (k > bInfNbAchro && hasBeenComplete) {
                         int nbachro = k - 1;
-                        System.out.println("Le nombre achromatique du graphe est " +
-                                "egal a " + nbachro);
+                        System.out.println("Le nombre achromatique du graphe est " + "egal a " + nbachro);
                         return nbachro;
                     } else if (k == bSupNbAchro) {
                         System.out.println("Le graphe n'admet pas de coloration complete");
