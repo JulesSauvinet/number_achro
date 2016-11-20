@@ -1,14 +1,6 @@
 package test;
 
 import graphmodel.ColoredGraph;
-import org.chocosolver.solver.Model;
-import org.chocosolver.solver.Solver;
-import org.chocosolver.solver.search.strategy.Search;
-import org.chocosolver.solver.variables.IntVar;
-import org.graphstream.graph.Graph;
-import org.graphstream.graph.implementations.SingleGraph;
-import org.jgrapht.ListenableGraph;
-import org.jgrapht.graph.ListenableUndirectedGraph;
 import solver.AchroSolver;
 import utils.GraphReader;
 
@@ -20,7 +12,7 @@ import java.io.IOException;
  */
 public class Test {
 
-    static String GRAPHNAME = "ks/k9";
+    static String GRAPHNAME = "benchmark/k19";
     public static void main (String[] args) throws IOException {
 
         //AchroSolver.testSolver1();
