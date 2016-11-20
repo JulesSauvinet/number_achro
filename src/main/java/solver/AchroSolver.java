@@ -8,9 +8,13 @@ import org.chocosolver.solver.exception.ContradictionException;
 import org.chocosolver.solver.search.strategy.Search;
 import org.chocosolver.solver.variables.IntVar;
 import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
+import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 import utils.ColorMapping;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jules on 16/11/2016.
@@ -18,24 +22,22 @@ import utils.ColorMapping;
 public class AchroSolver {
     public int solve(SingleGraph g){
         boolean hasBeenComplete = false;
-        Integer bSupNbAchro = g.getNodeSet().size();
-        Integer bInfNbAchro = 0;
         Integer nbEdges = g.getEdgeCount();
         Integer nbVertexes = g.getNodeCount();
 
-        Integer maxDegree = 0;
 
-        ColoredNode maxNode = null;
+        //Determination des bornes pour k, le nombre achromatique
+        //La borne sup est le nombre de noeud (grossier)
+        Integer bSupNbAchro = g.getNodeSet().size();
+        //La borne inf est la taille de la clique maximale (grossier)
+        Integer bInfNbAchro = 0;
         //Pour respecter la contrainte de coloration propre
-        for (Object v :g.getNodeSet()){
-            ColoredNode s = (ColoredNode) v;
-            if (s.getDegree() > maxDegree) {
-                maxDegree = s.getDegree();
-                maxNode = s;
-            }
-        }
+        List<Node> maximumClique = new ArrayList<Node>();
+        for (List<Node> clique : Toolkit.getMaximalCliques(g))
+            if (clique.size() > maximumClique.size())
+                maximumClique = clique;
 
-        bInfNbAchro = maxDegree;
+        bInfNbAchro = maximumClique.size();
 
         int N = nbVertexes;
 
@@ -44,14 +46,10 @@ public class AchroSolver {
             //les contraintes
             IntVar[] B = model.intVarArray("the vertex associated with the index has the color c",N, 0,k-1, true);
 
-            for (Node v1 :g.getNodeSet()){
-
-            }
-
             //IntVar[] CNS = model.intVarArray("the nValues of the vertexes",nbVertexes, 0,k-1, true);
 
-            Integer[][] matAdj = new Integer[N][N];
             //Construction d'une matrice d'adjacence
+            Integer[][] matAdj = new Integer[N][N];
             int i1 = 0, i2 = 0, i3=0;
             for (Node v1 :g.getNodeSet()){
                 ColoredNode s1 = (ColoredNode) v1;
@@ -77,8 +75,9 @@ public class AchroSolver {
                 i1++;
             }
 
-            //Opti? on a la droit? car pas toutes les solution avec ça et puis quand la taille augmente ca devient néegligeable
-            model.arithm(B[maxNode.getIndex()],"=",0).post();
+            //Petite Opti? on a la droit?
+            // car pas toutes les solutions avec ça et puis quand la taille augmente ca devient négligeable
+            model.arithm(B[maximumClique.get(0).getIndex()],"=",0).post();
 
             //coloration propre
             for (int i = 0; i < N-1 ; i++) { // pour chaque noeud
@@ -144,7 +143,7 @@ public class AchroSolver {
                 }
             }
 
-            //OPTI 1
+            //optimisation 1
             IntVar nValues  = new FixedIntVarImpl("nValues",k,model);
             //model.atLeastNValues(B,nValues,false).post();
             model.atMostNValues(B,nValues,false).post();
@@ -154,7 +153,7 @@ public class AchroSolver {
             //TODO regarder les stratégies
             solver.setSearch(Search.defaultSearch(model));//minDomLBSearch(C));
 
-            //PROPAGATION
+            //PROPAGATION de contrainte
             try {
                 solver.propagate();
             } catch (ContradictionException e) {
@@ -164,30 +163,38 @@ public class AchroSolver {
 
             if(solver.solve()){
                 hasBeenComplete = true;
-                //TODO find all the complete coloring and display all the solutions
-                System.out.println("All complete coloring of number achromatic :" + k);
+                System.out.println("Une solution a été trouvé pour le nombre achromatique " + k);
                 for (int i = 0; i < N ; i++) {
                     int color = B[i].getValue();
                     //System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[color%32]);
                     //g.getNode(i).addAttribute("ui.class", "color" + i);
                     g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
                 }
+
+                //Affichage personnalise selon le graphe
                 //clebshLayout(g);
-                //JAVA HEAP SPACE!
+
+                //Affichage de toutes les solutions : nécessaire? Attention JAVA HEAP SPACE
                 /*solver.findAllSolutions();
                 solver.showSolutions();
                 solver.showStatistics();*/
-//                g.display();
-            }else if(solver.hasEndedUnexpectedly()){
-                if (k>bInfNbAchro) {
+
+                //Affichage en continu
+                // g.display();
+            }
+            //On renvoie le nombre achromatique
+            else if(solver.hasEndedUnexpectedly()){
+                if (k>bInfNbAchro && hasBeenComplete) {
                     int nbachro = k-1;
-                    System.out.println("Le solveur n'a pas pu trouvé de solutions dans le temps limite; le nombre achromatique est " +
+                    System.out.println("Le solveur n'a pas pu trouver de solutions dans le temps limite, " +
+                            "le nombre achromatique est " +
                             "au moins egal a " + nbachro);
+                    return k - 1;
                 }
                 else{
-                    System.out.println("le solveur n'a pas pu determiner s'il existait une coloration complete");
+                    System.out.println("Le solveur n'a pas pu determiner s'il existait une coloration complete");
+                    return -1;
                 }
-                return k - 1;
             }
             else {
                 if (k>bInfNbAchro && hasBeenComplete) {
@@ -196,20 +203,16 @@ public class AchroSolver {
                             "egal a " + nbachro);
                     return nbachro;
                 }
-                else if (hasBeenComplete){
-                    System.out.println("le graphe n'admet pas de coloration complete");
-                    return k - 1;
-                }
                 else if (k==bSupNbAchro){
-                    System.out.println("le graphe n'admet pas de coloration complete");
+                    System.out.println("Le graphe n'admet pas de coloration complete");
                     return -1;
                 }
                 //TODO traiter le else
             }
 
-            //TODO donner toutes les solutions??! ou c'est juste une permutation?
+            //TODO donner toutes les solutions? ou c'est juste une permutation?
         }
-	return bSupNbAchro;
+	    return bSupNbAchro;
     }
 
 
