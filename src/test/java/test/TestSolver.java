@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
 import solver.AchroSolver;
@@ -25,10 +25,10 @@ public class TestSolver {
     private static final String resourcePath = "benchmark/";
     private static final ArrayList<TestResult> summary = new ArrayList<>();
     
-    @After
+    @AfterClass
     public void displaySummary(){
 	for (TestResult a : summary) {
-	    System.out.println(a.toString());
+	    System.out.println("Test summary : " + a.toString());
 	}
     }
     
@@ -138,4 +138,8 @@ public class TestSolver {
 	testGraphFile("petersen", 5);
     }
     
+    @Test
+    public void testMyciel3(){
+	testGraphFile("myciel3.col", 6);
+    }
 }
