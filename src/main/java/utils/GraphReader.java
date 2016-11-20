@@ -14,7 +14,7 @@ public class GraphReader {
     public static void buildGraphFromFile(Graph g, String fileName) throws IOException, NullPointerException {
 
         if (fileName == null)
-            fileName = "data_raw/clebsh.txt";
+            fileName = "benchmark/clebsh";
 
         String[] fileSplit = fileName.split("/");
         int nbVertex = 0;
