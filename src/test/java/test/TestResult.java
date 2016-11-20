@@ -13,11 +13,13 @@ public class TestResult {
     private long elapsedTimeInMs;
     private String filename;
     private int nbVertices;
+    private int nbEdges;
 
-    public TestResult(long elapsedTimeInMs, String filename, int nbVertices) {
+    public TestResult(long elapsedTimeInMs, String filename, int nbVertices, int nbEdges) {
 	this.elapsedTimeInMs = elapsedTimeInMs;
 	this.filename = filename;
 	this.nbVertices = nbVertices;
+	this.nbEdges = nbEdges;
     }
 
     public long getElapsedTimeInMs() {
@@ -44,9 +46,17 @@ public class TestResult {
 	this.nbVertices = nbVertices;
     }
 
+    public int getNbEdges() {
+	return nbEdges;
+    }
+
+    public void setNbEdges(int nbEdges) {
+	this.nbEdges = nbEdges;
+    }
+
     @Override
     public String toString() {
-	return filename + "\t\t(" + nbVertices + " v.) : \t\t" + elapsedTimeInMs + "ms";
+	return String.format("%-30s", filename) + String.format("%-15s", nbVertices) + String.format("%-15s", nbEdges) + String.format("%-10s", elapsedTimeInMs + "ms");
     }
     
     
