@@ -31,18 +31,22 @@ public class AchroSolver {
         Integer nbVertexes = g.getNodeCount();
 
 
+
         //Determination des bornes pour k, le nombre achromatique
         //La borne sup est le nombre de noeud (grossier)
         Integer bSupNbAchro = g.getNodeSet().size();
         //La borne inf est la taille de la clique maximale (grossier)
         Integer bInfNbAchro = 0;
         //Pour respecter la contrainte de coloration propre
-        List<Node> maximumClique = new ArrayList<Node>();
-        for (List<Node> clique : Toolkit.getMaximalCliques(g))
-            if (clique.size() > maximumClique.size())
-                maximumClique = clique;
+        List<Node> maximalClique = new ArrayList<Node>();
+        List<List<Node>> maximalCliques = new ArrayList<>();
+        for (List<Node> clique : Toolkit.getMaximalCliques(g)) {
+            maximalCliques.add(clique);
+            if (clique.size() > maximalClique.size())
+                maximalClique = clique;
+        }
 
-        bInfNbAchro = maximumClique.size();
+        bInfNbAchro = maximalClique.size();
 
         int N = nbVertexes;
 
@@ -51,20 +55,16 @@ public class AchroSolver {
             //les contraintes
             IntVar[] B = model.intVarArray("the vertex associated with the index has the color c",N, 0,k-1, true);
 
-            //IntVar[] CNS = model.intVarArray("the nValues of the vertexes",nbVertexes, 0,k-1, true);
 
             //Construction d'une matrice d'adjacence
             Integer[][] matAdj = new Integer[N][N];
             int i1 = 0, i2 = 0, i3=0;
             for (Node v1 :g.getNodeSet()){
                 ColoredNode s1 = (ColoredNode) v1;
-                //IntVar[] CN = model.intVarArray("the color of the neighbours",v1.getDegree(), 0,k-1, false);
-                i3=0;
                 for (Node v2 :g.getNodeSet()) {
 
                     ColoredNode s2 = (ColoredNode) v2;
                     if (s1.hasEdgeBetween(s2)){
-                        //CN[i3] = B[i2]; i3++;
                         matAdj[i1][i2] = 1;
                     }
                     else{
@@ -72,17 +72,25 @@ public class AchroSolver {
                     }
                     i2++;
                 }
-                //OPTI 2 NE SERT A RIEN
-                /*IntVar nValues = new FixedIntVarImpl("nValuesi",v1.getDegree(),model);
-                model.atMostNValues(CN, nValues,true).post();
-                model.setObjective(Model.MAXIMIZE,nValues);*/
                 i2=0;
                 i1++;
             }
 
-            //Petite Opti? on a la droit?
+            //Petite OPTI on a la droit?
             // car pas toutes les solutions avec ça et puis quand la taille augmente ca devient négligeable
-            model.arithm(B[maximumClique.get(0).getIndex()],"=",0).post();
+            model.arithm(B[Toolkit.randomNode(g).getIndex()],"=",0).post();
+
+            //OPTI SUR Les clique max : fonctionne un petit peu..
+            for (List<Node> nodes : maximalCliques){
+                int sizeClique = nodes.size();
+                IntVar[] C = model.intVarArray("the maximal clique vertices color",sizeClique, 0, Math.max(k-1,sizeClique), true);
+                int idx=0;
+                for (Node node : nodes){
+                    C[idx]=B[node.getIndex()];
+                    idx++;
+                }
+                model.allDifferent(C).post();
+            }
 
             //coloration propre
             for (int i = 0; i < N-1 ; i++) { // pour chaque noeud
@@ -226,5 +234,4 @@ public class AchroSolver {
         }
         return bSupNbAchro;
     }
-
 }
