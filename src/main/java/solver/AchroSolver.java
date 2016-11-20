@@ -151,7 +151,8 @@ public class AchroSolver {
 
             //Limite de 60 secondes
             solver.limitTime(TIME_LIMIT+"s");
-            solver.setDBTLearning(true,false);
+            solver.setNoLearning();//(true,false);
+            solver.
             long time = System.currentTimeMillis();
             //TODO regarder les stratégies
             //solver.setSearch(Search.defaultSearch(model));//minDomLBSearch(C));
