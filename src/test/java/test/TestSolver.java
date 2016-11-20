@@ -22,7 +22,7 @@ import utils.GraphReader;
  */
 public class TestSolver {
     
-    private static final String resourcePath = "data_raw/";
+    private static final String resourcePath = "benchmark/";
     private static final ArrayList<TestResult> summary = new ArrayList<>();
     
     @After
@@ -71,6 +71,67 @@ public class TestSolver {
     public void testK5(){
 	testGraphFile("k5", 5);
     }
+
+	@Test
+	public void testK6(){
+		testGraphFile("k6", 6);
+	}
+
+	@Test
+	public void testK7(){
+		testGraphFile("k7", 7);
+	}
+
+	@Test
+	public void testK8(){
+		testGraphFile("k8", 8);
+	}
+
+	@Test
+	public void testK9(){
+		testGraphFile("k9", 9);
+	}
+
+	@Test
+	public void testK10(){
+		testGraphFile("k10", 10);
+	}
+
+	@Test
+	public void testK11(){
+		testGraphFile("k11", 11);
+	}
+
+	@Test
+	public void testK12(){
+		testGraphFile("k12", 12);
+	}
+
+	@Test
+	public void testK13(){
+		testGraphFile("k13", 13);
+	}
+
+	@Test
+	public void testK14(){
+		testGraphFile("k14", 14);
+	}
+
+	@Test
+	public void testK15(){
+		testGraphFile("k15", 15);
+	}
+
+	@Test
+	public void testK16(){
+		testGraphFile("k16", 16);
+	}
+
+	@Test
+	public void testK18(){
+		testGraphFile("k18", 18);
+	}
+
     
     @Test
     public void testPetersen(){
