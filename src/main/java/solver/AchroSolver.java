@@ -137,14 +137,21 @@ public class AchroSolver {
                 }
             }
 
+            //model.allDifferentUnderCondition();model.among();
+            //for (int i=0; i<k; i++)
+            //    model.count(i, B, N/k);
+
             //optimisation 1
             IntVar nValues  = new FixedIntVarImpl("nValues",k,model);
             //model.atLeastNValues(B,nValues,false).post();
             model.atMostNValues(B,nValues,false).post();
             model.setObjective(Model.MAXIMIZE, nValues);
             Solver solver = model.getSolver();
+            //solver.setL
+
             //Limite de 60 secondes
             solver.limitTime(TIME_LIMIT+"s");
+            solver.setDBTLearning(true,false);
             long time = System.currentTimeMillis();
             //TODO regarder les stratégies
             //solver.setSearch(Search.defaultSearch(model));//minDomLBSearch(C));
@@ -166,7 +173,7 @@ public class AchroSolver {
                 System.out.println("Une solution a été trouvé pour le nombre achromatique " + k);
                 for (int i = 0; i < N ; i++) {
                     int color = B[i].getValue();
-                    //System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[color%32]);
+                    System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[color%32]);
                     //g.getNode(i).addAttribute("ui.class", "color" + i);
                     g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
                 }
