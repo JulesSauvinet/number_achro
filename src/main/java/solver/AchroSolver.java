@@ -16,9 +16,8 @@ import utils.ColorMapping;
  * Created by jules on 16/11/2016.
  */
 public class AchroSolver {
-    public void solve(SingleGraph g){
+    public int solve(SingleGraph g){
         boolean hasBeenComplete = false;
-
         Integer bSupNbAchro = g.getNodeSet().size();
         Integer bInfNbAchro = 0;
         Integer nbEdges = g.getEdgeCount();
@@ -178,7 +177,7 @@ public class AchroSolver {
                 /*solver.findAllSolutions();
                 solver.showSolutions();
                 solver.showStatistics();*/
-                g.display();
+//                g.display();
             }else if(solver.hasEndedUnexpectedly()){
                 if (k>bInfNbAchro) {
                     int nbachro = k-1;
@@ -188,28 +187,29 @@ public class AchroSolver {
                 else{
                     System.out.println("le solveur n'a pas pu determiner s'il existait une coloration complete");
                 }
-                return;
+                return k - 1;
             }
             else {
                 if (k>bInfNbAchro && hasBeenComplete) {
                     int nbachro = k-1;
                     System.out.println("Le nombre achromatique du graphe est " +
                             "egal a " + nbachro);
-                    return;
+                    return nbachro;
                 }
                 else if (hasBeenComplete){
                     System.out.println("le graphe n'admet pas de coloration complete");
-                    return;
+                    return k - 1;
                 }
                 else if (k==bSupNbAchro){
                     System.out.println("le graphe n'admet pas de coloration complete");
-                    return;
+                    return -1;
                 }
                 //TODO traiter le else
             }
 
             //TODO donner toutes les solutions??! ou c'est juste une permutation?
         }
+	return bSupNbAchro;
     }
 
 
