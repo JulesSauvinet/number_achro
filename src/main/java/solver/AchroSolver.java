@@ -14,7 +14,11 @@ import utils.ColorMapping;
 
 /**
  * Created by jules on 16/11/2016.
+ * Dans cette classe, il faut coder les deux principales contraintes :
+ *      - la coloration propre
+ *      - la coloration complete
  */
+
 public class AchroSolver {
     public int solve(SingleGraph g){
         boolean hasBeenComplete = false;
