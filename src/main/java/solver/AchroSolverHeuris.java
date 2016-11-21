@@ -12,10 +12,13 @@ import java.util.*;
  * Created by jules on 16/11/2016.
  * Cette classe code la résolution de la coloration, 
  *      -> c'est dans cette classe que nous utilisons le solveur.
- * Il faut y décrire le modèle, les données, les sorties et les containtes.
+ * Il faut y décrire le modèle, les données, les sorties et les contraintes.
  * Voici les deux principales contraintes :
  *      - la coloration propre
  *      - la coloration complete
+ * Nous avons ajouté des heuristiques 
+ * par exemple pour ordonner le tableau de traitement des noeuds
+ * et ainsi traiter en premiers les noeuds au degres le + élevé
  */
 
 public class AchroSolverHeuris {
