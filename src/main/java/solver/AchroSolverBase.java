@@ -91,7 +91,7 @@ public class AchroSolverBase {
 
             // Chaque sommet ne peut avoir qu'une couleur !!
             for (int i = 0; i < N ; i++) {
-                for (int c=0;c<k;c++){
+                for (int c = 0; c < k; c++){
                     for(int g2 = 0; g2 < k; g2++){
                         if(g2 != c) {
                             Constraint constr = model.arithm(B[(i * k) + c], "!=", B[(i * k) + g2]);
@@ -101,11 +101,11 @@ public class AchroSolverBase {
                 }
             }
 
-            //coloration propre
-            for (int i = 0; i < N-1 ; i++) { // pour chaque noeud
-                for (int j = i+1; j < N ; j++) { // pour chaque couleur
-                    for (int c=0; c<k;c++) {
-                        if (matAdj[i][j]==1) {
+            // Codage de la coloration propre
+            for (int i = 0; i < N-1; i++) { 
+                for (int j = i+1; j < N; j++) {
+                    for (int c = 0; c < k; c++) {
+                        if (matAdj[i][j] == 1) {
                             Constraint constr = model.arithm(B[(i*k)+c], "!=", B[(j*k)+c]);
                             model.ifThen(B[(i*k)+c], constr);
                         }
@@ -113,24 +113,14 @@ public class AchroSolverBase {
                 }
             }
 
-            for (int i=0; i<N;i++){
+            // On verifie ici avec cette contrainte que chaque noeud a bien une couleur a la fin
+            for (int i = 0; i < N; i++){
                 BoolVar[] BTemp = new BoolVar[k];
-                for (int coul=0; coul<k;coul++) {
-                    BTemp[coul]=B[i*k+coul];
+                for (int coul=0; coul < k; coul++) {
+                    BTemp[coul] = B[i*k+coul];
                 }
                 model.notAllEqual(BTemp).post();
             }
-
-            /*for(int i = 0; i < N-1; i++) {
-                for(int j = i+1; j < N-1; j++) {
-                    for(int l = 0; l < k; l++) {
-                        if(matAdj[i][j] == 1) {
-                            model.ifThen(B[i+l],model.arithm(B[i+l], "!=", B[j+l]));
-                        }
-                    }
-                }
-            }*/
-
 
             int idxN1 = 0;
             int idxN2 = 0;
