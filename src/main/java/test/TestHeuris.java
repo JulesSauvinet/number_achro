@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by jules on 16/11/2016.
  */
-public class Test {
+public class TestHeuris {
 
     static String GRAPHNAME = "benchmark/marine";
     public static void main (String[] args) throws IOException {
