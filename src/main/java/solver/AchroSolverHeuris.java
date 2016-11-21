@@ -1,21 +1,11 @@
 package solver;
 
 import graphmodel.ColoredNode;
-import org.chocosolver.solver.Model;
-import org.chocosolver.solver.Solver;
-import org.chocosolver.solver.constraints.Constraint;
-import org.chocosolver.solver.exception.ContradictionException;
-import org.chocosolver.solver.search.limits.TimeCounter;
-import org.chocosolver.solver.search.strategy.Search;
-import org.chocosolver.solver.variables.IntVar;
-import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
-import org.chocosolver.util.criteria.Criterion;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 import utils.ColorMapping;
 
-import javax.tools.Tool;
 import java.util.*;
 
 /**
