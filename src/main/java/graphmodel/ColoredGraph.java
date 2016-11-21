@@ -1,7 +1,6 @@
 package graphmodel;
 
 import org.graphstream.graph.Graph;
-import org.graphstream.graph.NodeFactory;
 import org.graphstream.graph.implementations.SingleGraph;
 
 import java.awt.*;
