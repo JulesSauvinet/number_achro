@@ -135,53 +135,39 @@ public class AchroSolverBase {
                         idxN2=0;
                         for (Node n2 : g.getNodeSet()) {
                             if (matAdj[idxN1][idxN2]==1) {
-                                /*Constraint constraint1 = model.arithm(C[idxN1], "=", c1);
-                                Constraint constraint2 = model.arithm(C[idxN2], "=", c2);
-                                BoolVar c1n1 = constraint1.reify();
-                                // creation de la contrainte
-                                BoolVar c2n2 = constraint2.reify();*/
-
                                 BoolVar c1n1 =B[idxN1*c1];
                                 BoolVar c2n2 =B[idxN2*c2];
-
                                 if (!n1.equals(n2)) {
                                     LogOp conj = LogOp.and(B[idxN1*c1], B[idxN2*c2]);
-                                    if (contrainte1 == null) {
+                                    if (contrainte1 == null)
                                         contrainte1 = conj;
-                                    } else {
+                                    else
                                         contrainte1 = LogOp.or(contrainte1, conj);
-                                    }
                                 }
                             }
                             idxN2++;
                         }
-                        if (contrainte1 != null){
-                            if (contrainte2 == null){
+                        if (contrainte1 != null) {
+                            if (contrainte2 == null)
                                 contrainte2 = contrainte1;
-                            }
-                            else {
+                            else 
                                 contrainte2= LogOp.or(contrainte2,contrainte1);
-                            }
                         }
                         idxN1++;
                     }
-                    if (contrainte2 != null){
-                        if (contrainte3 == null){
+                    if (contrainte2 != null) {
+                        if (contrainte3 == null)
                             contrainte3 = contrainte2;
-                        }
-                        else {
+                        else
                             contrainte3= LogOp.and(contrainte3,contrainte2);
-                        }
                     }
                 }
 
-                if (contrainte3 != null){
-                    if (contrainte4 == null){
+                if (contrainte3 != null) {
+                    if (contrainte4 == null)
                         contrainte4= contrainte3;
-                    }
-                    else {
+                    else
                         contrainte4= LogOp.and(contrainte4,contrainte3);
-                    }
                 }
             }
 
@@ -190,21 +176,17 @@ public class AchroSolverBase {
 
 
             Solver solver = model.getSolver();
-            //TODO regarder les stratégies
-            //solver.setSearch(Search.minDomLBSearch(C));
 
-            if(solver.solve()){
+            if(solver.solve()) {
                 System.out.println("All complete coloring of number achromatic :" + k);
-                for (int i = 0; i < N ; i++) {
+                for (int i = 0; i < N; i++) {
                     int color = 0;
-                    for (int c=0;c<k;c++){
+                    for (int c = 0; c < k; c++){
                         System.out.println(B[(i*k)+c].getValue());
-                        if (B[(i*k)+c].getValue() == 1){
+                        if (B[(i*k)+c].getValue() == 1)
                             color = c;
-                        }
                     }
                     System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[color]);
-                    //g.getNode(i).addAttribute("ui.class", "color" + i);
                     g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color]+";");
                 }
                 g.display();
@@ -212,9 +194,7 @@ public class AchroSolverBase {
             else {
                 System.out.println("il n'y a pas de solutions");
             }
-            //TODO donner toutes les solutions??! ou c'est juste une permutation?
         }
-
         return bSupNbAchro;
     }
 }
