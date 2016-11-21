@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class Test {
 
-    static String GRAPHNAME = "benchmark/k19";
+    static String GRAPHNAME = "benchmark/marine";
     public static void main (String[] args) throws IOException {
 
         //AchroSolver.testSolver1();
@@ -21,6 +21,7 @@ public class Test {
         g.setUiProps();
         //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
         //g.display();
+
         AchroSolver solver = new AchroSolver();
         int achroNumber = solver.solve(g);
         System.out.println("Achromatic number : " + achroNumber);
