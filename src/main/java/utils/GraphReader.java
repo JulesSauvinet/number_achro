@@ -1,7 +1,6 @@
 package utils;
 
 import org.graphstream.graph.Graph;
-import org.graphstream.graph.implementations.SingleGraph;
 
 import java.io.File;
 import java.io.IOException;
