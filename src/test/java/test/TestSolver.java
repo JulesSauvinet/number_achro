@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
-import solver.AchroSolver;
+import solver.AchroSolverHeuris;
 import utils.GraphReader;
 
 /**
@@ -41,7 +41,7 @@ public class TestSolver {
 	    ColoredGraph g = new ColoredGraph(filename);
 	    GraphReader.buildGraphFromFile(g, resourcePath + "/" + filename);
 	    g.setUiProps();
-	    AchroSolver solver = new AchroSolver();
+	    AchroSolverHeuris solver = new AchroSolverHeuris();
 	    
 	    
 	    Instant startTime = Instant.now(); // Measure duration
