@@ -23,8 +23,6 @@ public class TestBase {
         ColoredGraph g = new ColoredGraph(GRAPHNAME);
         GraphReader.buildGraphFromFile(g,  GRAPHNAME);
         g.setUiProps();
-        //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
-        //g.display();
 
         AchroSolverHeuris solver = new AchroSolverHeuris();
         int achroNumber = solver.solve(g);
