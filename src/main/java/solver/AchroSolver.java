@@ -20,7 +20,14 @@ import java.util.*;
 
 /**
  * Created by jules on 16/11/2016.
+ * Cette classe code la résolution de la coloration, 
+ *      -> c'est dans cette classe que nous utilisons le solveur.
+ * Il faut y décrire le modèle, les données, les sorties et les containtes.
+ * Voici les deux principales contraintes :
+ *      - la coloration propre
+ *      - la coloration complete
  */
+
 public class AchroSolver {
 
     private final static int TIME_LIMIT = 60;
@@ -134,38 +141,41 @@ public class AchroSolver {
             }
 
             //coloration propre
+            //Opti? on a la droit? car pas toutes les solution avec ça et puis quand la taille augmente ca devient negligeable
+//            model.arithm(B[maxNode.getIndex()],"=",0).post();
+
+            // On code ici la coloration propre
+            // si deux noeuds sont voisins, ils ne peuvent pas avoir la meme couleur
             for (int i = 0; i < N-1 ; i++) { // pour chaque noeud
                 for (int j = 0; j < N ; j++) { // pour chaque couleur
-                    if (matAdj[i][j]==1 && i != j) {
+                    if (matAdj[i][j] == 1 && i != j) {
                         Constraint constr = model.arithm(B[i], "!=", B[j]);
                         constr.post();
                     }
                 }
             }
 
-            //coloration complete
-            int idxN1 = 0;
-            int idxN2 = 0;
+            // On code ici la coloration complete
+            int idxN1 = 0, idxN2 = 0;
             Constraint contrainte4 = null;
             for (int c1 = 0; c1 < k-1; c1++) {
                 Constraint contrainte3 = null;
                 for (int c2 = c1+1; c2 < k; c2++) {
                     Constraint contrainte2 = null;
-                    idxN1=0;
+                    idxN1 = 0;
                     for (Node n1 : g.getNodeSet()) {
                         Constraint contrainte1= null;
-                        idxN2=0;
+                        idxN2 = 0;
                         for (Node n2 : g.getNodeSet()) {
                             if (matAdj[idxN1][idxN2]==1) {
-
                                 Constraint c1n1 = model.arithm(B[idxN1], "=", c1);
                                 Constraint c2n2 = model.arithm(B[idxN2], "=", c2);
-
                                 if (!n1.equals(n2)) {
                                     Constraint conj = model.and(c1n1, c2n2);
                                     if (contrainte1 == null) {
                                         contrainte1 = conj;
-                                    } else {
+                                    } 
+                                    else {
                                         contrainte1 = model.or(contrainte1, conj);
                                     }
                                 }
@@ -187,7 +197,7 @@ public class AchroSolver {
                             contrainte3 = contrainte2;
                         }
                         else {
-                            contrainte3= model.and(contrainte3,contrainte2);
+                            contrainte3 = model.and(contrainte3,contrainte2);
                         }
                     }
                 }
