@@ -28,7 +28,7 @@ import java.util.*;
  *      - la coloration complete
  */
 
-public class AchroSolver {
+public class AchroSolverHeuris {
 
     private final static int TIME_LIMIT = 60;
 
