@@ -1,7 +1,7 @@
 package test;
 
 import graphmodel.ColoredGraph;
-import solver.AchroSolverHeuris;
+import solver.AchroSolverBase;
 import utils.GraphReader;
 
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class TestHeuris {
         //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
         //g.display();
 
-        AchroSolverHeuris solver = new AchroSolverHeuris();
+        AchroSolverBase solver = new AchroSolverBase();
         int achroNumber = solver.solve(g);
         System.out.println("Achromatic number : " + achroNumber);
         g.display();
