@@ -18,12 +18,7 @@ public class ColoredGraph extends SingleGraph {
     public ColoredGraph(String name) {
         super(name);
 
-        setNodeFactory(new NodeFactory<ColoredNode>() {
-            @Override
-            public ColoredNode newInstance(String id, Graph graph) {
-                return new ColoredNode(graph, id) ;
-            }
-        });
+        setNodeFactory((String id1, Graph graph) -> new ColoredNode(graph, id1));
     }
 
     public HashMap<String, Color> getVertexColoring() {
