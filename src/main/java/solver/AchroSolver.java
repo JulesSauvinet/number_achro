@@ -15,8 +15,8 @@ import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 import utils.ColorMapping;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.tools.Tool;
+import java.util.*;
 
 /**
  * Created by jules on 16/11/2016.
@@ -38,28 +38,88 @@ public class AchroSolver {
         //Pour respecter la contrainte de coloration propre
         List<Node> maximalClique = new ArrayList<Node>();
         List<List<Node>> maximalCliques = new ArrayList<>();
+        List<ColoredNode> unionClique = new ArrayList<>();
+        int maxAppClique = 0;
+        boolean getMax = true;
+        ColoredNode maxNode = null;
         for (List<Node> clique : Toolkit.getMaximalCliques(g)) {
+            if (getMax){
+                maxNode = (ColoredNode) clique.get(0);
+                getMax = false;
+            }
+            if (clique.contains(maxNode))
+                maxAppClique++;
             maximalCliques.add(clique);
+            System.out.println("maxclique"+ clique.size());
             if (clique.size() > maximalClique.size())
                 maximalClique = clique;
+
+            for (Node node : clique){
+                ColoredNode cNode = (ColoredNode) node;
+                if (!cNode.equals(maxNode))
+                    unionClique.add(cNode);
+            }
         }
 
         bInfNbAchro = maximalClique.size();
 
+        ColoredNode[] sortedNodes = new ColoredNode[nbVertexes];
+        int cpt=0;
+        for (Node node : g.getNodeSet()){
+            sortedNodes[cpt]=(ColoredNode) node;
+            cpt++;
+        }
+        Arrays.sort(sortedNodes, (o1, o2) -> {
+            if (o1.getDegree()>o2.getDegree()){
+                return -1;
+            }
+            else if (o1.getDegree()<o2.getDegree()){
+                return 1;
+            }
+            return 0;
+        });
+        //System.out.println(Arrays.toString(sortedNodes));
+
         int N = nbVertexes;
+
+        /*Integer[] mapping = new Integer[nbVertexes];
+        Integer[] mapping2 = new Integer[nbVertexes];
+        int cpt2 = 0;
+        for (Node sortedNode: sortedNodes){
+            mapping[sortedNode.getIndex()] = cpt2;
+            mapping2[cpt2] = sortedNode.getIndex();
+            cpt2++;
+        }*/
+
 
         for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
             Model model = new Model("Complete coloring of size " + k);
+
             //les contraintes
             IntVar[] B = model.intVarArray("the vertex associated with the index has the color c",N, 0,k-1, true);
 
             //Construction d'une matrice d'adjacence
             int[][] matAdj = Toolkit.getAdjacencyMatrix(g);
+            /*for (int i1=0; i1 < sortedNodes.length; i1++){
+                for (int i2=0; i2 < sortedNodes.length; i2++) {
+                    int hasEdge = sortedNodes[i1].hasEdgeBetween(sortedNodes[i2]) ? 1 : 0;
+                    matAdj[i1][i2]= hasEdge;
+                }
+            }*/
             //community?
 
             //Petite OPTI on a la droit?
             // car pas toutes les solutions avec ça et puis quand la taille augmente ca devient négligeable
-            model.arithm(B[Toolkit.randomNode(g).getIndex()],"=",0).post();
+            model.arithm(B[sortedNodes[0].getIndex()],"=",0).post();
+
+
+            //le nomre de clique max dans lesquels est present un meme noeud
+
+            /*int maxcol = N/maxAppClique;//(unionClique.size());
+            IntVar maxColI = new FixedIntVarImpl("maxnumberofverticesofthecolor",maxcol ,model);
+            for (int i=0; i<k; i++){
+                model.count(i,B,maxColI).post();
+            }*/
 
             //OPTI SUR Les clique max : fonctionne un petit peu..
             for (List<Node> nodes : maximalCliques){
@@ -67,7 +127,7 @@ public class AchroSolver {
                 IntVar[] C = model.intVarArray("the maximal clique vertices color",sizeClique, 0, Math.max(k-1,sizeClique), true);
                 int idx=0;
                 for (Node node : nodes){
-                    C[idx]=B[node.getIndex()];
+                    C[idx]=B[/*mapping[*/node.getIndex()/*]*/];
                     idx++;
                 }
                 model.allDifferent(C).post();
@@ -146,6 +206,7 @@ public class AchroSolver {
             //model.atLeastNValues(B,nValues,false).post();
             model.atMostNValues(B,nValues,false).post();
             model.setObjective(Model.MAXIMIZE, nValues);
+
             Solver solver = model.getSolver();
             //solver.setL
 
@@ -158,6 +219,7 @@ public class AchroSolver {
             //solver.setSearch(Search.activityBasedSearch(B));
             //Vraiment mieux
             solver.setSearch(Search.domOverWDegSearch(B));
+            //solver.setSearch(Search.inputOrderLBSearch(B));
 
             //PROPAGATION de contrainte
             try {
@@ -175,7 +237,7 @@ public class AchroSolver {
                     int color = B[i].getValue();
                     System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[color%32]);
                     //g.getNode(i).addAttribute("ui.class", "color" + i);
-                    g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
+                    g.getNode(/*mapping2[*/i/*]*/).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
                 }
 
                 //Affichage personnalise selon le graphe

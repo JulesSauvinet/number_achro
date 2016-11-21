@@ -39,6 +39,7 @@ public class ColoredNode extends SingleNode{
     public String toString() {
         return "ColoredNode{" +
                 "id='" + id + '\'' +
+                "degree=" + this.getDegree() + '\'' +
                 '}';
     }
 
