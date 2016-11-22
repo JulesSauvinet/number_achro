@@ -92,9 +92,6 @@ public class AchroSolver {
                         int nbachro = k - 1;
                         System.out.println("Le nombre achromatique du graphe est " + "egal a " + nbachro);
                         return nbachro;
-                    } else if (k == bSupNbAchro) {
-                        System.out.println("Le graphe n'admet pas de coloration complete");
-                        return -1;
                     }
                 }
             }

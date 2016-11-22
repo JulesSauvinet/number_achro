@@ -18,8 +18,6 @@ public class GraphReader {
 
         if (fileName == null)
             fileName = "benchmark/clebsh";
-
-        String[] fileSplit = fileName.split("/");
         int nbVertex = 0;
         int nbEdges = 0;
 
