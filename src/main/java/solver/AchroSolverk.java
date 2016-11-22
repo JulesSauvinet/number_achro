@@ -78,7 +78,6 @@ public class AchroSolverk {
         this.k = k;
     }
 
-
     public void setUseHeuristicFirstAffectation(Boolean UseHeuristicFirstAffectation) {
         this.UseHeuristicFirstAffectation = UseHeuristicFirstAffectation;
     }
@@ -90,7 +89,6 @@ public class AchroSolverk {
     public void setUseHeuristicMaxClique(Boolean UseHeuristicMaxClique) {
         this.UseHeuristicMaxClique = UseHeuristicMaxClique;
     }
-
 
     private void heuristicFirstAffectation(){
         model.arithm(B[sortedNodes[0].getIndex()],"=",0).post();
@@ -218,8 +216,6 @@ public class AchroSolverk {
         //Limite de 60 secondes
         solver.limitTime(TIME_LIMIT+"s");
         solver.setNoLearning();//(true,false);
-        //Vraiment mieux
-        solver.setSearch(Search.domOverWDegSearch(B));
 
         long time = System.currentTimeMillis();
         //TODO regarder les stratégies
