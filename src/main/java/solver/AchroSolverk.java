@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package solver;
 
 import graphmodel.ColoredNode;
@@ -24,37 +19,40 @@ import utils.ColorMapping;
  * @author howard
  */
 public class AchroSolverk {
-    
+
     private final static int TIME_LIMIT = 10;
-    
+
     private SingleGraph g;
     private int k;
-    
+
     public Model model;
     public IntVar[] B;
-    
+
     public int runtime;
     private int N;
     private int[][] matAdj;
     private List<List<Node>> maximalCliques;
     private ColoredNode[] sortedNodes;
-    
 
-    public AchroSolverk(SingleGraph g, int k, List<List<Node>> maximalCliques,ColoredNode[] sortedNodes) {
+
+    public AchroSolverk(SingleGraph g, int N, List<List<Node>> maximalCliques,ColoredNode[] sortedNodes) {
         this.g = g;
-        this.k=k;
-        this.N = g.getNodeCount();
+        this.N = N;
         this.maximalCliques = maximalCliques;
         this.sortedNodes =sortedNodes;
-        this.model = new Model("Complete coloring of size " + k);        
-        this.B = model.intVarArray("the vertex associated with the index has the color c",N, 0,k-1, true);
-        
+
+
         //Construction d'une matrice d'adjacence
         matAdj = Toolkit.getAdjacencyMatrix(g);
     }
     Boolean UseHeuristicFirstAffectation = true;
     Boolean UseHeuristicMaxClique = true;
     Boolean UseHeuristicNValue = true;
+
+    public void setK(int k) {
+        this.k = k;
+    }
+
 
     public void setUseHeuristicFirstAffectation(Boolean UseHeuristicFirstAffectation) {
         this.UseHeuristicFirstAffectation = UseHeuristicFirstAffectation;
@@ -67,8 +65,8 @@ public class AchroSolverk {
     public void setUseHeuristicMaxClique(Boolean UseHeuristicMaxClique) {
         this.UseHeuristicMaxClique = UseHeuristicMaxClique;
     }
-    
-    
+
+
     private void heuristicFirstAffectation(){
         model.arithm(B[sortedNodes[0].getIndex()],"=",0).post();
     }
@@ -78,19 +76,19 @@ public class AchroSolverk {
             IntVar[] C = model.intVarArray("the maximal clique vertices color",sizeClique, 0, Math.max(k-1,sizeClique), true);
             int idx=0;
             for (Node node : nodes){
-                C[idx]=B[node.getIndex()];
+                C[idx]=B[/*mapping[*/node.getIndex()/*]*/];
                 idx++;
             }
             model.allDifferent(C).post();
         }
-    }    
+    }
     private void heuristicNValue(){
         IntVar nValues  = new FixedIntVarImpl("nValues",k,model);
         //model.atLeastNValues(B,nValues,false).post();
         model.atMostNValues(B,nValues,false).post();
         model.setObjective(Model.MAXIMIZE, nValues);
     }
-    
+
     private void constraintProperColoring(){
         // On code ici la coloration propre
         // si deux noeuds sont voisins, ils ne peuvent pas avoir la meme couleur
@@ -103,7 +101,7 @@ public class AchroSolverk {
             }
         }
     }
-    
+
     private void constraintCompleteColoring(){
         // On code ici la coloration complete
         int idxN1 = 0, idxN2 = 0;
@@ -124,7 +122,7 @@ public class AchroSolverk {
                                 Constraint conj = model.and(c1n1, c2n2);
                                 if (constraint1 == null) {
                                     constraint1 = conj;
-                                } 
+                                }
                                 else {
                                     constraint1 = model.or(constraint1, conj);
                                 }
@@ -157,11 +155,15 @@ public class AchroSolverk {
             }
         }
     }
-    
+
     public Boolean solve(){
 
+        System.out.println("Recherche d'une solution pour le nombre achromatique " + k);
 
-        System.out.println("Recherche d'une solution pour le nombre achromatique "+ k);
+        this.model = new Model("Complete coloring of size " + k);
+        this.B = model.intVarArray("the vertex associated with the index has the color c",N, 0,k-1, true);
+
+
 
         constraintProperColoring();
 
@@ -171,29 +173,30 @@ public class AchroSolverk {
 
         //optimisation 1
         if(UseHeuristicNValue) heuristicNValue();
-       
-        
-         //Petite OPTI on a la droit?
+
+
+        //Petite OPTI on a la droit?
         // car pas toutes les solutions avec ça et puis quand la taille augmente ca devient négligeable
         if(UseHeuristicFirstAffectation)   heuristicFirstAffectation();
 
 
         //OPTI SUR Les clique max : fonctionne un petit peu..
         if(UseHeuristicMaxClique) heuristicMaxClique();
-        
+
 
         Solver solver = model.getSolver();
 
         //Limite de 60 secondes
         solver.limitTime(TIME_LIMIT+"s");
         solver.setNoLearning();//(true,false);
-        
+        //Vraiment mieux
+        solver.setSearch(Search.domOverWDegSearch(B));
+
         long time = System.currentTimeMillis();
         //TODO regarder les stratégies
         solver.setSearch(Search.defaultSearch(model));//minDomLBSearch(C));
         //solver.setSearch(Search.activityBasedSearch(B));
         //solver.setSearch(Search.inputOrderLBSearch(B));
-        //Vraiment mieux
         //solver.setSearch(Search.domOverWDegSearch(B));
 
         //PROPAGATION de constraint
@@ -202,14 +205,11 @@ public class AchroSolverk {
         } catch (ContradictionException e) {
             e.printStackTrace();
         }
+
+        //solver.addStopCriterion()?;
+
         Boolean res = solver.solve();
         runtime =  (int)((System.currentTimeMillis()-time)/1000);
         return res;
     }
-    
-    
-    
-    
-    
-    
 }
