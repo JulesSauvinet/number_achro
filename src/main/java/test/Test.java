@@ -1,10 +1,10 @@
 package test;
 
 import graphmodel.ColoredGraph;
+import solver.AchroSolver;
 import utils.GraphReader;
 
 import java.io.IOException;
-import solver.AchroSolver;
 
 
 /**
@@ -21,8 +21,8 @@ public class Test {
         //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
         //g.display();
 
-        AchroSolver solver = new AchroSolver();
-        int achroNumber = solver.solve(g);
+        AchroSolver solver = new AchroSolver(g);
+        int achroNumber = solver.solve();
         System.out.println("Achromatic number : " + achroNumber);
         g.display();
     }
