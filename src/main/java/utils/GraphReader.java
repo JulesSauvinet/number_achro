@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 /**
  * Created by jules on 16/11/2016.
+ * Cette classe permet de lire nos fichiers de donnees et ainsi charger un graphe
  */
 public class GraphReader {
     public static ColoredGraph buildGraphFromFile(String fileName) throws IOException, NullPointerException {
