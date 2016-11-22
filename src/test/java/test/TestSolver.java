@@ -27,7 +27,10 @@ public class TestSolver {
     @AfterClass
     public static void displaySummary(){
         System.out.println("\n##################################################");
-        System.out.println(String.format("%-30s", "File_name") + String.format("%-15s", "Vertices") + String.format("%-15s", "Edges") + String.format("%-10s", "Time (ms)"));
+        System.out.println(String.format("%-30s", "File_name") 
+                            + String.format("%-15s", "Vertices")
+                            + String.format("%-15s", "Edges") 
+                            + String.format("%-10s", "Time (ms)"));
         for (TestResult a : summary) {
             System.out.println(a.toString());
         }
