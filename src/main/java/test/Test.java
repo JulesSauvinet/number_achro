@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class Test {
 
-    static String GRAPHNAME = "benchmark/k4";
+    static String GRAPHNAME = "benchmark/clebsh";
     public static void main (String[] args) throws IOException {
         //AchroSolver.testSolver1();
         ColoredGraph g = GraphReader.buildGraphFromFile(GRAPHNAME);
