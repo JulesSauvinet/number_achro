@@ -58,7 +58,4 @@ public class TestResult {
     public String toString() {
 	return String.format("%-30s", filename) + String.format("%-15s", nbVertices) + String.format("%-15s", nbEdges) + String.format("%-10s", elapsedTimeInMs + "ms");
     }
-    
-    
-    
 }
