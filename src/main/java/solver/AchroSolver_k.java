@@ -199,15 +199,18 @@ public class AchroSolver_k {
 
 
         //optimisation 1
-        if(UseHeuristicNValue) heuristicNValue();
+        if(UseHeuristicNValue)
+            heuristicNValue();
 
         //Petite OPTI on a la droit?
         // car pas toutes les solutions avec ça et puis quand la taille augmente ca devient négligeable
-        if(UseConstraintFirstAffectation)   ConstraintFirstAffectation();
+        if(UseConstraintFirstAffectation)
+            ConstraintFirstAffectation();
 
 
         //OPTI SUR Les clique max : fonctionne un petit peu..
-        if(UseHeuristicMaxClique) heuristicMaxClique();
+        if(UseHeuristicMaxClique)
+            heuristicMaxClique();
 
 
         Solver solver = model.getSolver();
