@@ -44,8 +44,15 @@ public class AchroSolver {
             this.solveur = new AchroSolverk(g, UHSN);
         }
     
+    public void SetContrainteSuplementaires(Boolean UseConstraintFirstAffectation, Boolean UseHeuristicMaxClique, 
+                               Boolean UseHeuristicNValue, Boolean UseHeuristicSortedNode ){
+        solveur.setUseConstraintFirstAffectation(UseConstraintFirstAffectation);
+        solveur.setUseHeuristicMaxClique(UseHeuristicMaxClique);
+        solveur.setUseHeuristicNValue(UseHeuristicNValue);
+        solveur.setUseHeuristicSortedNode(UseHeuristicSortedNode);
+    }
+    
     public int solve(){
-
         for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
             solveur.setK(k);
 
