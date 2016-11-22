@@ -49,6 +49,7 @@ public class AchroSolverk {
         this.maximalCliques = maximalCliques;
         this.sortedNodes =sortedNodes;
 
+        //Construction d'une matrice d'adjacence
         UseHeuristicSortedNode = UHSN;
         if (UseHeuristicSortedNode){
             matAdj = new int[N][N];
@@ -58,22 +59,19 @@ public class AchroSolverk {
                     matAdj[i1][i2]= hasEdge;
                 }
             }
+            this.mapping = new Integer[N];
+            this.mappingInv = new Integer[N];
+
+            int cpt2 = 0;
+            for (Node sortedNode: sortedNodes){
+                mapping[sortedNode.getIndex()] = cpt2;
+                mappingInv[cpt2] = sortedNode.getIndex();
+                cpt2++;
+            }
         }
         else{
-            //Construction d'une matrice d'adjacence
             matAdj = Toolkit.getAdjacencyMatrix(g);
         }
-
-        this.mapping = new Integer[N];
-        this.mappingInv = new Integer[N];
-
-        int cpt2 = 0;
-        for (Node sortedNode: sortedNodes){
-            mapping[sortedNode.getIndex()] = cpt2;
-            mappingInv[cpt2] = sortedNode.getIndex();
-            cpt2++;
-        }
-        int test=0;
     }
 
     public void setK(int k) {
@@ -104,7 +102,6 @@ public class AchroSolverk {
             int idx=0;
             for (Node node : nodes){
                 if (UseHeuristicSortedNode){
-                    int test= 0;
                     C[idx]=B[mapping[node.getIndex()]];
                 }
                 else{
@@ -206,7 +203,6 @@ public class AchroSolverk {
 
         //optimisation 1
         if(UseHeuristicNValue) heuristicNValue();
-
 
         //Petite OPTI on a la droit?
         // car pas toutes les solutions avec ça et puis quand la taille augmente ca devient négligeable
