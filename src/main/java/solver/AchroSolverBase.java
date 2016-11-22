@@ -53,12 +53,6 @@ public class AchroSolverBase {
 
         for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
             Model model = new Model("All complete coloring of size " + k);
-            
-            // On definit le domaine des couleurs
-            IntVar[] CouLeur = model.intVarArray("color vertex domain", N, 0, k-1, false);
-            
-            // On definit le domaines des arêtes
-            IntVar[] AreTe = model.intVarArray("edges domain", nbEdges, 0, k*(k-1), false);
 
             // On definit le tableau rempli en respectant les contraintes
             BoolVar[] B = model.boolVarArray("is the vertex has the color c", nbEdges*k);
@@ -82,13 +76,6 @@ public class AchroSolverBase {
             }
             
             // A partir de la matrice d'adjacence on peut coder les contraintes de la coloration propre
-            // Les sommets adjacents n'ont pas la même couleur => coloration propre
-            for (int i = 0; i < N ; i++) {
-                for (int j = 0; j < N; j++) {
-                    if ((i != j) && (matAdj[i][j] == 1))
-                        model.arithm(CouLeur[i], "!=", CouLeur[j]).post();
-                }
-            }
 
             // Chaque sommet ne peut avoir qu'une couleur !!
             for (int i = 0; i < N ; i++) {
@@ -136,8 +123,6 @@ public class AchroSolverBase {
                         idxN2=0;
                         for (Node n2 : g.getNodeSet()) {
                             if (matAdj[idxN1][idxN2]==1) {
-                                BoolVar c1n1 =B[idxN1*c1];
-                                BoolVar c2n2 =B[idxN2*c2];
                                 if (!n1.equals(n2)) {
                                     LogOp conj = LogOp.and(B[idxN1*c1], B[idxN2*c2]);
                                     if (contrainte1 == null)
@@ -187,7 +172,7 @@ public class AchroSolverBase {
                         if (B[(i*k)+c].getValue() == 1)
                             color = c;
                     }
-                    System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[color]);
+                    System.out.println("Le sommet "+i+" est de couleur "+ColorMapping.colorsMap[color]);
                     g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color]+";");
                 }
                 g.display();

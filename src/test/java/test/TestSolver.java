@@ -26,12 +26,12 @@ public class TestSolver {
     
     @AfterClass
     public static void displaySummary(){
-	System.out.println("\n##################################################");
-	System.out.println(String.format("%-30s", "File_name") + String.format("%-15s", "Vertices") + String.format("%-15s", "Edges") + String.format("%-10s", "Time (ms)"));
-	for (TestResult a : summary) {
-	    System.out.println(a.toString());
-	}
-	System.out.println("##################################################\n");
+        System.out.println("\n##################################################");
+        System.out.println(String.format("%-30s", "File_name") + String.format("%-15s", "Vertices") + String.format("%-15s", "Edges") + String.format("%-10s", "Time (ms)"));
+        for (TestResult a : summary) {
+            System.out.println(a.toString());
+        }
+        System.out.println("##################################################\n");
     }
     
     public void testGraphFile(String filename, int expectedAchromaticNumber){
@@ -136,9 +136,36 @@ public class TestSolver {
 
     @Test
     public void testK18(){
-	    testGraphFile("k18", 18);
+        testGraphFile("k18", 18);
     }
-    
+
+    @Test
+    public void testK19(){
+	    testGraphFile("k19", 19);
+    }
+
+    @Test
+    public void testK20(){
+        testGraphFile("k20", 20);
+    }
+
+    @Test
+    public void testK21(){
+        testGraphFile("k21", 21);
+    }
+
+    @Test
+    public void testMarine(){
+        testGraphFile("marine", 7);
+    }
+
+    @Test
+    public void testClebsh(){
+        testGraphFile("clebsh", 8);
+    }
+
+
+
     @Test
     public void testK5_minus_1(){
 	testGraphFile("k5_minus_1", 4);
