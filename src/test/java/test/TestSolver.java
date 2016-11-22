@@ -38,13 +38,11 @@ public class TestSolver {
 	System.out.println("\nTesting " + filename + "...");
 	try {
 	    // Setup graph
-	    ColoredGraph g = new ColoredGraph(filename);
-	    GraphReader.buildGraphFromFile(g, resourcePath + "/" + filename);
+	    ColoredGraph g = GraphReader.buildGraphFromFile(resourcePath + "/" + filename);
 	    g.setUiProps();
 	    AchroSolver solver = new AchroSolver(g, false);
 
-	    
-	    
+
 	    Instant startTime = Instant.now(); // Measure duration
 	    
 	    int achromaticNumber = solver.solve(); // Start solver

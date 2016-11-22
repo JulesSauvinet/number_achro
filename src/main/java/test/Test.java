@@ -8,15 +8,14 @@ import java.io.IOException;
 
 
 /**
- * Created by jules on 16/11/2016.
+ ** Created by teamgraphe
  */
 public class Test {
 
     static String GRAPHNAME = "benchmark/marine";
     public static void main (String[] args) throws IOException {
         //AchroSolver.testSolver1();
-        ColoredGraph g = new ColoredGraph(GRAPHNAME);
-        GraphReader.buildGraphFromFile(g,  GRAPHNAME);
+        ColoredGraph g = GraphReader.buildGraphFromFile(GRAPHNAME);
         g.setUiProps();
         //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
         //g.display();

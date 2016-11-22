@@ -1,5 +1,6 @@
 package solver;
 
+import graphmodel.ColoredGraph;
 import graphmodel.ColoredNode;
 
 import java.util.Arrays;
@@ -17,14 +18,14 @@ import org.graphstream.graph.implementations.SingleGraph;
 import utils.ColorMapping;
 
 /**
+ ** Created by teamgraphe
  *
- * @author howard
  */
 public class AchroSolverk {
 
     private final static int TIME_LIMIT = 10;
 
-    private SingleGraph g;
+    private ColoredGraph g;
     private int k;
 
     public Model model;
@@ -33,8 +34,6 @@ public class AchroSolverk {
     public int runtime;
     private int N;
     private int[][] matAdj;
-    private List<List<Node>> maximalCliques;
-    private ColoredNode[] sortedNodes;
     public Integer[] mapping;
     public Integer[] mappingInv;
 
@@ -43,19 +42,17 @@ public class AchroSolverk {
     Boolean UseHeuristicNValue = true;
     Boolean UseHeuristicSortedNode = true;
 
-    public AchroSolverk(SingleGraph g, List<List<Node>> maximalCliques,ColoredNode[] sortedNodes, boolean UHSN) {
+    public AchroSolverk(ColoredGraph g, boolean UHSN) {
         this.g = g;
         this.N = g.getNodeCount();
-        this.maximalCliques = maximalCliques;
-        this.sortedNodes =sortedNodes;
 
         //Construction d'une matrice d'adjacence
         UseHeuristicSortedNode = UHSN;
         if (UseHeuristicSortedNode){
             matAdj = new int[N][N];
-            for (int i1=0; i1 < sortedNodes.length; i1++){
-                for (int i2=0; i2 < sortedNodes.length; i2++) {
-                    int hasEdge = sortedNodes[i1].hasEdgeBetween(sortedNodes[i2]) ? 1 : 0;
+            for (int i1=0; i1 < g.getSortedNodes().length; i1++){
+                for (int i2=0; i2 < g.getSortedNodes().length; i2++) {
+                    int hasEdge = g.getSortedNodes()[i1].hasEdgeBetween(g.getSortedNodes()[i2]) ? 1 : 0;
                     matAdj[i1][i2]= hasEdge;
                 }
             }
@@ -63,7 +60,7 @@ public class AchroSolverk {
             this.mappingInv = new Integer[N];
 
             int cpt2 = 0;
-            for (Node sortedNode: sortedNodes){
+            for (Node sortedNode: g.getSortedNodes()){
                 mapping[sortedNode.getIndex()] = cpt2;
                 mappingInv[cpt2] = sortedNode.getIndex();
                 cpt2++;
@@ -91,10 +88,10 @@ public class AchroSolverk {
     }
 
     private void heuristicFirstAffectation(){
-        model.arithm(B[sortedNodes[0].getIndex()],"=",0).post();
+        model.arithm(B[g.getSortedNodes()[0].getIndex()],"=",0).post();
     }
     private void heuristicMaxClique(){
-        for (List<Node> nodes : maximalCliques){
+        for (List<Node> nodes : g.getMaximalCliques()){
             int sizeClique = nodes.size();
             IntVar[] C = model.intVarArray("the maximal clique vertices color",sizeClique, 0, Math.max(k-1,sizeClique), true);
             int idx=0;

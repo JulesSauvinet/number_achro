@@ -7,7 +7,7 @@ import org.graphstream.graph.implementations.SingleNode;
 import java.awt.*;
 
 /**
- * Created by jules on 16/11/2016.
+ * Created by teamgraphe
  * Classe qui décrit un noeud de notre graphe coloré
  */
 public class ColoredNode extends SingleNode {

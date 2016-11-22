@@ -11,8 +11,7 @@ import solver.AchroSolverBase;
 import utils.GraphReader;
 
 /**
- *
- * @author Marine
+ ** Created by teamgraphe
  */
 public class TestBase {
 
@@ -20,8 +19,7 @@ public class TestBase {
     public static void main (String[] args) throws IOException {
 
         //AchroSolver.testSolver1();
-        ColoredGraph g = new ColoredGraph(GRAPHNAME);
-        GraphReader.buildGraphFromFile(g,  GRAPHNAME);
+        ColoredGraph g = GraphReader.buildGraphFromFile(GRAPHNAME);
         g.setUiProps();
 
         AchroSolverBase solver = new AchroSolverBase();
