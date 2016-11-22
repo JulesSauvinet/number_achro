@@ -55,8 +55,6 @@ public class TestSolver {
 	} catch (IOException | NullPointerException ex) {
 	    Assert.fail("File not found : " + resourcePath + "/" + filename);
 	}
-	
-	
     }
     
     @Test
@@ -164,8 +162,6 @@ public class TestSolver {
         testGraphFile("clebsh", 8);
     }
 
-
-
     @Test
     public void testK5_minus_1(){
 	testGraphFile("k5_minus_1", 4);
@@ -190,7 +186,6 @@ public class TestSolver {
     public void testK5_minus_3_focused(){
 	testGraphFile("k5_minus_3_focused", 4);
     }
-
     
     @Test
     public void testPetersen(){
