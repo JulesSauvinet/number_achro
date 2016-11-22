@@ -40,14 +40,12 @@ public class AchroSolverk {
     private ColoredNode[] sortedNodes;
     
 
-    public AchroSolverk(SingleGraph g, int k, int N, List<List<Node>> maximalCliques,ColoredNode[] sortedNodes) {
+    public AchroSolverk(SingleGraph g, int N, List<List<Node>> maximalCliques,ColoredNode[] sortedNodes) {
         this.g = g;
-        this.k=k;
         this.N = N;
         this.maximalCliques = maximalCliques;
         this.sortedNodes =sortedNodes;
-        this.model = new Model("Complete coloring of size " + k);        
-        this.B = model.intVarArray("the vertex associated with the index has the color c",N, 0,k-1, true);
+        
         
         //Construction d'une matrice d'adjacence
         matAdj = Toolkit.getAdjacencyMatrix(g);
@@ -55,6 +53,11 @@ public class AchroSolverk {
     Boolean UseHeuristicFirstAffectation = true;
     Boolean UseHeuristicMaxClique = true;
     Boolean UseHeuristicNValue = true;
+
+    public void setK(int k) {
+        this.k = k;
+    }
+    
 
     public void setUseHeuristicFirstAffectation(Boolean UseHeuristicFirstAffectation) {
         this.UseHeuristicFirstAffectation = UseHeuristicFirstAffectation;
@@ -159,6 +162,9 @@ public class AchroSolverk {
     }
     
     public Boolean solve(){
+        
+        this.model = new Model("Complete coloring of size " + k);        
+        this.B = model.intVarArray("the vertex associated with the index has the color c",N, 0,k-1, true);
 
        
 

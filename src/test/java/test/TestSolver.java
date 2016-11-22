@@ -41,12 +41,12 @@ public class TestSolver {
 	    ColoredGraph g = new ColoredGraph(filename);
 	    GraphReader.buildGraphFromFile(g, resourcePath + "/" + filename);
 	    g.setUiProps();
-	    AchroSolverHeuris solver = new AchroSolverHeuris();
+	    AchroSolverHeuris solver = new AchroSolverHeuris(g);
 	    
 	    
 	    Instant startTime = Instant.now(); // Measure duration
 	    
-	    int achromaticNumber = solver.solve(g); // Start solver
+	    int achromaticNumber = solver.solve(); // Start solver
 	    Assert.assertEquals("Achromatic number differs from expected value", expectedAchromaticNumber, achromaticNumber);
 	    
 	    Instant stopTime = Instant.now(); // Measure duration
