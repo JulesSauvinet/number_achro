@@ -27,35 +27,25 @@ public class AchroSolver {
 
     private final static int TIME_LIMIT = 60;
     private AchroSolverk solveur;
-
-    boolean hasBeenComplete = false;
-
-    //La borne inf est la taille de la clique maximale (grossier)
-    Integer bInfNbAchro = 0;
-    //Pour respecter la contrainte de coloration propre
-
-    //Determination des bornes pour k, le nombre achromatique
-    //La borne sup est le nombre de noeud (grossier)
-    Integer bSupNbAchro;
-    ColoredGraph g;
-    Integer nbEdges ;
-    int N;
-
+    private boolean hasBeenComplete = false;
+    private Integer bInfNbAchro = 0;
+    private Integer bSupNbAchro;
+    private ColoredGraph g;
+    private int N;
 
     public AchroSolver(ColoredGraph g, boolean UHSN) {
             this.g=g;
             this.N = g.getNodeCount();
-            this.nbEdges = g.getEdgeCount();
+            //Determination des bornes pour k, le nombre achromatique
+            //La borne inf est la taille de la clique maximale (grossier)
+            //La borne sup est le nombre de noeud (grossier)
             this.bSupNbAchro = g.getNodeSet().size();
             this.bInfNbAchro = g.getMaximalClique().size();
-
-
             this.solveur = new AchroSolverk(g, UHSN);
         }
     
     public int solve(){
 
-        
         for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
             solveur.setK(k);
 
@@ -75,11 +65,10 @@ public class AchroSolver {
 
                 //Affichage personnalise selon le graphe
                 //clebshLayout(g);
-
                 //Affichage de toutes les solutions : nécessaire?
-                /*solver.findAllSolutions();
-                solver.showSolutions();
-                solver.showStatistics();*/
+                //solver.findAllSolutions();
+                //solver.showSolutions();
+                //solver.showStatistics();
 
                 //Affichage en continu
                 // g.display();

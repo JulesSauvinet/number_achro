@@ -90,6 +90,7 @@ public class AchroSolverk {
     private void heuristicFirstAffectation(){
         model.arithm(B[g.getSortedNodes()[0].getIndex()],"=",0).post();
     }
+
     private void heuristicMaxClique(){
         for (List<Node> nodes : g.getMaximalCliques()){
             int sizeClique = nodes.size();
@@ -107,6 +108,7 @@ public class AchroSolverk {
             model.allDifferent(C).post();
         }
     }
+
     private void heuristicNValue(){
         IntVar nValues  = new FixedIntVarImpl("nValues",k,model);
         //model.atLeastNValues(B,nValues,false).post();
@@ -194,6 +196,7 @@ public class AchroSolverk {
         constraintCompleteColoring();
 
 
+
         //optimisation 1
         if(UseHeuristicNValue) heuristicNValue();
 
@@ -217,6 +220,7 @@ public class AchroSolverk {
         solver.setSearch(Search.defaultSearch(model));//minDomLBSearch(C));
         //solver.setSearch(Search.activityBasedSearch(B));
         //solver.setSearch(Search.inputOrderLBSearch(B));
+        //HEURISTIQUE GLOUTONNE A CHOISIR DANS LA MAJORITE DES CAS!
         //solver.setSearch(Search.domOverWDegSearch(B));
 
         //PROPAGATION de constraint
