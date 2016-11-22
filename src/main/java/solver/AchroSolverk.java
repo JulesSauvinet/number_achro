@@ -37,7 +37,7 @@ public class AchroSolverk {
     public Integer[] mapping;
     public Integer[] mappingInv;
 
-    Boolean UseHeuristicFirstAffectation = true;
+    Boolean UseConstraintFirstAffectation = true;
     Boolean UseHeuristicMaxClique = true;
     Boolean UseHeuristicNValue = true;
     Boolean UseHeuristicSortedNode = true;
@@ -75,8 +75,8 @@ public class AchroSolverk {
         this.k = k;
     }
 
-    public void setUseHeuristicFirstAffectation(Boolean UseHeuristicFirstAffectation) {
-        this.UseHeuristicFirstAffectation = UseHeuristicFirstAffectation;
+    public void setUseConstraintFirstAffectation(Boolean UseHeuristicFirstAffectation) {
+        this.UseConstraintFirstAffectation = UseConstraintFirstAffectation;
     }
 
     public void setUseHeuristicNValue(Boolean UseHeuristicNValue) {
@@ -86,8 +86,14 @@ public class AchroSolverk {
     public void setUseHeuristicMaxClique(Boolean UseHeuristicMaxClique) {
         this.UseHeuristicMaxClique = UseHeuristicMaxClique;
     }
-
-    private void heuristicFirstAffectation(){
+    
+    public void setUseHeuristicSortedNode(Boolean UseHeuristicSortedNode) {
+        this.UseHeuristicSortedNode = UseHeuristicSortedNode;
+    }
+    /*
+    * Optimisation    
+    */
+    private void ConstraintFirstAffectation(){
         model.arithm(B[g.getSortedNodes()[0].getIndex()],"=",0).post();
     }
 
@@ -202,7 +208,7 @@ public class AchroSolverk {
 
         //Petite OPTI on a la droit?
         // car pas toutes les solutions avec ça et puis quand la taille augmente ca devient négligeable
-        if(UseHeuristicFirstAffectation)   heuristicFirstAffectation();
+        if(UseConstraintFirstAffectation)   ConstraintFirstAffectation();
 
 
         //OPTI SUR Les clique max : fonctionne un petit peu..
