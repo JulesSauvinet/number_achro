@@ -4,6 +4,7 @@ import org.graphstream.graph.Graph;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Scanner;
 
 /**
@@ -20,7 +21,8 @@ public class GraphReader {
         int nbEdges = 0;
 
         ClassLoader classLoader = GraphReader.class.getClassLoader();
-        File file = new File(classLoader.getResource(fileName).getFile()); // Throws NullPointerException if file does not exist
+        URL urlFile = classLoader.getResource(fileName);
+        File file = new File(urlFile.getFile()); // Throws NullPointerException if file does not exist
 
         Scanner scanner = new Scanner(file);
 

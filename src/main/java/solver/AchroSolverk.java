@@ -40,10 +40,10 @@ public class AchroSolverk {
     private ColoredNode[] sortedNodes;
     
 
-    public AchroSolverk(SingleGraph g, int k, int N, List<List<Node>> maximalCliques,ColoredNode[] sortedNodes) {
+    public AchroSolverk(SingleGraph g, int k, List<List<Node>> maximalCliques,ColoredNode[] sortedNodes) {
         this.g = g;
         this.k=k;
-        this.N = N;
+        this.N = g.getNodeCount();
         this.maximalCliques = maximalCliques;
         this.sortedNodes =sortedNodes;
         this.model = new Model("Complete coloring of size " + k);        
@@ -78,7 +78,7 @@ public class AchroSolverk {
             IntVar[] C = model.intVarArray("the maximal clique vertices color",sizeClique, 0, Math.max(k-1,sizeClique), true);
             int idx=0;
             for (Node node : nodes){
-                C[idx]=B[/*mapping[*/node.getIndex()/*]*/];
+                C[idx]=B[node.getIndex()];
                 idx++;
             }
             model.allDifferent(C).post();
@@ -107,14 +107,14 @@ public class AchroSolverk {
     private void constraintCompleteColoring(){
         // On code ici la coloration complete
         int idxN1 = 0, idxN2 = 0;
-        Constraint contrainte4 = null;
+        Constraint constraint4 = null;
         for (int c1 = 0; c1 < k-1; c1++) {
-            Constraint contrainte3 = null;
+            Constraint constraint3 = null;
             for (int c2 = c1+1; c2 < k; c2++) {
-                Constraint contrainte2 = null;
+                Constraint constraint2 = null;
                 idxN1 = 0;
                 for (Node n1 : g.getNodeSet()) {
-                    Constraint contrainte1= null;
+                    Constraint constraint1= null;
                     idxN2 = 0;
                     for (Node n2 : g.getNodeSet()) {
                         if (matAdj[idxN1][idxN2]==1) {
@@ -122,45 +122,46 @@ public class AchroSolverk {
                             Constraint c2n2 = model.arithm(B[idxN2], "=", c2);
                             if (!n1.equals(n2)) {
                                 Constraint conj = model.and(c1n1, c2n2);
-                                if (contrainte1 == null) {
-                                    contrainte1 = conj;
+                                if (constraint1 == null) {
+                                    constraint1 = conj;
                                 } 
                                 else {
-                                    contrainte1 = model.or(contrainte1, conj);
+                                    constraint1 = model.or(constraint1, conj);
                                 }
                             }
                         }
                         idxN2++;
                     }
-                    if (contrainte1 != null){
-                        if (contrainte2 == null){
-                            contrainte2 = contrainte1;
+                    if (constraint1 != null){
+                        if (constraint2 == null){
+                            constraint2 = constraint1;
                         }
                         else {
-                            contrainte2= model.or(contrainte2,contrainte1);
+                            constraint2= model.or(constraint2,constraint1);
                         }
                     }
                     idxN1++;
                 }
-                if (contrainte2 != null){
-                    if (contrainte3 == null){
-                        contrainte3 = contrainte2;
+                if (constraint2 != null){
+                    if (constraint3 == null){
+                        constraint3 = constraint2;
                     }
                     else {
-                        contrainte3 = model.and(contrainte3,contrainte2);
+                        constraint3 = model.and(constraint3,constraint2);
                     }
                 }
             }
 
-            if (contrainte3 != null){
-                contrainte3.post();
+            if (constraint3 != null){
+                constraint3.post();
             }
         }
     }
     
     public Boolean solve(){
 
-       
+
+        System.out.println("Recherche d'une solution pour le nombre achromatique "+ k);
 
         constraintProperColoring();
 
@@ -186,25 +187,21 @@ public class AchroSolverk {
         //Limite de 60 secondes
         solver.limitTime(TIME_LIMIT+"s");
         solver.setNoLearning();//(true,false);
-        //Vraiment mieux
-        solver.setSearch(Search.domOverWDegSearch(B));
         
         long time = System.currentTimeMillis();
         //TODO regarder les stratégies
-        //solver.setSearch(Search.defaultSearch(model));//minDomLBSearch(C));
+        solver.setSearch(Search.defaultSearch(model));//minDomLBSearch(C));
         //solver.setSearch(Search.activityBasedSearch(B));
-        
         //solver.setSearch(Search.inputOrderLBSearch(B));
+        //Vraiment mieux
+        //solver.setSearch(Search.domOverWDegSearch(B));
 
-        //PROPAGATION de contrainte
+        //PROPAGATION de constraint
         try {
             solver.propagate();
         } catch (ContradictionException e) {
             e.printStackTrace();
         }
-
-        //solver.addStopCriterion()?;
-
         Boolean res = solver.solve();
         runtime =  (int)((System.currentTimeMillis()-time)/1000);
         return res;

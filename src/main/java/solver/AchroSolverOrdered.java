@@ -23,7 +23,6 @@ public class AchroSolverOrdered {
 
     public int solve(SingleGraph g){
         boolean hasBeenComplete = false;
-        Integer nbEdges = g.getEdgeCount();
         Integer nbVertexes = g.getNodeCount();
 
         //Determination des bornes pour k, le nombre achromatique
@@ -46,7 +45,6 @@ public class AchroSolverOrdered {
             if (clique.contains(maxNode))
                 maxAppClique++;
             maximalesCliques.add(clique);
-            System.out.println("maxclique"+ clique.size());
             if (clique.size() > maximalClique.size())
                 maximalClique = clique;
             for (Node node : clique){
@@ -203,7 +201,7 @@ public class AchroSolverOrdered {
                 System.out.println("Une solution a été trouvé pour le nombre achromatique " + k);
                 for (int i = 0; i < N ; i++) {
                     int color = B[i].getValue();
-                    System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[color%32]);
+                    System.out.println("Le sommet "+i+" est de couleur "+ColorMapping.colorsMap[color%32]);
                     //g.getNode(i).addAttribute("ui.class", "color" + i);
                     g.getNode(mapping2[i]).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
                 }

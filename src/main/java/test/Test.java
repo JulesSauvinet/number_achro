@@ -1,21 +1,19 @@
 package test;
 
 import graphmodel.ColoredGraph;
-import solver.AchroSolverBase;
 import utils.GraphReader;
 
 import java.io.IOException;
-import solver.AchroSolverHeuris;
+import solver.AchroSolver;
 
 
 /**
  * Created by jules on 16/11/2016.
  */
-public class TestHeuris {
+public class Test {
 
-    static String GRAPHNAME = "benchmark/marine";
+    static String GRAPHNAME = "benchmark/clebsh";
     public static void main (String[] args) throws IOException {
-        System.out.println("test");
         //AchroSolver.testSolver1();
         ColoredGraph g = new ColoredGraph(GRAPHNAME);
         GraphReader.buildGraphFromFile(g,  GRAPHNAME);
@@ -23,10 +21,8 @@ public class TestHeuris {
         //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
         //g.display();
 
-        AchroSolverHeuris solver = new AchroSolverHeuris();
-        System.out.println("test");
+        AchroSolver solver = new AchroSolver();
         int achroNumber = solver.solve(g);
-        System.out.println("test");
         System.out.println("Achromatic number : " + achroNumber);
         g.display();
     }

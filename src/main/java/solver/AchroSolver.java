@@ -9,7 +9,6 @@ import utils.ColorMapping;
 import java.util.*;
 
 /**
- * Created by jules on 16/11/2016.
  * Cette classe code la résolution de la coloration, 
  *      -> c'est dans cette classe que nous utilisons le solveur.
  * Il faut y décrire le modèle, les données, les sorties et les contraintes.
@@ -21,20 +20,21 @@ import java.util.*;
  * et ainsi traiter en premiers les noeuds au degres le + élevé
  */
 
-public class AchroSolverHeuris {
+public class AchroSolver {
 
     private final static int TIME_LIMIT = 60;
 
     public int solve(SingleGraph g){
         boolean hasBeenComplete = false;
-        Integer nbEdges = g.getEdgeCount();
         Integer nbVertexes = g.getNodeCount();
 
         //Determination des bornes pour k, le nombre achromatique
         //La borne sup est le nombre de noeud (grossier)
         Integer bSupNbAchro = g.getNodeSet().size();
+
         //La borne inf est la taille de la clique maximale (grossier)
         Integer bInfNbAchro = 0;
+
         //Pour respecter la contrainte de coloration propre
         List<Node> maximalClique = new ArrayList<Node>();
         List<List<Node>> maximalCliques = new ArrayList<>();
@@ -50,7 +50,6 @@ public class AchroSolverHeuris {
             if (clique.contains(maxNode))
                 maxAppClique++;
             maximalCliques.add(clique);
-            System.out.println("maxclique"+ clique.size());
             if (clique.size() > maximalClique.size())
                 maximalClique = clique;
 
@@ -78,37 +77,26 @@ public class AchroSolverHeuris {
             }
             return 0;
         });
-        //System.out.println(Arrays.toString(sortedNodes));
 
         int N = nbVertexes;
 
-        /*Integer[] mapping = new Integer[nbVertexes];
-        Integer[] mapping2 = new Integer[nbVertexes];
-        int cpt2 = 0;
-        for (Node sortedNode: sortedNodes){
-            mapping[sortedNode.getIndex()] = cpt2;
-            mapping2[cpt2] = sortedNode.getIndex();
-            cpt2++;
-        }*/
-
-
         for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
-            AchroSolverk solveur = new AchroSolverk(g, k, N, maximalCliques, sortedNodes);
+            AchroSolverk solveur = new AchroSolverk(g, k, maximalCliques, sortedNodes);
 
             if(solveur.solve()){
                 hasBeenComplete = true;
                 System.out.println("Une solution a été trouvé pour le nombre achromatique " + k);
                 for (int i = 0; i < N ; i++) {
                     int color = solveur.B[i].getValue();
-                    System.out.println("L'arete "+i+" est de couleur "+ColorMapping.colorsMap[color%32]);
+                    //System.out.println("Le somment "+i+" a été affecté de la couleur "+ColorMapping.colorsMap[color%32]);
                     //g.getNode(i).addAttribute("ui.class", "color" + i);
-                    g.getNode(/*mapping2[*/i/*]*/).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
+                    g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
                 }
 
                 //Affichage personnalise selon le graphe
                 //clebshLayout(g);
 
-                //Affichage de toutes les solutions : nécessaire? Attention JAVA HEAP SPACE
+                //Affichage de toutes les solutions : nécessaire?
                 /*solver.findAllSolutions();
                 solver.showSolutions();
                 solver.showStatistics();*/
@@ -140,11 +128,10 @@ public class AchroSolverHeuris {
                         return -1;
                     }
                 }
-                //TODO traiter le else
             }
-
-            //TODO donner toutes les solutions? ou c'est juste une permutation?
         }
+
+        System.out.println("Le nombre achromatique du graphe est " + "egal a " + bSupNbAchro);
         return bSupNbAchro;
     }
 }
