@@ -1,9 +1,6 @@
 package solver;
 
 import graphmodel.ColoredGraph;
-import graphmodel.ColoredNode;
-
-import java.util.Arrays;
 import java.util.List;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.Solver;
@@ -14,14 +11,12 @@ import org.chocosolver.solver.variables.IntVar;
 import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Node;
-import org.graphstream.graph.implementations.SingleGraph;
-import utils.ColorMapping;
 
 /**
  ** Created by teamgraphe
  *
  */
-public class AchroSolverk {
+public class AchroSolver_k {
 
     private final static int TIME_LIMIT = 10;
 
@@ -37,12 +32,12 @@ public class AchroSolverk {
     public Integer[] mapping;
     public Integer[] mappingInv;
 
-    Boolean UseHeuristicFirstAffectation = true;
+    Boolean UseConstraintFirstAffectation = true;
     Boolean UseHeuristicMaxClique = true;
     Boolean UseHeuristicNValue = true;
     Boolean UseHeuristicSortedNode = true;
 
-    public AchroSolverk(ColoredGraph g, boolean UHSN) {
+    public AchroSolver_k(ColoredGraph g, boolean UHSN) {
         this.g = g;
         this.N = g.getNodeCount();
 
@@ -75,8 +70,8 @@ public class AchroSolverk {
         this.k = k;
     }
 
-    public void setUseHeuristicFirstAffectation(Boolean UseHeuristicFirstAffectation) {
-        this.UseHeuristicFirstAffectation = UseHeuristicFirstAffectation;
+    public void setUseConstraintFirstAffectation(Boolean UseHeuristicFirstAffectation) {
+        this.UseConstraintFirstAffectation = UseConstraintFirstAffectation;
     }
 
     public void setUseHeuristicNValue(Boolean UseHeuristicNValue) {
@@ -86,8 +81,14 @@ public class AchroSolverk {
     public void setUseHeuristicMaxClique(Boolean UseHeuristicMaxClique) {
         this.UseHeuristicMaxClique = UseHeuristicMaxClique;
     }
-
-    private void heuristicFirstAffectation(){
+    
+    public void setUseHeuristicSortedNode(Boolean UseHeuristicSortedNode) {
+        this.UseHeuristicSortedNode = UseHeuristicSortedNode;
+    }
+    /*
+    * Optimisation    
+    */
+    private void ConstraintFirstAffectation(){
         model.arithm(B[g.getSortedNodes()[0].getIndex()],"=",0).post();
     }
 
@@ -198,15 +199,18 @@ public class AchroSolverk {
 
 
         //optimisation 1
-        if(UseHeuristicNValue) heuristicNValue();
+        if(UseHeuristicNValue)
+            heuristicNValue();
 
         //Petite OPTI on a la droit?
         // car pas toutes les solutions avec ça et puis quand la taille augmente ca devient négligeable
-        if(UseHeuristicFirstAffectation)   heuristicFirstAffectation();
+        if(UseConstraintFirstAffectation)
+            ConstraintFirstAffectation();
 
 
         //OPTI SUR Les clique max : fonctionne un petit peu..
-        if(UseHeuristicMaxClique) heuristicMaxClique();
+        if(UseHeuristicMaxClique)
+            heuristicMaxClique();
 
 
         Solver solver = model.getSolver();
