@@ -21,7 +21,7 @@ public class Test {
         //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
         //g.display();
 
-        AchroSolver solver = new AchroSolver(g, false);
+        AchroSolver solver = new AchroSolver(g, true);
         int achroNumber = solver.solve();
         System.out.println("Achromatic number : " + achroNumber);
         g.display();

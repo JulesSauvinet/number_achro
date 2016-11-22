@@ -35,8 +35,8 @@ public class AchroSolverk {
     private int[][] matAdj;
     private List<List<Node>> maximalCliques;
     private ColoredNode[] sortedNodes;
-    Integer[] mapping;
-    Integer[] mappingInv;
+    public Integer[] mapping;
+    public Integer[] mappingInv;
 
     Boolean UseHeuristicFirstAffectation = true;
     Boolean UseHeuristicMaxClique = true;
@@ -64,8 +64,8 @@ public class AchroSolverk {
             matAdj = Toolkit.getAdjacencyMatrix(g);
         }
 
-        Integer[] mapping = new Integer[N];
-        Integer[] mappingInv = new Integer[N];
+        this.mapping = new Integer[N];
+        this.mappingInv = new Integer[N];
 
         int cpt2 = 0;
         for (Node sortedNode: sortedNodes){
