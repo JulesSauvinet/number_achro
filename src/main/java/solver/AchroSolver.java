@@ -1,13 +1,8 @@
 package solver;
 
 import graphmodel.ColoredGraph;
-import graphmodel.ColoredNode;
-import org.graphstream.algorithm.Toolkit;
-import org.graphstream.graph.Node;
-import org.graphstream.graph.implementations.SingleGraph;
 import utils.ColorMapping;
 
-import java.util.*;
 
 /**
  * * Created by teamgraphe
