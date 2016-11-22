@@ -41,7 +41,7 @@ public class TestSolver {
 	    ColoredGraph g = new ColoredGraph(filename);
 	    GraphReader.buildGraphFromFile(g, resourcePath + "/" + filename);
 	    g.setUiProps();
-	    AchroSolver solver = new AchroSolver(g);
+	    AchroSolver solver = new AchroSolver(g, false);
 
 	    
 	    

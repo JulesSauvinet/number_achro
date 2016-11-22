@@ -46,10 +46,10 @@ public class AchroSolver {
     SingleGraph g;
 
 
-    public AchroSolver(SingleGraph g) {
+    public AchroSolver(SingleGraph g, boolean UHSN) {
             this.g=g;
+            this.N = g.getNodeCount();
             nbEdges = g.getEdgeCount();
-            nbVertexes = g.getNodeCount();
 
             //Determination des bornes pour k, le nombre achromatique
             //La borne sup est le nombre de noeud (grossier)
@@ -76,7 +76,7 @@ public class AchroSolver {
 
             bInfNbAchro = maximalClique.size();
 
-            ColoredNode[] sortedNodes = new ColoredNode[nbVertexes];
+            ColoredNode[] sortedNodes = new ColoredNode[N];
             int cpt=0;
             for (Node node : g.getNodeSet()){
                 sortedNodes[cpt]=(ColoredNode) node;
@@ -92,9 +92,7 @@ public class AchroSolver {
                 return 0;
             });
 
-            N = nbVertexes;
-
-            solveur = new AchroSolverk(g, N, maximalCliques, sortedNodes);
+            solveur = new AchroSolverk(g, maximalCliques, sortedNodes, UHSN);
         }
     
     public int solve(){
@@ -110,7 +108,11 @@ public class AchroSolver {
                     int color = solveur.B[i].getValue();
                     //System.out.println("Le somment "+i+" a été affecté de la couleur "+ColorMapping.colorsMap[color%32]);
                     //g.getNode(i).addAttribute("ui.class", "color" + i);
-                    g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
+
+                    if (solveur.UseHeuristicSortedNode)
+                        g.getNode(solveur.mappingInv[i]).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
+                    else
+                        g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
                 }
 
                 //Affichage personnalise selon le graphe
