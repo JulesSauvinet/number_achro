@@ -1,9 +1,6 @@
 package solver;
 
 import graphmodel.ColoredGraph;
-import graphmodel.ColoredNode;
-
-import java.util.Arrays;
 import java.util.List;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.Solver;
@@ -14,8 +11,6 @@ import org.chocosolver.solver.variables.IntVar;
 import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Node;
-import org.graphstream.graph.implementations.SingleGraph;
-import utils.ColorMapping;
 
 /**
  ** Created by teamgraphe
