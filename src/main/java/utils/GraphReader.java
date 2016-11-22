@@ -1,7 +1,6 @@
 package utils;
 
 import graphmodel.ColoredGraph;
-import org.graphstream.graph.Graph;
 
 import java.io.File;
 import java.io.IOException;
