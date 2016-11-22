@@ -1,5 +1,6 @@
 package solver;
 
+import graphmodel.ColoredGraph;
 import graphmodel.ColoredNode;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Node;
@@ -9,6 +10,8 @@ import utils.ColorMapping;
 import java.util.*;
 
 /**
+ * * Created by teamgraphe
+ *
  * Cette classe code la résolution de la coloration, 
  *      -> c'est dans cette classe que nous utilisons le solveur.
  * Il faut y décrire le modèle, les données, les sorties et les contraintes.
@@ -30,69 +33,24 @@ public class AchroSolver {
     //La borne inf est la taille de la clique maximale (grossier)
     Integer bInfNbAchro = 0;
     //Pour respecter la contrainte de coloration propre
-    List<Node> maximalClique = new ArrayList<Node>();
-    List<List<Node>> maximalCliques = new ArrayList<>();
-    List<ColoredNode> unionClique = new ArrayList<>();
-    int maxAppClique = 0;
-    boolean getMax = true;
-    ColoredNode maxNode = null;
-    Integer nbEdges ;
-    Integer nbVertexes ;
-    int N;
 
     //Determination des bornes pour k, le nombre achromatique
     //La borne sup est le nombre de noeud (grossier)
     Integer bSupNbAchro;
-    SingleGraph g;
+    ColoredGraph g;
+    Integer nbEdges ;
+    int N;
 
 
-    public AchroSolver(SingleGraph g, boolean UHSN) {
+    public AchroSolver(ColoredGraph g, boolean UHSN) {
             this.g=g;
             this.N = g.getNodeCount();
-            nbEdges = g.getEdgeCount();
+            this.nbEdges = g.getEdgeCount();
+            this.bSupNbAchro = g.getNodeSet().size();
+            this.bInfNbAchro = g.getMaximalClique().size();
 
-            //Determination des bornes pour k, le nombre achromatique
-            //La borne sup est le nombre de noeud (grossier)
-            bSupNbAchro = g.getNodeSet().size();
 
-            for (List<Node> clique : Toolkit.getMaximalCliques(g)) {
-                if (getMax){
-                    maxNode = (ColoredNode) clique.get(0);
-                    getMax = false;
-                }
-                if (clique.contains(maxNode))
-                    maxAppClique++;
-                maximalCliques.add(clique);
-                //System.out.println("maxclique"+ clique.size());
-                if (clique.size() > maximalClique.size())
-                    maximalClique = clique;
-
-                for (Node node : clique){
-                    ColoredNode cNode = (ColoredNode) node;
-                    if (!cNode.equals(maxNode))
-                        unionClique.add(cNode);
-                }
-            }
-
-            bInfNbAchro = maximalClique.size();
-
-            ColoredNode[] sortedNodes = new ColoredNode[N];
-            int cpt=0;
-            for (Node node : g.getNodeSet()){
-                sortedNodes[cpt]=(ColoredNode) node;
-                cpt++;
-            }
-            Arrays.sort(sortedNodes, (o1, o2) -> {
-                if (o1.getDegree()>o2.getDegree()){
-                    return -1;
-                }
-                else if (o1.getDegree()<o2.getDegree()){
-                    return 1;
-                }
-                return 0;
-            });
-
-            solveur = new AchroSolverk(g, maximalCliques, sortedNodes, UHSN);
+            this.solveur = new AchroSolverk(g, UHSN);
         }
     
     public int solve(){

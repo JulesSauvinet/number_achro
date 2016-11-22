@@ -1,5 +1,6 @@
 package utils;
 
+import graphmodel.ColoredGraph;
 import org.graphstream.graph.Graph;
 
 import java.io.File;
@@ -11,7 +12,9 @@ import java.util.Scanner;
  * Created by jules on 16/11/2016.
  */
 public class GraphReader {
-    public static void buildGraphFromFile(Graph g, String fileName) throws IOException, NullPointerException {
+    public static ColoredGraph buildGraphFromFile(String fileName) throws IOException, NullPointerException {
+
+        ColoredGraph g = new ColoredGraph(fileName.split("/")[fileName.split("/").length-1]);
 
         if (fileName == null)
             fileName = "benchmark/clebsh";
@@ -50,6 +53,10 @@ public class GraphReader {
         }
 
         scanner.close();
+
+        g.buildGraph();
+
+        return g;
     }
 
 }

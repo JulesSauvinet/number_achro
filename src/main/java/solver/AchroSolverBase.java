@@ -13,6 +13,8 @@ import org.chocosolver.solver.variables.BoolVar;
 import org.chocosolver.solver.variables.IntVar;
 
 /**
+ ** Created by teamgraphe
+ *
  * Cette classe code la résolution de la coloration, 
  *      -> c'est dans cette classe que nous utilisons le solveur.
  * Il faut y décrire le modèle, les données, les sorties et les containtes.
