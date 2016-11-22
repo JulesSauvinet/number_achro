@@ -221,7 +221,8 @@ public class AchroSolver_k {
 
         long time = System.currentTimeMillis();
         //TODO regarder les stratégies
-        solver.setSearch(Search.defaultSearch(model),Search.domOverWDegSearch(B));//minDomLBSearch(C));
+        //solver.setSearch(Search.defaultSearch(model),Search.domOverWDegSearch(B));//minDomLBSearch(C));
+        solver.setSearch(new CustomSearch(model));//minDomLBSearch(C));
         //solver.setSearch(Search.activityBasedSearch(B));
         //solver.setSearch(Search.inputOrderLBSearch(B));
         //HEURISTIQUE GLOUTONNE A CHOISIR DANS LA MAJORITE DES CAS!

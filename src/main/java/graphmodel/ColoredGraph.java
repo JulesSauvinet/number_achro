@@ -51,18 +51,18 @@ public class ColoredGraph extends SingleGraph {
 
     public void setUiProps() {
         System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
-        this.addAttribute("ui.stylesheet", "graph { fill-color: #1a1713;\n" +
+        this.addAttribute("ui.stylesheet", "graph { fill-color: white;\n" +
                 "canvas-color: black;\n" +
                 "fill-mode: gradient-vertical;\n" +
-                "fill-color: black, #004;\n" +
+                "/*fill-color: black, #004;*/\n" +
                 "padding: 40px; } " + "\n" +
                 "node { size: 18px; fill-mode :gradient-horizontal; shadow-mode: gradient-radial;\n" +
                 "shadow-color: #FFF5, #FFF0;\n" +
-                "shadow-width: 10px;\n" +
+                "shadow-width: 3px;\n" +
                 "shadow-offset: 3px, 3px;}" + "\n" +
                 "edge { /*shape: L-square-line;*/\n" +
                 "size: 1px;\n" +
-                "fill-color: #FFF3;\n" +
+                "fill-color: black;\n" +
                 "fill-mode: plain;\n" +
                 "arrow-shape: none;}" +
                 "\n" +
