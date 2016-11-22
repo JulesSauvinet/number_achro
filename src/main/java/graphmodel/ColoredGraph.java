@@ -16,15 +16,9 @@ import java.util.List;
  */
 public class ColoredGraph extends SingleGraph {
 
-    public HashMap<String, Color> vertexColoring;
-    List<Node> maximalClique = new ArrayList<Node>();
-    List<List<Node>> maximalCliques = new ArrayList<>();
-    List<ColoredNode> unionClique = new ArrayList<>();
-    ColoredNode[] sortedNodes;
-
-    int maxAppClique = 0;
-    boolean getMax = true;
-    ColoredNode maxNode = null;
+    private List<Node> maximalClique = new ArrayList<Node>();
+    private List<List<Node>> maximalCliques = new ArrayList<>();
+    private ColoredNode[] sortedNodes;
 
     public ColoredGraph(String name) {
         super(name);
@@ -50,50 +44,17 @@ public class ColoredGraph extends SingleGraph {
         });
 
         for (List<Node> clique : Toolkit.getMaximalCliques(this)) {
-            if (this.getMax){
-                this.maxNode = (ColoredNode) clique.get(0);
-                this.getMax = false;
-            }
-            if (clique.contains(this.maxNode))
-                this.maxAppClique++;
             this.maximalCliques.add(clique);
             //System.out.println("maxclique"+ clique.size());
             if (clique.size() > this.maximalClique.size())
                 this.maximalClique = clique;
-
-            for (Node node : clique){
-                ColoredNode cNode = (ColoredNode) node;
-                if (!cNode.equals(this.maxNode))
-                    this.unionClique.add(cNode);
-            }
         }
-
-        
-    }
-
-    public HashMap<String, Color> getVertexColoring() {
-        return vertexColoring;
-    }
-
-    public void setVertexColoring(HashMap<String, Color> vertexColoring) {
-        this.vertexColoring = vertexColoring;
-    }
-
-    public void setColor(String vertex, Color c){
-        vertexColoring.put(vertex,c);
     }
 
     public void setUiProps() {
         System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
         //this.addAttribute("ui.stylesheet", "graph { fill-color: red; }");
         this.addAttribute("ui.stylesheet", "node { size: 18px; }");
-    }
-
-    public void setDefaultColors(){
-        for (Object v : this.getNodeSet()){
-            String s = (String) v;
-            vertexColoring.put(s,Color.black);
-        }
     }
 
     public java.util.List<Node> getMaximalClique() {
