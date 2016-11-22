@@ -5,6 +5,7 @@ import solver.AchroSolverBase;
 import utils.GraphReader;
 
 import java.io.IOException;
+import solver.AchroSolverHeuris;
 
 
 /**
@@ -14,7 +15,7 @@ public class TestHeuris {
 
     static String GRAPHNAME = "benchmark/marine";
     public static void main (String[] args) throws IOException {
-
+        System.out.println("test");
         //AchroSolver.testSolver1();
         ColoredGraph g = new ColoredGraph(GRAPHNAME);
         GraphReader.buildGraphFromFile(g,  GRAPHNAME);
@@ -22,8 +23,10 @@ public class TestHeuris {
         //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
         //g.display();
 
-        AchroSolverBase solver = new AchroSolverBase();
+        AchroSolverHeuris solver = new AchroSolverHeuris();
+        System.out.println("test");
         int achroNumber = solver.solve(g);
+        System.out.println("test");
         System.out.println("Achromatic number : " + achroNumber);
         g.display();
     }
