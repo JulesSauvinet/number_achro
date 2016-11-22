@@ -1,12 +1,10 @@
 package graphmodel;
 
-import org.graphstream.algorithm.*;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -16,7 +14,7 @@ import java.util.List;
  */
 public class ColoredGraph extends SingleGraph {
 
-    private List<Node> maximalClique = new ArrayList<Node>();
+    private List<Node> maximalClique = new ArrayList<>();
     private List<List<Node>> maximalCliques = new ArrayList<>();
     private ColoredNode[] sortedNodes;
 
