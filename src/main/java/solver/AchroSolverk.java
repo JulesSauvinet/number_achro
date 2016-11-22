@@ -121,7 +121,7 @@ public class AchroSolverk {
         // On code ici la coloration propre
         // si deux noeuds sont voisins, ils ne peuvent pas avoir la meme couleur
         for (int i = 0; i < N-1 ; i++) { // pour chaque noeud
-            for (int j = 0; j < N ; j++) { // pour chaque couleur
+            for (int j = 0; j < N ; j++) { // pour chaque noeud voisin
                 if (matAdj[i][j] == 1 && i != j) {
                     Constraint constr = model.arithm(B[i], "!=", B[j]);
                     constr.post();
@@ -192,11 +192,9 @@ public class AchroSolverk {
         this.B = model.intVarArray("the vertex associated with the index has the color c",N, 0,k-1, true);
 
 
-
         constraintProperColoring();
 
         constraintCompleteColoring();
-
 
 
         //optimisation 1
@@ -230,8 +228,6 @@ public class AchroSolverk {
         } catch (ContradictionException e) {
             e.printStackTrace();
         }
-
-        //solver.addStopCriterion()?;
 
         Boolean res = solver.solve();
         runtime =  (int)((System.currentTimeMillis()-time)/1000);

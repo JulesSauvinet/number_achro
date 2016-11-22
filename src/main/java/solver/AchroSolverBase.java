@@ -21,7 +21,7 @@ import org.chocosolver.solver.variables.IntVar;
  *      - la coloration complete
  */
 
-//TODO créer un deuxieme modele avec une matrice
+//TODO créer un deuxieme modele avec une matrice extrait de l'idée presente dans cette classe
 public class AchroSolverBase {
 
     private final static int TIME_LIMIT = 60;
