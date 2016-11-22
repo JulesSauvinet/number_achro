@@ -16,7 +16,7 @@ import org.graphstream.graph.Node;
  ** Created by teamgraphe
  *
  */
-public class AchroSolverk {
+public class AchroSolver_k {
 
     private final static int TIME_LIMIT = 10;
 
@@ -37,7 +37,7 @@ public class AchroSolverk {
     Boolean UseHeuristicNValue = true;
     Boolean UseHeuristicSortedNode = true;
 
-    public AchroSolverk(ColoredGraph g, boolean UHSN) {
+    public AchroSolver_k(ColoredGraph g, boolean UHSN) {
         this.g = g;
         this.N = g.getNodeCount();
 

@@ -21,7 +21,7 @@ import utils.ColorMapping;
 public class AchroSolver {
 
     private final static int TIME_LIMIT = 60;
-    private AchroSolverk solveur;
+    private AchroSolver_k solveur;
     private boolean hasBeenComplete = false;
     private Integer bInfNbAchro = 0;
     private Integer bSupNbAchro;
@@ -36,7 +36,7 @@ public class AchroSolver {
             //La borne sup est le nombre de noeud (grossier)
             this.bSupNbAchro = g.getNodeSet().size();
             this.bInfNbAchro = g.getMaximalClique().size();
-            this.solveur = new AchroSolverk(g, UHSN);
+            this.solveur = new AchroSolver_k(g, UHSN);
         }
     
     public void SetContrainteSuplementaires(Boolean UseConstraintFirstAffectation, Boolean UseHeuristicMaxClique, 
