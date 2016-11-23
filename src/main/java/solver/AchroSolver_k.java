@@ -1,27 +1,26 @@
 package solver;
 
 import graphmodel.ColoredGraph;
-import graphmodel.ColoredNode;
-
-import java.util.Arrays;
 import java.util.List;
 import org.chocosolver.solver.Model;
+import org.chocosolver.solver.ResolutionPolicy;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.constraints.Constraint;
 import org.chocosolver.solver.exception.ContradictionException;
+import org.chocosolver.solver.objective.ObjectiveManager;
+import org.chocosolver.solver.search.limits.FailCounter;
 import org.chocosolver.solver.search.strategy.Search;
 import org.chocosolver.solver.variables.IntVar;
+import org.chocosolver.solver.variables.Variable;
 import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Node;
-import org.graphstream.graph.implementations.SingleGraph;
-import utils.ColorMapping;
 
 /**
  ** Created by teamgraphe
  *
  */
-public class AchroSolverk {
+public class AchroSolver_k {
 
     private final static int TIME_LIMIT = 10;
 
@@ -42,7 +41,7 @@ public class AchroSolverk {
     Boolean UseHeuristicNValue = true;
     Boolean UseHeuristicSortedNode = true;
 
-    public AchroSolverk(ColoredGraph g, boolean UHSN) {
+    public AchroSolver_k(ColoredGraph g, boolean UHSN) {
         this.g = g;
         this.N = g.getNodeCount();
 
@@ -204,15 +203,18 @@ public class AchroSolverk {
 
 
         //optimisation 1
-        if(UseHeuristicNValue) heuristicNValue();
+        if(UseHeuristicNValue)
+            heuristicNValue();
 
         //Petite OPTI on a la droit?
         // car pas toutes les solutions avec ça et puis quand la taille augmente ca devient négligeable
-        if(UseConstraintFirstAffectation)   ConstraintFirstAffectation();
+        if(UseConstraintFirstAffectation)
+            ConstraintFirstAffectation();
 
 
         //OPTI SUR Les clique max : fonctionne un petit peu..
-        if(UseHeuristicMaxClique) heuristicMaxClique();
+        if(UseHeuristicMaxClique)
+            heuristicMaxClique();
 
 
         Solver solver = model.getSolver();
@@ -222,8 +224,13 @@ public class AchroSolverk {
         solver.setNoLearning();//(true,false);
 
         long time = System.currentTimeMillis();
+
+        IntVar objective = (IntVar) model.getObjective();
+        //solver.setObjectiveManager(new ObjectiveManager(objective, ResolutionPolicy.MAXIMIZE, ));
+
         //TODO regarder les stratégies
-//        solver.setSearch(Search.defaultSearch(model),Search.domOverWDegSearch(B));//minDomLBSearch(C));
+        solver.setSearch(Search.defaultSearch(model),Search.domOverWDegSearch(B));//minDomLBSearch(C));
+        //solver.setSearch(new CustomSearch(model)/*, Search.activityBasedSearch(B)*/);//minDomLBSearch(C));
         //solver.setSearch(Search.activityBasedSearch(B));
         //solver.setSearch(Search.inputOrderLBSearch(B));
         //HEURISTIQUE GLOUTONNE A CHOISIR DANS LA MAJORITE DES CAS!

@@ -114,7 +114,4 @@ public class TestResult {
 	
         return out;
     }
-    
-    
-    
 }

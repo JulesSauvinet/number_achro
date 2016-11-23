@@ -13,21 +13,19 @@ public class SolverConstraints {
     public Boolean UseConstraintFirstAffectation;
     public Boolean UseHeuristicMaxClique;
     public Boolean UseHeuristicNValue;
-    public Boolean UseHeuristicSortedNode;
 
-    public SolverConstraints(Boolean UseConstraintFirstAffectation, Boolean UseHeuristicMaxClique, Boolean UseHeuristicNValue, Boolean UseHeuristicSortedNode) {
+    public SolverConstraints(Boolean UseConstraintFirstAffectation, Boolean UseHeuristicMaxClique, Boolean UseHeuristicNValue) {
         this.UseConstraintFirstAffectation = UseConstraintFirstAffectation;
         this.UseHeuristicMaxClique = UseHeuristicMaxClique;
         this.UseHeuristicNValue = UseHeuristicNValue;
-        this.UseHeuristicSortedNode = UseHeuristicSortedNode;
     }
 
     @Override
     public String toString() {
         String out = "";
-        if(UseConstraintFirstAffectation && UseHeuristicMaxClique && UseHeuristicNValue && UseHeuristicSortedNode){
+        if(UseConstraintFirstAffectation && UseHeuristicMaxClique && UseHeuristicNValue){
             out = "AllConstraints";
-        } else if((!UseConstraintFirstAffectation) && (!UseHeuristicMaxClique) && (!UseHeuristicNValue) && (!UseHeuristicSortedNode)){
+        } else if((!UseConstraintFirstAffectation) && (!UseHeuristicMaxClique) && (!UseHeuristicNValue)){
             out = "NoConstraint";
         } else {
             if(UseConstraintFirstAffectation){
@@ -38,9 +36,6 @@ public class SolverConstraints {
             }
             if(UseHeuristicNValue){
                 out += "NValue ";
-            }
-            if(UseHeuristicSortedNode){
-                out += "SortedNode";
             }
     }
         return out;

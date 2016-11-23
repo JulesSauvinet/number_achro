@@ -14,6 +14,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
 import solver.AchroSolver;
+import utils.GraphEReader;
 import utils.GraphReader;
 
 /**
@@ -27,7 +28,7 @@ public class TestSolver {
     @AfterClass
     public static void displaySummary(){
         System.out.println("\n##################################################");
-        System.out.println(String.format("%-30s", "File_name") 
+        System.out.println(String.format("%-30s", "File_name")
                 + String.format("%-15s", "Vertices") 
                 + String.format("%-15s", "Edges") 
                 + String.format("%-15s", "No_const (ms)")
@@ -36,7 +37,6 @@ public class TestSolver {
                 + String.format("%-15s", "NValue (ms)")
                 + String.format("%-15s", "SortedNode (ms)")
                 + String.format("%-15s", "All_const (ms)"));
-        
         for (TestResult a : summary) {
             System.out.println(a.toString());
         }
@@ -49,8 +49,11 @@ public class TestSolver {
         AchroSolver solver;
         ColoredGraph g;
         try {
-        
-            g = GraphReader.buildGraphFromFile(resourcePath + "/" + filename);
+            if(filename.equals("contiguous-usa")){
+                g = GraphEReader.buildGraphFromFile(resourcePath + "/" + filename);
+            } else {
+                g = GraphReader.buildGraphFromFile(resourcePath + "/" + filename);
+            }
             g.setUiProps();
             solver = new AchroSolver(g, false);
         } catch (IOException | NullPointerException ex) {
@@ -61,38 +64,31 @@ public class TestSolver {
         results.setNbVertices(g.getNodeCount());
         
         // No constraint
-//        System.out.println("\t " + filename + " - No constraint");
 //        results.setElapsedTimeInMsNoConstraint(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, false, false)));
 
-//        System.out.println("\t " + filename + " - UseConstraintFirstAffectation");
         // UseConstraintFirstAffectation
 //        results.setElapsedTimeInMsUseConstraintFirstAffectation(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(true, false, false, false)));
 
-//        System.out.println("\t " + filename + " - UseHeuristicMaxClique");
         // UseHeuristicMaxClique
 //        results.setElapsedTimeInMsUseHeuristicMaxClique(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, true, false, false)));
 
-//        System.out.println("\t " + filename + " - UseHeuristicNValue");
 //        // UseHeuristicNValue
 //        results.setElapsedTimeInMsUseHeuristicNValue(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, true, false)));
 
-        System.out.println("\t " + filename + " - Don't UseHeuristicNValue");
-        // UseHeuristicNValue
-        results.setElapsedTimeInMsUseHeuristicNValue(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(true, true, false, true)));
+        // Without UseHeuristicNValue
+        results.setElapsedTimeInMsUseHeuristicNValue(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(true, true, false)));
 
-//        System.out.println("\t " + filename + " - UseHeuristicSortedNode");
         // UseHeuristicSortedNode
 //        results.setElapsedTimeInMsUseHeuristicSortedNode(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, false, true)));
 
-        System.out.println("\t " + filename + " - All constraint");
         // All constraints
-        results.setElapsedTimeInMsAllConstraints(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(true, true, true, true)));
+        results.setElapsedTimeInMsAllConstraints(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(true, true, true)));
         summary.add(results);
     }
     
     public long testGraphWithConstraints(AchroSolver solver, int expectedAchromaticNumber, SolverConstraints cstr){
         
-            solver.SetContrainteSuplementaires(cstr.UseConstraintFirstAffectation, cstr.UseHeuristicMaxClique, cstr.UseHeuristicNValue, cstr.UseHeuristicSortedNode);
+            solver.setConstraintSupp(cstr.UseConstraintFirstAffectation, cstr.UseHeuristicMaxClique, cstr.UseHeuristicNValue);
             Instant startTime = Instant.now(); // Measure duration
 	    
 	    int achromaticNumber = solver.solve(); // Start solver
@@ -207,8 +203,6 @@ public class TestSolver {
         testGraphFile("clebsh", 8);
     }
 
-
-
     @Test
     public void testK5_minus_1(){
 	testGraphFile("k5_minus_1", 4);
@@ -233,7 +227,6 @@ public class TestSolver {
     public void testK5_minus_3_focused(){
 	testGraphFile("k5_minus_3_focused", 4);
     }
-
     
     @Test
     public void testPetersen(){
@@ -243,5 +236,10 @@ public class TestSolver {
     @Test
     public void testMyciel3(){
 	testGraphFile("myciel3.col", 6);
+    }
+
+    @Test
+    public void testContiguousUSA(){
+        testGraphFile("contiguous-usa", 11);
     }
 }
