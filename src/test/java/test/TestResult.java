@@ -10,24 +10,16 @@ package test;
  * @author Bruno
  */
 public class TestResult {
-    private long elapsedTimeInMs;
+    private long elapsedTimeWithHeuristicNValue;
+    private long elapsedTimeWithoutHeuristicNValue;
     private String filename;
     private int nbVertices;
     private int nbEdges;
 
-    public TestResult(long elapsedTimeInMs, String filename, int nbVertices, int nbEdges) {
-	this.elapsedTimeInMs = elapsedTimeInMs;
-	this.filename = filename;
-	this.nbVertices = nbVertices;
-	this.nbEdges = nbEdges;
-    }
-
-    public long getElapsedTimeInMs() {
-	return elapsedTimeInMs;
-    }
-
-    public void setElapsedTimeInMs(long elapsedTimeInMs) {
-	this.elapsedTimeInMs = elapsedTimeInMs;
+    public TestResult(String filename) {
+        this.filename = filename;
+        this.nbVertices = nbVertices;
+        this.nbEdges = nbEdges;
     }
 
     public String getFilename() {
@@ -54,8 +46,32 @@ public class TestResult {
 	this.nbEdges = nbEdges;
     }
 
+    public long getElapsedTimeWithHeuristicNValue() {
+        return elapsedTimeWithHeuristicNValue;
+    }
+
+    public void setElapsedTimeWithHeuristicNValue(long elapsedTimeWithHeuristicNValue) {
+        this.elapsedTimeWithHeuristicNValue = elapsedTimeWithHeuristicNValue;
+    }
+
+    public long getElapsedTimeWithoutHeuristicNValue() {
+        return elapsedTimeWithoutHeuristicNValue;
+    }
+
+    public void setElapsedTimeWithoutHeuristicNValue(long elapsedTimeWithoutHeuristicNValue) {
+        this.elapsedTimeWithoutHeuristicNValue = elapsedTimeWithoutHeuristicNValue;
+    }
+    
+    
+
     @Override
     public String toString() {
-	return String.format("%-30s", filename) + String.format("%-15s", nbVertices) + String.format("%-15s", nbEdges) + String.format("%-10s", elapsedTimeInMs + "ms");
+        String out = String.format("%-30s", filename)
+                + String.format("%-15s", nbVertices)
+                + String.format("%-15s", nbEdges)
+                + String.format("%-15s", elapsedTimeWithoutHeuristicNValue)
+                + String.format("%-15s", elapsedTimeWithHeuristicNValue);
+	
+        return out;
     }
 }
