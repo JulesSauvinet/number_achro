@@ -46,7 +46,7 @@ public class TestSolver {
     public void testGraphFile(String filename, int expectedAchromaticNumber){
 	System.out.println("\nTesting " + filename + "...");
         TestResult results = new TestResult(filename);
-        AchroSolver solver;
+//        AchroSolver solver;
         ColoredGraph g;
         try {
             if(filename.equals("contiguous-usa")){
@@ -55,7 +55,7 @@ public class TestSolver {
                 g = GraphReader.buildGraphFromFile(resourcePath + "/" + filename);
             }
             g.setUiProps();
-            solver = new AchroSolver(g, false);
+//            solver = new AchroSolver(g, false);
         } catch (IOException | NullPointerException ex) {
 	    Assert.fail("File not found : " + resourcePath + "/" + filename);
             return;
@@ -76,18 +76,19 @@ public class TestSolver {
 //        results.setElapsedTimeInMsUseHeuristicNValue(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, true, false)));
 
         // Without UseHeuristicNValue
-        results.setElapsedTimeInMsUseHeuristicNValue(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(true, true, false)));
+        results.setElapsedTimeInMsUseHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, new SolverConstraints(true, true, false)));
 
         // UseHeuristicSortedNode
 //        results.setElapsedTimeInMsUseHeuristicSortedNode(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, false, true)));
 
         // All constraints
-        results.setElapsedTimeInMsAllConstraints(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(true, true, true)));
+        results.setElapsedTimeInMsAllConstraints(testGraphWithConstraints(g, expectedAchromaticNumber, new SolverConstraints(true, true, true)));
         summary.add(results);
     }
     
-    public long testGraphWithConstraints(AchroSolver solver, int expectedAchromaticNumber, SolverConstraints cstr){
-        
+    public long testGraphWithConstraints(ColoredGraph g, int expectedAchromaticNumber, SolverConstraints cstr){
+//    public long testGraphWithConstraints(AchroSolver solver, int expectedAchromaticNumber, SolverConstraints cstr){
+            AchroSolver solver = new AchroSolver(g, false);
             solver.setConstraintSupp(cstr.UseConstraintFirstAffectation, cstr.UseHeuristicMaxClique, cstr.UseHeuristicNValue);
             Instant startTime = Instant.now(); // Measure duration
 	    
