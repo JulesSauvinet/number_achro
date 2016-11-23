@@ -75,6 +75,10 @@ public class AchroSolver {
 
                 //Affichage en continu
                 // g.display();
+                if (k==bSupNbAchro){
+                    System.out.println("Le nombre achromatique du graphe est " + "egal a " + bSupNbAchro);
+                    return bSupNbAchro;
+                }
             }
             else {
                 int runtime = solveur.runtime;
@@ -83,7 +87,8 @@ public class AchroSolver {
                         int nbachro = k-1;
                         System.out.print("Le solveur n'a pas pu trouver de solutions dans le temps limite de " + (TIME_LIMIT) + " secondes, ");
                         System.out.println("le nombre achromatique est " + "au moins egal a " + nbachro);
-                        return k - 1;
+
+                        return nbachro;
                     }
                     else{
                         System.out.println("Le solveur n'a pas pu determiner s'il existait une coloration complete" + " en " + (TIME_LIMIT) +" secondes");
@@ -99,8 +104,8 @@ public class AchroSolver {
                 }
             }
         }
-
-        System.out.println("Le nombre achromatique du graphe est " + "egal a " + bSupNbAchro);
-        return bSupNbAchro;
+        return -1;
     }
+
+
 }

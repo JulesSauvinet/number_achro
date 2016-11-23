@@ -1,4 +1,4 @@
-package solver;
+package search;
 
 /**
  * Created by jules on 23/11/2016.

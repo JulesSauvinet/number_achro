@@ -1,4 +1,4 @@
-package solver;
+package search;
 
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.search.strategy.assignments.DecisionOperator;
