@@ -14,6 +14,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
 import solver.AchroSolver;
+import utils.GraphEReader;
 import utils.GraphReader;
 
 /**
@@ -40,8 +41,12 @@ public class TestSolver {
     public void testGraphFile(String filename, int expectedAchromaticNumber){
 	System.out.println("\nTesting " + filename + "...");
 	try {
+	    ColoredGraph g;
 	    // Setup graph
-	    ColoredGraph g = GraphReader.buildGraphFromFile(resourcePath + "/" + filename);
+        if (filename.equals("contiguous-usa"))
+            g = GraphEReader.buildGraphFromFile(resourcePath + "/" + filename);
+	    else
+            g = GraphReader.buildGraphFromFile(resourcePath + "/" + filename);
 	    g.setUiProps();
 	    AchroSolver solver = new AchroSolver(g, false);
 
@@ -198,5 +203,10 @@ public class TestSolver {
     @Test
     public void testMyciel3(){
 	testGraphFile("myciel3.col", 6);
+    }
+
+    @Test
+    public void testContiguousUSA(){
+        testGraphFile("contiguous-usa", 11);
     }
 }

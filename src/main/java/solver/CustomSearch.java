@@ -35,7 +35,7 @@ public class CustomSearch extends AbstractStrategy {
             }
             else{
                 if (!valuesAffected.containsKey(iv.getValue()))
-                        valuesAffected.put(iv.getValue(),1);
+                    valuesAffected.put(iv.getValue(),1);
                 else {
                     valuesAffected.put(iv.getValue(),valuesAffected.get(iv.getValue())+1);
                 }
@@ -57,6 +57,7 @@ public class CustomSearch extends AbstractStrategy {
                 int minvalue = valuesAffected.entrySet().stream().min((entry1, entry2) -> entry1.getValue() <= entry2.getValue() ? 1 : -1).get().getKey();;
                 value =minvalue;
             }*/
+            //System.out.println(value);
             d.set(next,value, DecisionOperator.int_eq);
             return d;
         }
