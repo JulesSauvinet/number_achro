@@ -27,7 +27,16 @@ public class TestSolver {
     @AfterClass
     public static void displaySummary(){
         System.out.println("\n##################################################");
-        System.out.println(String.format("%-30s", "File_name") + String.format("%-15s", "Vertices") + String.format("%-15s", "Edges") + String.format("%-10s", "Time (ms)"));
+        System.out.println(String.format("%-30s", "File_name") 
+                + String.format("%-15s", "Vertices") 
+                + String.format("%-15s", "Edges") 
+                + String.format("%-15s", "No_const (ms)")
+                + String.format("%-15s", "1stAffect (ms)")
+                + String.format("%-15s", "MaxClique (ms)")
+                + String.format("%-15s", "NValue (ms)")
+                + String.format("%-15s", "SortedNode (ms)")
+                + String.format("%-15s", "All_const (ms)"));
+        
         for (TestResult a : summary) {
             System.out.println(a.toString());
         }
@@ -36,27 +45,61 @@ public class TestSolver {
     
     public void testGraphFile(String filename, int expectedAchromaticNumber){
 	System.out.println("\nTesting " + filename + "...");
-	try {
-	    // Setup graph
-	    ColoredGraph g = GraphReader.buildGraphFromFile(resourcePath + "/" + filename);
-	    g.setUiProps();
-	    AchroSolver solver = new AchroSolver(g, false);
+        TestResult results = new TestResult(filename);
+        AchroSolver solver;
+        ColoredGraph g;
+        try {
+        
+            g = GraphReader.buildGraphFromFile(resourcePath + "/" + filename);
+            g.setUiProps();
+            solver = new AchroSolver(g, false);
+        } catch (IOException | NullPointerException ex) {
+	    Assert.fail("File not found : " + resourcePath + "/" + filename);
+            return;
+	}
+        results.setNbEdges(g.getEdgeCount());
+        results.setNbVertices(g.getNodeCount());
+        
+        // No constraint
+//        System.out.println("\t " + filename + " - No constraint");
+//        results.setElapsedTimeInMsNoConstraint(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, false, false)));
 
+//        System.out.println("\t " + filename + " - UseConstraintFirstAffectation");
+        // UseConstraintFirstAffectation
+//        results.setElapsedTimeInMsUseConstraintFirstAffectation(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(true, false, false, false)));
 
-	    Instant startTime = Instant.now(); // Measure duration
+//        System.out.println("\t " + filename + " - UseHeuristicMaxClique");
+        // UseHeuristicMaxClique
+//        results.setElapsedTimeInMsUseHeuristicMaxClique(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, true, false, false)));
+
+//        System.out.println("\t " + filename + " - UseHeuristicNValue");
+//        // UseHeuristicNValue
+//        results.setElapsedTimeInMsUseHeuristicNValue(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, true, false)));
+
+        System.out.println("\t " + filename + " - Don't UseHeuristicNValue");
+        // UseHeuristicNValue
+        results.setElapsedTimeInMsUseHeuristicNValue(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(true, true, false, true)));
+
+//        System.out.println("\t " + filename + " - UseHeuristicSortedNode");
+        // UseHeuristicSortedNode
+//        results.setElapsedTimeInMsUseHeuristicSortedNode(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, false, true)));
+
+        System.out.println("\t " + filename + " - All constraint");
+        // All constraints
+        results.setElapsedTimeInMsAllConstraints(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(true, true, true, true)));
+        summary.add(results);
+    }
+    
+    public long testGraphWithConstraints(AchroSolver solver, int expectedAchromaticNumber, SolverConstraints cstr){
+        
+            solver.SetContrainteSuplementaires(cstr.UseConstraintFirstAffectation, cstr.UseHeuristicMaxClique, cstr.UseHeuristicNValue, cstr.UseHeuristicSortedNode);
+            Instant startTime = Instant.now(); // Measure duration
 	    
 	    int achromaticNumber = solver.solve(); // Start solver
-	    Assert.assertEquals("Achromatic number differs from expected value", expectedAchromaticNumber, achromaticNumber);
+	    Assert.assertEquals("[" + cstr.toString() + "] Achromatic number differs from expected value", expectedAchromaticNumber, achromaticNumber);
 	    
 	    Instant stopTime = Instant.now(); // Measure duration
-	    Duration timeElapsed = Duration.between(startTime, stopTime);
-	    
-	    summary.add(new TestResult(timeElapsed.toMillis(), filename, g.getNodeCount(), g.getEdgeCount())); // Log results
-	} catch (IOException | NullPointerException ex) {
-	    Assert.fail("File not found : " + resourcePath + "/" + filename);
-	}
-	
-	
+	    return Duration.between(startTime, stopTime).toMillis();
     }
     
     @Test
@@ -124,35 +167,35 @@ public class TestSolver {
 	testGraphFile("k15", 15);
     }
     
-    @Test
-    public void testK16(){
-	testGraphFile("k16", 16);
-    }
-    
-    @Test
-    public void testK17(){
-	testGraphFile("k17", 17);
-    }
-
-    @Test
-    public void testK18(){
-        testGraphFile("k18", 18);
-    }
-
-    @Test
-    public void testK19(){
-	    testGraphFile("k19", 19);
-    }
-
-    @Test
-    public void testK20(){
-        testGraphFile("k20", 20);
-    }
-
-    @Test
-    public void testK21(){
-        testGraphFile("k21", 21);
-    }
+//    @Test
+//    public void testK16(){
+//	testGraphFile("k16", 16);
+//    }
+//    
+//    @Test
+//    public void testK17(){
+//	testGraphFile("k17", 17);
+//    }
+//
+//    @Test
+//    public void testK18(){
+//        testGraphFile("k18", 18);
+//    }
+//
+//    @Test
+//    public void testK19(){
+//	    testGraphFile("k19", 19);
+//    }
+//
+//    @Test
+//    public void testK20(){
+//        testGraphFile("k20", 20);
+//    }
+//
+//    @Test
+//    public void testK21(){
+//        testGraphFile("k21", 21);
+//    }
 
     @Test
     public void testMarine(){
