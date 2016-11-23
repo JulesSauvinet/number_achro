@@ -14,30 +14,18 @@ public class SolverConstraints {
     public Boolean UseHeuristicMaxClique;
     public Boolean UseHeuristicNValue;
 
-    public SolverConstraints(Boolean UseConstraintFirstAffectation, Boolean UseHeuristicMaxClique, Boolean UseHeuristicNValue) {
-        this.UseConstraintFirstAffectation = UseConstraintFirstAffectation;
-        this.UseHeuristicMaxClique = UseHeuristicMaxClique;
+    public SolverConstraints(Boolean UseHeuristicNValue) {
         this.UseHeuristicNValue = UseHeuristicNValue;
     }
 
     @Override
     public String toString() {
         String out = "";
-        if(UseConstraintFirstAffectation && UseHeuristicMaxClique && UseHeuristicNValue){
-            out = "AllConstraints";
-        } else if((!UseConstraintFirstAffectation) && (!UseHeuristicMaxClique) && (!UseHeuristicNValue)){
-            out = "NoConstraint";
+        if(UseHeuristicNValue){
+            out = "w/ NValue";
         } else {
-            if(UseConstraintFirstAffectation){
-                out += "1stAffect ";
-            }
-            if(UseHeuristicMaxClique){
-                out += "MaxClique ";
-            }
-            if(UseHeuristicNValue){
-                out += "NValue ";
-            }
-    }
+            out = "w/o NValue";
+        }
         return out;
     }
     

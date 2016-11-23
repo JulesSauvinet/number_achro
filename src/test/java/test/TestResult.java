@@ -10,12 +10,8 @@ package test;
  * @author Bruno
  */
 public class TestResult {
-    private long elapsedTimeInMsNoConstraint;
-    private long elapsedTimeInMsUseConstraintFirstAffectation;
-    private long elapsedTimeInMsUseHeuristicMaxClique;
-    private long elapsedTimeInMsUseHeuristicNValue;
-    private long elapsedTimeInMsUseHeuristicSortedNode;
-    private long elapsedTimeInMsAllConstraints;
+    private long elapsedTimeWithHeuristicNValue;
+    private long elapsedTimeWithoutHeuristicNValue;
     private String filename;
     private int nbVertices;
     private int nbEdges;
@@ -50,53 +46,23 @@ public class TestResult {
 	this.nbEdges = nbEdges;
     }
 
-    public long getElapsedTimeInMsNoConstraint() {
-        return elapsedTimeInMsNoConstraint;
+    public long getElapsedTimeWithHeuristicNValue() {
+        return elapsedTimeWithHeuristicNValue;
     }
 
-    public void setElapsedTimeInMsNoConstraint(long elapsedTimeInMsNoConstraint) {
-        this.elapsedTimeInMsNoConstraint = elapsedTimeInMsNoConstraint;
+    public void setElapsedTimeWithHeuristicNValue(long elapsedTimeWithHeuristicNValue) {
+        this.elapsedTimeWithHeuristicNValue = elapsedTimeWithHeuristicNValue;
     }
 
-    public long getElapsedTimeInMsUseConstraintFirstAffectation() {
-        return elapsedTimeInMsUseConstraintFirstAffectation;
+    public long getElapsedTimeWithoutHeuristicNValue() {
+        return elapsedTimeWithoutHeuristicNValue;
     }
 
-    public void setElapsedTimeInMsUseConstraintFirstAffectation(long elapsedTimeInMsUseConstraintFirstAffectation) {
-        this.elapsedTimeInMsUseConstraintFirstAffectation = elapsedTimeInMsUseConstraintFirstAffectation;
+    public void setElapsedTimeWithoutHeuristicNValue(long elapsedTimeWithoutHeuristicNValue) {
+        this.elapsedTimeWithoutHeuristicNValue = elapsedTimeWithoutHeuristicNValue;
     }
 
-    public long getElapsedTimeInMsUseHeuristicMaxClique() {
-        return elapsedTimeInMsUseHeuristicMaxClique;
-    }
-
-    public void setElapsedTimeInMsUseHeuristicMaxClique(long elapsedTimeInMsUseHeuristicMaxClique) {
-        this.elapsedTimeInMsUseHeuristicMaxClique = elapsedTimeInMsUseHeuristicMaxClique;
-    }
-
-    public long getElapsedTimeInMsUseHeuristicNValue() {
-        return elapsedTimeInMsUseHeuristicNValue;
-    }
-
-    public void setElapsedTimeInMsUseHeuristicNValue(long elapsedTimeInMsUseHeuristicNValue) {
-        this.elapsedTimeInMsUseHeuristicNValue = elapsedTimeInMsUseHeuristicNValue;
-    }
-
-    public long getElapsedTimeInMsUseHeuristicSortedNode() {
-        return elapsedTimeInMsUseHeuristicSortedNode;
-    }
-
-    public void setElapsedTimeInMsUseHeuristicSortedNode(long elapsedTimeInMsUseHeuristicSortedNode) {
-        this.elapsedTimeInMsUseHeuristicSortedNode = elapsedTimeInMsUseHeuristicSortedNode;
-    }
-
-    public long getElapsedTimeInMsAllConstraints() {
-        return elapsedTimeInMsAllConstraints;
-    }
-
-    public void setElapsedTimeInMsAllConstraints(long elapsedTimeInMsAllConstraints) {
-        this.elapsedTimeInMsAllConstraints = elapsedTimeInMsAllConstraints;
-    }
+    
     
     
 
@@ -105,12 +71,8 @@ public class TestResult {
         String out = String.format("%-30s", filename)
                 + String.format("%-15s", nbVertices)
                 + String.format("%-15s", nbEdges)
-                + String.format("%-15s", elapsedTimeInMsNoConstraint)
-                + String.format("%-15s", elapsedTimeInMsUseConstraintFirstAffectation)
-                + String.format("%-15s", elapsedTimeInMsUseHeuristicMaxClique)
-                + String.format("%-15s", elapsedTimeInMsUseHeuristicNValue)
-                + String.format("%-15s", elapsedTimeInMsUseHeuristicSortedNode)
-                + String.format("%-15s", elapsedTimeInMsAllConstraints);
+                + String.format("%-15s", elapsedTimeWithoutHeuristicNValue)
+                + String.format("%-15s", elapsedTimeWithHeuristicNValue);
 	
         return out;
     }
