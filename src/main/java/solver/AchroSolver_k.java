@@ -208,9 +208,9 @@ public class AchroSolver_k {
             portfolio.addModel(makeModel(st));
         }*/
 
-        //portfolio.addModel(makeModel(SearchType.DEFAULT));
+        portfolio.addModel(makeModel(SearchType.DEFAULT));
         //portfolio.addModel(makeModel(SearchType.INTVAR));
-        portfolio.addModel(makeModel(SearchType.CUSTOM));
+        //portfolio.addModel(makeModel(SearchType.CUSTOM));
         //portfolio.addModel(makeModel(SearchType.GREEDY));
         //portfolio.addModel(makeModel(SearchType.ACTIVITY));
 
