@@ -49,6 +49,7 @@ public class TestSolver {
             g = GraphReader.buildGraphFromFile(resourcePath + "/" + filename);
 	    g.setUiProps();
 	    AchroSolver solver = new AchroSolver(g, false);
+        solver.setConstraintSupp(true,true,false);
 
 
 	    Instant startTime = Instant.now(); // Measure duration
@@ -207,6 +208,6 @@ public class TestSolver {
 
     @Test
     public void testContiguousUSA(){
-        testGraphFile("contiguous-usa", 11);
+        testGraphFile("contiguous-usa", 12);
     }
 }
