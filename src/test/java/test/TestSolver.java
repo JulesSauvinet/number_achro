@@ -31,12 +31,8 @@ public class TestSolver {
         System.out.println(String.format("%-30s", "File_name")
                 + String.format("%-15s", "Vertices") 
                 + String.format("%-15s", "Edges") 
-                + String.format("%-15s", "No_const (ms)")
-                + String.format("%-15s", "1stAffect (ms)")
-                + String.format("%-15s", "MaxClique (ms)")
-                + String.format("%-15s", "NValue (ms)")
-                + String.format("%-15s", "SortedNode (ms)")
-                + String.format("%-15s", "All_const (ms)"));
+                + String.format("%-15s", "w/ NValue (ms)")
+                + String.format("%-15s", "w/o NValue (ms)"));
         for (TestResult a : summary) {
             System.out.println(a.toString());
         }
@@ -76,13 +72,13 @@ public class TestSolver {
 //        results.setElapsedTimeInMsUseHeuristicNValue(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, true, false)));
 
         // Without UseHeuristicNValue
-        results.setElapsedTimeInMsUseHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, new SolverConstraints(true, true, false)));
+        results.setElapsedTimeWithoutHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, new SolverConstraints(false)));
 
         // UseHeuristicSortedNode
 //        results.setElapsedTimeInMsUseHeuristicSortedNode(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, false, true)));
 
         // All constraints
-        results.setElapsedTimeInMsAllConstraints(testGraphWithConstraints(g, expectedAchromaticNumber, new SolverConstraints(true, true, true)));
+        results.setElapsedTimeWithHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, new SolverConstraints(true)));
         summary.add(results);
     }
     
