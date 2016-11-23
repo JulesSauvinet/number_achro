@@ -3,11 +3,15 @@ package solver;
 import graphmodel.ColoredGraph;
 import java.util.List;
 import org.chocosolver.solver.Model;
+import org.chocosolver.solver.ResolutionPolicy;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.constraints.Constraint;
 import org.chocosolver.solver.exception.ContradictionException;
+import org.chocosolver.solver.objective.ObjectiveManager;
+import org.chocosolver.solver.search.limits.FailCounter;
 import org.chocosolver.solver.search.strategy.Search;
 import org.chocosolver.solver.variables.IntVar;
+import org.chocosolver.solver.variables.Variable;
 import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Node;
@@ -220,9 +224,13 @@ public class AchroSolver_k {
         solver.setNoLearning();//(true,false);
 
         long time = System.currentTimeMillis();
+
+        IntVar objective = (IntVar) model.getObjective();
+        //solver.setObjectiveManager(new ObjectiveManager(objective, ResolutionPolicy.MAXIMIZE, ));
+
         //TODO regarder les stratégies
-        //solver.setSearch(Search.defaultSearch(model),Search.domOverWDegSearch(B));//minDomLBSearch(C));
-        solver.setSearch(new CustomSearch(model));//minDomLBSearch(C));
+        solver.setSearch(Search.defaultSearch(model),Search.domOverWDegSearch(B));//minDomLBSearch(C));
+        //solver.setSearch(new CustomSearch(model)/*, Search.activityBasedSearch(B)*/);//minDomLBSearch(C));
         //solver.setSearch(Search.activityBasedSearch(B));
         //solver.setSearch(Search.inputOrderLBSearch(B));
         //HEURISTIQUE GLOUTONNE A CHOISIR DANS LA MAJORITE DES CAS!
