@@ -10,8 +10,8 @@ package test;
  * @author Bruno
  */
 public class SolverConstraints {
-    public Boolean UseConstraintFirstAffectation;
-    public Boolean UseHeuristicMaxClique;
+    public Boolean UseConstraintFirstAffectation = true;
+    public Boolean UseHeuristicMaxClique = true;
     public Boolean UseHeuristicNValue;
 
     public SolverConstraints(Boolean UseHeuristicNValue) {
