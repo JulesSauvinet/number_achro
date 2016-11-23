@@ -1,6 +1,7 @@
 package solver;
 
 import graphmodel.ColoredGraph;
+import org.chocosolver.solver.variables.IntVar;
 import utils.ColorMapping;
 
 
@@ -50,11 +51,12 @@ public class AchroSolver {
         for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
             solveur.setK(k);
 
+
             if(solveur.solve()){
                 hasBeenComplete = true;
                 System.out.println("Une solution a été trouvé pour le nombre achromatique " + k);
                 for (int i = 0; i < N ; i++) {
-                    int color = solveur.B[i].getValue();
+                    int color = ((IntVar)(solveur.bestModel.getVars()[i])).getValue();
                     //System.out.println("Le somment "+i+" a été affecté de la couleur "+ColorMapping.colorsMap[color%32]);
                     //g.getNode(i).addAttribute("ui.class", "color" + i);
 

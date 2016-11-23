@@ -3,6 +3,7 @@ package solver;
 import graphmodel.ColoredGraph;
 import java.util.List;
 import org.chocosolver.solver.Model;
+import org.chocosolver.solver.ParallelPortfolio;
 import org.chocosolver.solver.ResolutionPolicy;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.constraints.Constraint;
@@ -15,6 +16,7 @@ import org.chocosolver.solver.variables.Variable;
 import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Node;
+import scala.Int;
 
 /**
  ** Created by teamgraphe
@@ -26,9 +28,6 @@ public class AchroSolver_k {
 
     private ColoredGraph g;
     private int k;
-
-    public Model model;
-    public IntVar[] B;
 
     public int runtime;
     private int N;
@@ -75,7 +74,7 @@ public class AchroSolver_k {
     }
 
     public void setUseConstraintFirstAffectation(Boolean UseHeuristicFirstAffectation) {
-        this.UseConstraintFirstAffectation = UseConstraintFirstAffectation;
+        this.UseConstraintFirstAffectation = UseHeuristicFirstAffectation;
     }
 
     public void setUseHeuristicNValue(Boolean UseHeuristicNValue) {
@@ -92,11 +91,11 @@ public class AchroSolver_k {
     /*
     * Optimisation    
     */
-    private void ConstraintFirstAffectation(){
-        model.arithm(B[g.getSortedNodes()[0].getIndex()],"=",0).post();
+    private void ConstraintFirstAffectation(Model model, IntVar[] B){
+        model.arithm( B[g.getSortedNodes()[0].getIndex()],"=",0).post();
     }
 
-    private void heuristicMaxClique(){
+    private void heuristicMaxClique(Model model, IntVar[] B){
         for (List<Node> nodes : g.getMaximalCliques()){
             int sizeClique = nodes.size();
             IntVar[] C = model.intVarArray("the maximal clique vertices color",sizeClique, 0, Math.max(k-1,sizeClique), true);
@@ -114,14 +113,14 @@ public class AchroSolver_k {
         }
     }
 
-    private void heuristicNValue(){
+    private void heuristicNValue(Model model, IntVar[] B){
         IntVar nValues  = new FixedIntVarImpl("nValues",k,model);
         //model.atLeastNValues(B,nValues,false).post();
         model.atMostNValues(B,nValues,false).post();
         model.setObjective(Model.MAXIMIZE, nValues);
     }
 
-    private void constraintProperColoring(){
+    private void constraintProperColoring(Model model, IntVar[] B){
         // On code ici la coloration propre
         // si deux noeuds sont voisins, ils ne peuvent pas avoir la meme couleur
         for (int i = 0; i < N-1 ; i++) { // pour chaque noeud
@@ -134,7 +133,7 @@ public class AchroSolver_k {
         }
     }
 
-    private void constraintCompleteColoring(){
+    private void constraintCompleteColoring(Model model, IntVar[] B){
         // On code ici la coloration complete
         int idxN1 = 0, idxN2 = 0;
         Constraint constraint4 = null;
@@ -188,34 +187,52 @@ public class AchroSolver_k {
         }
     }
 
-    public Boolean solve(){
+    Model bestModel = null;
 
+    public Boolean solve(){
+        
         System.out.println("Recherche d'une solution pour le nombre achromatique " + k);
 
-        this.model = new Model("Complete coloring of size " + k);
-        this.B = model.intVarArray("the vertex associated with the index has the color c",N, 0,k-1, true);
+        long time = System.currentTimeMillis();
 
+        ParallelPortfolio portfolio = new ParallelPortfolio();
 
-        constraintProperColoring();
+        /*for(SearchType st : SearchType.values()){
+            portfolio.addModel(makeModel(st));
+        }*/
 
-        constraintCompleteColoring();
+        portfolio.addModel(makeModel(SearchType.DEFAULT));
 
+        Boolean res = portfolio.solve();
+        runtime =  (int)((System.currentTimeMillis()-time)/1000);
 
+        
+        if (res)
+            bestModel = portfolio.getBestModel();
+        
+        return res;
+    }
 
-        //optimisation 1
+    private Model makeModel(SearchType st) {
+        Model model;
+        model = new Model("Complete coloring of size " + k);
+        IntVar[] B = model.intVarArray("the vertex associated with the index has the color c",N, 0,k-1, true);
+
+        constraintProperColoring(model , B);
+
+        constraintCompleteColoring(model , B);
+
+        //OPTI1
         if(UseHeuristicNValue)
-            heuristicNValue();
+            heuristicNValue(model , B);
 
         //Petite OPTI on a la droit?
-        // car pas toutes les solutions avec ça et puis quand la taille augmente ca devient négligeable
         if(UseConstraintFirstAffectation)
-            ConstraintFirstAffectation();
+            ConstraintFirstAffectation(model , B);
 
-
-        //OPTI SUR Les clique max : fonctionne un petit peu..
+        //Contraintes sur les cliques
         if(UseHeuristicMaxClique)
-            heuristicMaxClique();
-
+            heuristicMaxClique(model , B);
 
         Solver solver = model.getSolver();
 
@@ -223,28 +240,31 @@ public class AchroSolver_k {
         solver.limitTime(TIME_LIMIT+"s");
         solver.setNoLearning();//(true,false);
 
-        long time = System.currentTimeMillis();
-
-        IntVar objective = (IntVar) model.getObjective();
-        //solver.setObjectiveManager(new ObjectiveManager(objective, ResolutionPolicy.MAXIMIZE, ));
 
         //TODO regarder les stratégies
-        solver.setSearch(Search.defaultSearch(model),Search.domOverWDegSearch(B));//minDomLBSearch(C));
-        //solver.setSearch(new CustomSearch(model)/*, Search.activityBasedSearch(B)*/);//minDomLBSearch(C));
-        //solver.setSearch(Search.activityBasedSearch(B));
-        //solver.setSearch(Search.inputOrderLBSearch(B));
-        //HEURISTIQUE GLOUTONNE A CHOISIR DANS LA MAJORITE DES CAS!
-        //solver.setSearch(Search.domOverWDegSearch(B));
-
-        //PROPAGATION de constraint
+        switch (st){
+            case DEFAULT:
+                solver.setSearch(Search.defaultSearch(model));
+                break;
+            case GREEDY:
+                solver.setSearch(Search.domOverWDegSearch(B));
+                break;
+            case ACTIVITY:
+                solver.setSearch(Search.activityBasedSearch(B));
+                break;
+            case MINDOM:
+                solver.setSearch(Search.minDomLBSearch(B));
+                break;
+            case CUSTOM:
+                solver.setSearch(new CustomSearch(model));
+                break;
+        }
+        //propagation de contraintes
         try {
             solver.propagate();
         } catch (ContradictionException e) {
             e.printStackTrace();
         }
-
-        Boolean res = solver.solve();
-        runtime =  (int)((System.currentTimeMillis()-time)/1000);
-        return res;
+        return model;
     }
 }
