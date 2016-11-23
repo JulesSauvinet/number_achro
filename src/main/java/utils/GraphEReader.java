@@ -1,7 +1,7 @@
 package utils;
 
 import graphmodel.ColoredGraph;
-import org.graphstream.graph.Graph;
+import graphmodel.ColoredNode;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,7 +44,8 @@ public class GraphEReader {
                 g.addNode(node2);
                 nodes.add(node2);
             }
-            g.addEdge(node1+"-"+node2,node1, node2);
+            if (!g.getNode(node1).hasEdgeBetween((ColoredNode) g.getNode(node2)))
+                g.addEdge(node1+"-"+node2,node1, node2);
         }
 
         sc.close();

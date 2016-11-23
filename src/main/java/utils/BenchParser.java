@@ -18,21 +18,34 @@ public class BenchParser {
 
             Scanner sc = new Scanner(file);
 
+            int nbGraph = 0;
             while (sc.hasNextLine()) {
 
                 String graphLine = sc.nextLine();
-                String[] graphInfos = graphLine.split(",");
-                String graphName = graphInfos[0].replaceAll("\"", "").replaceAll("\\{","").replaceAll("\\}","");
-                String content = "grge";
+                String[] graphInfos = graphLine.split("\"");
 
-                File newFile = new File(urlFile.getFile());
+                String arcs = graphInfos[2];
+                String[] edges = arcs.split("\\}, \\{");
+
+                File newFile = new File("graph"+nbGraph);
+                nbGraph++;
+
+                StringBuilder sb = new StringBuilder("");
+                for (int i =1; i< edges.length; i++){
+                    String edge = edges[i];
+                    edge = edge.replaceAll("\\{","");
+                    edge = edge.replaceAll("\\}","");
+                    edge = edge.replaceAll(",","");
+                    sb.append(edge);
+                    sb.append("\n");
+                }
                 // if file doesnt exists, then create it
                 if (!newFile.exists()) {
                     file.createNewFile();
                 }
                 FileWriter fw = new FileWriter(newFile.getAbsoluteFile());
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(content);
+                bw.write(sb.toString());
                 bw.close();
 
             }
