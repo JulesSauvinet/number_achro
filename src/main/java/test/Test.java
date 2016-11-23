@@ -13,10 +13,10 @@ import java.io.IOException;
  */
 public class Test {
 
-    static String GRAPHNAME = "benchmark/marine";
+    static String GRAPHNAME = "benchmark2/graph1";
     public static void main (String[] args) throws IOException {
         //AchroSolver.testSolver1();
-        ColoredGraph g = GraphReader.buildGraphFromFile(GRAPHNAME);
+        ColoredGraph g = GraphEReader.buildGraphFromFile(GRAPHNAME);
         g.setUiProps();
         //g.addAttribute("ui.stylesheet", Test.class.getClassLoader().getResource("colors.css"));
         //g.display();
