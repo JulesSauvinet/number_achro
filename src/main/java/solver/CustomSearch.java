@@ -18,6 +18,10 @@ public class CustomSearch extends AbstractStrategy {
     // enables to recycle decision objects (good practice)
     PoolManager<IntDecision> pool = new PoolManager();
 
+    //org.chocosolver.solver.search.strategy.selectors.variables.FirstFail
+    //        et
+    //org.chocosolver.solver.search.strategy.selectors.variables.GeneralizedMinDomVarSelector
+
     public CustomSearch(Model model){
         super(model.getVars());
     }
