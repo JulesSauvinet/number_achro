@@ -11,12 +11,19 @@ import org.chocosolver.solver.exception.ContradictionException;
 import org.chocosolver.solver.objective.ObjectiveManager;
 import org.chocosolver.solver.search.limits.FailCounter;
 import org.chocosolver.solver.search.strategy.Search;
+import org.chocosolver.solver.search.strategy.assignments.DecisionOperator;
+import org.chocosolver.solver.search.strategy.selectors.values.IntDomainMin;
+import org.chocosolver.solver.search.strategy.selectors.values.IntValueSelector;
+import org.chocosolver.solver.search.strategy.selectors.variables.FirstFail;
+import org.chocosolver.solver.search.strategy.selectors.variables.VariableSelector;
 import org.chocosolver.solver.variables.IntVar;
 import org.chocosolver.solver.variables.Variable;
 import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Node;
 import scala.Int;
+
+import static org.chocosolver.solver.search.strategy.Search.intVarSearch;
 
 /**
  ** Created by teamgraphe
@@ -201,7 +208,11 @@ public class AchroSolver_k {
             portfolio.addModel(makeModel(st));
         }*/
 
-        portfolio.addModel(makeModel(SearchType.DEFAULT));
+        //portfolio.addModel(makeModel(SearchType.DEFAULT));
+        //portfolio.addModel(makeModel(SearchType.INTVAR));
+        portfolio.addModel(makeModel(SearchType.CUSTOM));
+        //portfolio.addModel(makeModel(SearchType.GREEDY));
+        //portfolio.addModel(makeModel(SearchType.ACTIVITY));
 
         Boolean res = portfolio.solve();
         runtime =  (int)((System.currentTimeMillis()-time)/1000);
@@ -256,7 +267,33 @@ public class AchroSolver_k {
                 solver.setSearch(Search.minDomLBSearch(B));
                 break;
             case CUSTOM:
-                solver.setSearch(new CustomSearch(model));
+                solver.setSearch(intVarSearch(
+                        // variable selector
+                        (VariableSelector<IntVar>) variables -> {
+                            for(IntVar v:variables){
+                                if(!v.isInstantiated()){
+                                    return v;
+                                }
+                            }
+                            return null;
+                        },
+                        // value selector
+                        (IntValueSelector) var -> var.getLB(),
+                        // variables to branch on
+                        B
+                ));
+                break;
+            case INTVAR:
+                solver.setSearch(intVarSearch(
+                        // selects the variable of smallest domain size
+                        new FirstFail(model),
+                        // selects the smallest domain value (lower bound)
+                        new IntDomainMin(),
+                        // apply equality (var = val)
+                        DecisionOperator.int_eq,
+                        // variables to branch on
+                        B
+                ));
                 break;
         }
         //propagation de contraintes
