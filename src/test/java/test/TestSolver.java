@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
+import search.SearchType;
 import solver.AchroSolver;
 import utils.GraphEReader;
 import utils.GraphReader;
@@ -19,24 +20,35 @@ import utils.GraphReader;
 public class TestSolver {
     private static final String resourcePath = "benchmark/";
     private static final ArrayList<TestResult> summary = new ArrayList<>();
+    private static final boolean CSV_OUTPUT = false;
 
     @AfterClass
     public static void displaySummary(){
-        System.out.println("\n##################################################");
-        System.out.println(String.format("%-30s", "File_name")
-                + String.format("%-15s", "Vertices")
-                + String.format("%-15s", "Edges")
-                + String.format("%-15s", "w/ NValue (ms)")
-                + String.format("%-15s", "w/o NValue (ms)"));
-        for (TestResult a : summary) {
-            System.out.println(a.toString());
+        if(CSV_OUTPUT){
+            System.out.println("File_name;Strategy;Vertices;Edges;w/ NValue (ms);w/o NValue (ms)");
+        } else {
+            System.out.println("\n##################################################");
+            System.out.println(String.format("%-30s", "File_name")
+                    + String.format("%-15s", "Strategy")
+                    + String.format("%-15s", "Vertices")
+                    + String.format("%-15s", "Edges")
+                    + String.format("%-15s", "w/ NValue (ms)")
+                    + String.format("%-15s", "w/o NValue (ms)"));
         }
-        System.out.println("##################################################\n");
+        for (TestResult a : summary) {
+                System.out.println(a.toString(CSV_OUTPUT));
+            }
     }
 
     public void testGraphFile(String filename, int expectedAchromaticNumber){
+        testGraphFile(filename, SearchType.DEFAULT, expectedAchromaticNumber);
+        testGraphFile(filename, SearchType.GREEDY, expectedAchromaticNumber);
+        testGraphFile(filename, SearchType.MINDOM, expectedAchromaticNumber);
+        testGraphFile(filename, SearchType.MAXCONSTRAINTS, expectedAchromaticNumber);
+    }
+    public void testGraphFile(String filename, SearchType strategy, int expectedAchromaticNumber){
         System.out.println("\nTesting " + filename + "...");
-        TestResult results = new TestResult(filename);
+        TestResult results = new TestResult(filename, strategy);
 //        AchroSolver solver;
         ColoredGraph g;
         try {
