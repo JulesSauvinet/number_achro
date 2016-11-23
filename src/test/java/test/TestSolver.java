@@ -80,7 +80,7 @@ public class TestSolver {
     public long testGraphWithConstraints(ColoredGraph g, int expectedAchromaticNumber, SolverConstraints cstr){
 //    public long testGraphWithConstraints(AchroSolver solver, int expectedAchromaticNumber, SolverConstraints cstr){
         AchroSolver solver = new AchroSolver(g, false);
-        solver.setConstraintSupp(cstr.UseConstraintFirstAffectation, cstr.UseHeuristicMaxClique, cstr.UseHeuristicNValue);
+        solver.setConstraintSupp(cstr.UseConstraintFirstAffectation, false/*cstr.UseHeuristicMaxClique*/, cstr.UseHeuristicNValue);
         Instant startTime = Instant.now(); // Measure duration
 
         int achromaticNumber = solver.solve(); // Start solver
@@ -187,7 +187,7 @@ public class TestSolver {
 
     @Test
     public void testMarine(){
-        testGraphFile("marine", 7);
+        testGraphFile("marine", 6);
     }
 
     @Test

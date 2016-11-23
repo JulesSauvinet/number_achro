@@ -4,12 +4,9 @@ import graphmodel.ColoredGraph;
 import java.util.List;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.ParallelPortfolio;
-import org.chocosolver.solver.ResolutionPolicy;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.constraints.Constraint;
 import org.chocosolver.solver.exception.ContradictionException;
-import org.chocosolver.solver.objective.ObjectiveManager;
-import org.chocosolver.solver.search.limits.FailCounter;
 import org.chocosolver.solver.search.strategy.Search;
 import org.chocosolver.solver.search.strategy.assignments.DecisionOperator;
 import org.chocosolver.solver.search.strategy.selectors.values.IntDomainMin;
@@ -17,11 +14,11 @@ import org.chocosolver.solver.search.strategy.selectors.values.IntValueSelector;
 import org.chocosolver.solver.search.strategy.selectors.variables.FirstFail;
 import org.chocosolver.solver.search.strategy.selectors.variables.VariableSelector;
 import org.chocosolver.solver.variables.IntVar;
-import org.chocosolver.solver.variables.Variable;
 import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Node;
-import scala.Int;
+import search.IntValueSelect;
+import search.SearchType;
 
 import static org.chocosolver.solver.search.strategy.Search.intVarSearch;
 
@@ -217,9 +214,11 @@ public class AchroSolver_k {
         Boolean res = portfolio.solve();
         runtime =  (int)((System.currentTimeMillis()-time)/1000);
 
-        
-        if (res)
+
+        if (res){
             bestModel = portfolio.getBestModel();
+            printStat();
+        }
         
         return res;
     }
@@ -278,7 +277,7 @@ public class AchroSolver_k {
                             return null;
                         },
                         // value selector
-                        (IntValueSelector) var -> var.getLB(),
+                        new IntValueSelect(B),
                         // variables to branch on
                         B
                 ));
@@ -303,5 +302,10 @@ public class AchroSolver_k {
             e.printStackTrace();
         }
         return model;
+    }
+
+    private void printStat() {
+        bestModel.getSolver().showStatistics();
+        bestModel.getSolver().printStatistics();
     }
 }
