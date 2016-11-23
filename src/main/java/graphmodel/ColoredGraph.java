@@ -1,12 +1,10 @@
 package graphmodel;
 
-import org.graphstream.algorithm.*;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -16,7 +14,7 @@ import java.util.List;
  */
 public class ColoredGraph extends SingleGraph {
 
-    private List<Node> maximalClique = new ArrayList<Node>();
+    private List<Node> maximalClique = new ArrayList<>();
     private List<List<Node>> maximalCliques = new ArrayList<>();
     private ColoredNode[] sortedNodes;
 
@@ -53,8 +51,26 @@ public class ColoredGraph extends SingleGraph {
 
     public void setUiProps() {
         System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
-        //this.addAttribute("ui.stylesheet", "graph { fill-color: red; }");
-        this.addAttribute("ui.stylesheet", "node { size: 18px; }");
+        this.addAttribute("ui.stylesheet", "graph { fill-color: white;\n" +
+                "canvas-color: black;\n" +
+                "fill-mode: gradient-vertical;\n" +
+                "/*fill-color: black, #004;*/\n" +
+                "padding: 40px; } " + "\n" +
+                "node { size: 18px; fill-mode :gradient-horizontal; shadow-mode: gradient-radial;\n" +
+                "shadow-color: #FFF5, #FFF0;\n" +
+                "shadow-width: 3px;\n" +
+                "shadow-offset: 3px, 3px;}" + "\n" +
+                "edge { /*shape: L-square-line;*/\n" +
+                "size: 1px;\n" +
+                "fill-color: black;\n" +
+                "fill-mode: plain;\n" +
+                "arrow-shape: none;}" +
+                "\n" +
+                "sprite {\n" +
+                "shape: circle;\n" +
+                "fill-mode: gradient-radial;\n" +
+                "fill-color: #FFF8, #FFF0;\n" +
+                "}\n");
     }
 
     public java.util.List<Node> getMaximalClique() {

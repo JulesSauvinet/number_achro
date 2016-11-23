@@ -1,13 +1,8 @@
 package solver;
 
 import graphmodel.ColoredGraph;
-import graphmodel.ColoredNode;
-import org.graphstream.algorithm.Toolkit;
-import org.graphstream.graph.Node;
-import org.graphstream.graph.implementations.SingleGraph;
 import utils.ColorMapping;
 
-import java.util.*;
 
 /**
  * * Created by teamgraphe
@@ -26,7 +21,7 @@ import java.util.*;
 public class AchroSolver {
 
     private final static int TIME_LIMIT = 60;
-    private AchroSolverk solveur;
+    private AchroSolver_k solveur;
     private boolean hasBeenComplete = false;
     private Integer bInfNbAchro = 0;
     private Integer bSupNbAchro;
@@ -41,15 +36,14 @@ public class AchroSolver {
             //La borne sup est le nombre de noeud (grossier)
             this.bSupNbAchro = g.getNodeSet().size();
             this.bInfNbAchro = g.getMaximalClique().size();
-            this.solveur = new AchroSolverk(g, UHSN);
+            this.solveur = new AchroSolver_k(g, UHSN);
         }
     
-    public void SetContrainteSuplementaires(Boolean UseConstraintFirstAffectation, Boolean UseHeuristicMaxClique, 
-                               Boolean UseHeuristicNValue, Boolean UseHeuristicSortedNode ){
+    public void setConstraintSupp(Boolean UseConstraintFirstAffectation, Boolean UseHeuristicMaxClique, 
+                               Boolean UseHeuristicNValue){
         solveur.setUseConstraintFirstAffectation(UseConstraintFirstAffectation);
         solveur.setUseHeuristicMaxClique(UseHeuristicMaxClique);
         solveur.setUseHeuristicNValue(UseHeuristicNValue);
-        solveur.setUseHeuristicSortedNode(UseHeuristicSortedNode);
     }
     
     public int solve(){
@@ -99,9 +93,6 @@ public class AchroSolver {
                         int nbachro = k - 1;
                         System.out.println("Le nombre achromatique du graphe est " + "egal a " + nbachro);
                         return nbachro;
-                    } else if (k == bSupNbAchro) {
-                        System.out.println("Le graphe n'admet pas de coloration complete");
-                        return -1;
                     }
                 }
             }
