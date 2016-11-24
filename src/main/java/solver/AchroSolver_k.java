@@ -272,6 +272,38 @@ public class AchroSolver_k {
                         // variables to branch on
                         B
                 ), Search.defaultSearch(model));
+            case MAXCONS_RAND:
+                solver.setSearch(intVarSearch(
+                        // variable selector
+                        (VariableSelector<IntVar>) variables -> {
+                            int maxCount = Integer.MIN_VALUE;
+                            int maxVar = -1;
+                            for(int i = 0; i < variables.length; i++){
+                                if(!variables[i].isInstantiated()){
+                                    int countInstanciatedNeighbours = 0;
+                                    for (int j = 0; j < variables.length; j++) {
+                                        if(i != j && matAdj[i][j] == 1 && variables[j].isInstantiated()){
+                                            countInstanciatedNeighbours++;
+                                        }
+                                    }
+                                    if(countInstanciatedNeighbours > maxCount){
+                                        maxCount = countInstanciatedNeighbours;
+                                        maxVar = i;
+                                    }
+                                }
+                            }
+                            if(maxVar != -1){
+                                return variables[maxVar];
+                            } else{
+                                return null;
+                            }
+                        },
+                        // value selector
+                        new IntDomainRandom(242353595353L),
+
+                        // variables to branch on
+                        B
+                ), Search.defaultSearch(model));
         }
         //propagation de contraintes
         try {
