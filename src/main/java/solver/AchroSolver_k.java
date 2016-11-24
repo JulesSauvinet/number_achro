@@ -220,7 +220,7 @@ public class AchroSolver_k {
 
         if (res){
             bestModel = portfolio.getBestModel();
-            printStat();
+            //printStat();
         }
         
         return res;

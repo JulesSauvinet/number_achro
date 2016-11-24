@@ -44,7 +44,6 @@ public class IntValueSelect implements IntValueSelector {
             List<Integer> keys = new ArrayList(valuesAffected.keySet());
             Collections.shuffle(keys);
             for (Integer o : keys) {
-                // Access keys/values in a random order
                 if (valuesAffected.get(o) <= valuesAffected.get(minvalue)){
                     minvalue=o;
                 }
