@@ -21,7 +21,7 @@ public class TestSolver {
     private static final String resourcePath = "benchmark/";
     private static final ArrayList<TestResult> summary = new ArrayList<>();
     private static final boolean CSV_OUTPUT = false;
-    private static final boolean ASSERT = false;
+    private static final boolean ASSERT = true;
 
     @AfterClass
     public static void displaySummary(){
@@ -46,7 +46,7 @@ public class TestSolver {
         testGraphFile(filename, SearchType.DEFAULT, expectedAchromaticNumber);
         //testGraphFile(filename, SearchType.GREEDY, expectedAchromaticNumber);
         //testGraphFile(filename, SearchType.MINDOM, expectedAchromaticNumber);
-        testGraphFile(filename, SearchType.MAXCONSTRAINTS, expectedAchromaticNumber);
+        //testGraphFile(filename, SearchType.MAXCONSTRAINTS, expectedAchromaticNumber);
     }
 
     public void testGraphFile(String filename, SearchType strategy, int expectedAchromaticNumber){
@@ -84,8 +84,9 @@ public class TestSolver {
 //        results.setElapsedTimeInMsUseHeuristicSortedNode(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, false, true)));
 
         // All constraints
-        results.setElapsedTimeWithHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, true));
+        //results.setElapsedTimeWithHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, true));
         summary.add(results);
+        g.display();
     }
     
     public long testGraphWithConstraints(ColoredGraph g, int expectedAchromaticNumber, boolean useNvalueHeuristic){
@@ -201,7 +202,7 @@ public class TestSolver {
 
     @Test
     public void testMarine(){
-        testGraphFile("marine", 6);
+        testGraphFile("marine", 7);
     }
 
     @Test
@@ -246,7 +247,7 @@ public class TestSolver {
 
     @Test
     public void testContiguousUSA(){
-        testGraphFile("contiguous-usa", 12);
+        testGraphFile("contiguous-usa", 11);
     }
 
 //    @Test
