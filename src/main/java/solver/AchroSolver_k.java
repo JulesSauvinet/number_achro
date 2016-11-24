@@ -8,10 +8,14 @@ import org.chocosolver.solver.Model;
 import org.chocosolver.solver.ParallelPortfolio;
 import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.constraints.Constraint;
+import org.chocosolver.solver.constraints.Propagator;
+import org.chocosolver.solver.constraints.nary.nValue.PropAtMostNValues;
+import org.chocosolver.solver.constraints.nary.nValue.PropAtMostNValues_BC;
 import org.chocosolver.solver.exception.ContradictionException;
 import org.chocosolver.solver.search.strategy.Search;
 import org.chocosolver.solver.search.strategy.assignments.DecisionOperator;
 import org.chocosolver.solver.search.strategy.selectors.values.IntDomainMin;
+import org.chocosolver.solver.search.strategy.selectors.values.IntDomainRandom;
 import org.chocosolver.solver.search.strategy.selectors.values.IntValueSelector;
 import org.chocosolver.solver.search.strategy.selectors.variables.FirstFail;
 import org.chocosolver.solver.search.strategy.selectors.variables.VariableSelector;
@@ -20,6 +24,7 @@ import org.chocosolver.solver.variables.Variable;
 import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Node;
+import search.CustomSearch;
 import search.IntValueSelect;
 import search.SearchType;
 
@@ -31,7 +36,7 @@ import static org.chocosolver.solver.search.strategy.Search.intVarSearch;
  */
 public class AchroSolver_k {
 
-    private final static int TIME_LIMIT = 10;
+    private final static int TIME_LIMIT = 60;
 
     private ColoredGraph g;
     private int k;
@@ -39,8 +44,6 @@ public class AchroSolver_k {
     public int runtime;
     private int N;
     private int[][] matAdj;
-    public Integer[] mapping;
-    public Integer[] mappingInv;
 
     Boolean UseHeuristicMaxClique = true;
     Boolean UseHeuristicNValue = true;
@@ -81,8 +84,8 @@ public class AchroSolver_k {
 
     private void heuristicNValue(Model model, IntVar[] B){
         IntVar nValues  = new FixedIntVarImpl("nValues",k,model);
-        //model.atLeastNValues(B,nValues,false).post();
-        model.atMostNValues(B,nValues,false).post();
+        model.atLeastNValues(B,nValues,true).post();
+        model.atMostNValues(B,nValues,true).post();
         model.setObjective(Model.MAXIMIZE, nValues);
     }
 
@@ -221,21 +224,7 @@ public class AchroSolver_k {
                 solver.setSearch(Search.minDomLBSearch(B));
                 break;
             case CUSTOM:
-                solver.setSearch(intVarSearch(
-                        // variable selector
-                        (VariableSelector<IntVar>) variables -> {
-                            for(IntVar v:variables){
-                                if(!v.isInstantiated()){
-                                    return v;
-                                }
-                            }
-                            return null;
-                        },
-                        // value selector
-                        new IntValueSelect(B),
-                        // variables to branch on
-                        B
-                ));
+                solver.setSearch(new CustomSearch(model));
                 break;
             case INTVAR:
                 solver.setSearch(intVarSearch(
@@ -276,7 +265,7 @@ public class AchroSolver_k {
                             }
                         },
                         // value selector
-                        new IntValueSelect(B),
+                        new IntDomainRandom(242353595353L),
                         // variables to branch on
                         B
                 ), Search.defaultSearch(model));

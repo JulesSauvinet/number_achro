@@ -22,7 +22,7 @@ import utils.ColorMapping;
 
 public class AchroSolver {
 
-    private final static int TIME_LIMIT = 30;
+    private final static int TIME_LIMIT = 60;
     private AchroSolver_k solveur;
     private boolean hasBeenComplete = false;
     private Integer bInfNbAchro = 0;
@@ -41,7 +41,7 @@ public class AchroSolver {
             this.solveur = new AchroSolver_k(g);
         }
 
-        
+
     public void setConstraintSupp(Boolean UseHeuristicMaxClique,
                                   Boolean UseHeuristicNValue){
         solveur.setUseHeuristicMaxClique(UseHeuristicMaxClique);
@@ -54,7 +54,6 @@ public class AchroSolver {
     public int solve(SearchType st){
         for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
             solveur.setK(k);
-
 
             if(solveur.solve(st)){
                 hasBeenComplete = true;

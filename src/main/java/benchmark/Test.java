@@ -1,6 +1,7 @@
 package benchmark;
 
 import graphmodel.ColoredGraph;
+import search.SearchType;
 import solver.AchroSolver;
 import utils.GraphEReader;
 
@@ -12,7 +13,7 @@ import java.io.IOException;
  */
 public class Test {
 
-    static String GRAPHNAME = "benchmark/graph1";
+    static String GRAPHNAME = "benchmark/marine";
     public static void main (String[] args) throws IOException {
         //AchroSolver.testSolver1();
         ColoredGraph g = GraphEReader.buildGraphFromFile(GRAPHNAME);
@@ -21,7 +22,9 @@ public class Test {
         //g.display();
 
         AchroSolver solver = new AchroSolver(g);
-        int achroNumber = solver.solve();
+        solver.setConstraintSupp(false,true);
+        int achroNumber = solver.solve(SearchType.MAXCONSTRAINTS);
+
         System.out.println("Achromatic number : " + achroNumber);
         g.display();
     }
