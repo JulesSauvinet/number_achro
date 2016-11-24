@@ -25,16 +25,18 @@ public class CustomSearch extends AbstractStrategy {
     public CustomSearch(Model model){
         super(model.getVars());
     }
+    
     @Override
     public Decision getDecision() {
         IntDecision d = pool.getE();
-        if(d==null) d = new IntDecision(pool);
+        if(d == null) 
+            d = new IntDecision(pool);
         IntVar next = null;
 
         Map<Integer,Integer> valuesAffected = new HashMap();
         for(Variable v : vars){
             IntVar iv = (IntVar) v;
-            if(!v.isInstantiated()){
+            if(!v.isInstantiated()) {
                 next = iv; break;
             }
             else{
@@ -45,12 +47,14 @@ public class CustomSearch extends AbstractStrategy {
                 }
             }
         }
-        if(next == null){
+        if(next == null) {
             return null;
-        }else {// next decision is assigning nextVar to its lower bound
+        }
+        else {
+            // next decision is assigning nextVar to its lower bound
             Set<Integer> valuesToAffect = new HashSet();
             for (int i = next.getLB();i<=next.getUB();i++){
-                Integer I = new Integer(i);
+                Integer I = i;
                 if (!valuesAffected.containsKey(I))
                     valuesToAffect.add(I);
             }

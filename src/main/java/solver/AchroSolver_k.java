@@ -195,8 +195,12 @@ public class AchroSolver_k {
     }
 
     Model bestModel = null;
-
+    
     public Boolean solve(){
+        return solve(SearchType.DEFAULT);
+    }
+
+    public Boolean solve(SearchType strategy){
         
         System.out.println("Recherche d'une solution pour le nombre achromatique " + k);
 
@@ -208,11 +212,7 @@ public class AchroSolver_k {
             portfolio.addModel(makeModel(st));
         }*/
 
-        portfolio.addModel(makeModel(SearchType.DEFAULT));
-        //portfolio.addModel(makeModel(SearchType.INTVAR));
-        //portfolio.addModel(makeModel(SearchType.CUSTOM));
-        //portfolio.addModel(makeModel(SearchType.GREEDY));
-        //portfolio.addModel(makeModel(SearchType.ACTIVITY));
+        portfolio.addModel(makeModel(strategy));
 
         Boolean res = portfolio.solve();
         runtime =  (int)((System.currentTimeMillis()-time)/1000);
@@ -297,6 +297,37 @@ public class AchroSolver_k {
                         B
                 ));
                 break;
+            case MAXCONSTRAINTS:
+                solver.setSearch(intVarSearch(
+                        // variable selector
+                        (VariableSelector<IntVar>) variables -> {
+                            int maxCount = Integer.MIN_VALUE;
+                            int maxVar = -1;
+                            for(int i = 0; i < variables.length; i++){
+                                if(!variables[i].isInstantiated()){
+                                    int countInstanciatedNeighbours = 0;
+                                    for (int j = 0; j < variables.length; j++) {
+                                        if(i != j && matAdj[i][j] == 1 && variables[j].isInstantiated()){
+                                            countInstanciatedNeighbours++;
+                                        }
+                                    }
+                                    if(countInstanciatedNeighbours > maxCount){
+                                        maxCount = countInstanciatedNeighbours;
+                                        maxVar = i;
+                                    }
+                                }
+                            }
+                            if(maxVar != -1){
+                                return variables[maxVar];
+                            } else{
+                                return null;
+                            }
+                        },
+                        // value selector
+                        new IntValueSelect(B),
+                        // variables to branch on
+                        B
+                ), Search.defaultSearch(model));
         }
         //propagation de contraintes
         try {

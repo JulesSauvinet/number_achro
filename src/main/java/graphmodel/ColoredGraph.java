@@ -14,8 +14,14 @@ import java.util.List;
  */
 public class ColoredGraph extends SingleGraph {
 
+    // La clique maximale du graphe
     private List<Node> maximalClique = new ArrayList<>();
-    private List<List<Node>> maximalCliques = new ArrayList<>();
+    
+    // La liste de toutes les clique maximales accessibles à partir de chaque noeud du graphe
+    // on récupère la plus grande pour maximalClique
+    private List<List<Node>> maximalesCliques = new ArrayList<>();
+    
+    // Tableau des noeuds du graphe ordonnes par ordre decroissant de leur degre
     private ColoredNode[] sortedNodes;
 
     public ColoredGraph(String name) {
@@ -23,10 +29,25 @@ public class ColoredGraph extends SingleGraph {
         setNodeFactory((String id1, Graph graph) -> new ColoredNode(graph, id1));
     }
 
+    public java.util.List<Node> getMaximalClique() {
+        return maximalClique;
+    }
+
+    public ColoredNode[] getSortedNodes() {
+        return sortedNodes;
+    }
+
+    public java.util.List<java.util.List<Node>> getMaximalCliques() {
+        return maximalesCliques;
+    }
+
+    // cette fonction inialise nos donnees utiles a l'optimisation de la recherche
     public void buildGraph() {
         int N = this.getNodeCount();
         sortedNodes = new ColoredNode[N];
-        int cpt=0;
+        int cpt = 0;
+        
+        // on remplit notre tableau de noeuds que l'on trie ensuite
         for (Node node : this.getNodeSet()){
             sortedNodes[cpt]=(ColoredNode) node;
             cpt++;
@@ -41,8 +62,10 @@ public class ColoredGraph extends SingleGraph {
             return 0;
         });
 
+        // on recupere ici toutes les cliques maximales du graphe
+        // en faisant une recherche de taille maximale pour maximalClique
         for (List<Node> clique : Toolkit.getMaximalCliques(this)) {
-            this.maximalCliques.add(clique);
+            this.maximalesCliques.add(clique);
             //System.out.println("maxclique"+ clique.size());
             if (clique.size() > this.maximalClique.size())
                 this.maximalClique = clique;
@@ -71,17 +94,5 @@ public class ColoredGraph extends SingleGraph {
                 "fill-mode: gradient-radial;\n" +
                 "fill-color: #FFF8, #FFF0;\n" +
                 "}\n");
-    }
-
-    public java.util.List<Node> getMaximalClique() {
-        return maximalClique;
-    }
-
-    public ColoredNode[] getSortedNodes() {
-        return sortedNodes;
-    }
-
-    public java.util.List<java.util.List<Node>> getMaximalCliques() {
-        return maximalCliques;
     }
 }
