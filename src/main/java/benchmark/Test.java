@@ -3,6 +3,7 @@ package benchmark;
 import graphmodel.ColoredGraph;
 import search.SearchType;
 import solver.AchroSolver;
+import solver.exception.SolverTimeOutException;
 import utils.GraphEReader;
 
 import java.io.IOException;
@@ -14,7 +15,7 @@ import java.io.IOException;
 public class Test {
 
     static String GRAPHNAME = "benchmark/marine";
-    public static void main (String[] args) throws IOException {
+    public static void main (String[] args) throws IOException, SolverTimeOutException {
         //AchroSolver.testSolver1();
         ColoredGraph g = GraphEReader.buildGraphFromFile(GRAPHNAME);
         g.setUiProps();

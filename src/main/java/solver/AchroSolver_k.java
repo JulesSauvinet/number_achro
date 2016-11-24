@@ -29,6 +29,7 @@ import search.IntValueSelect;
 import search.SearchType;
 
 import static org.chocosolver.solver.search.strategy.Search.intVarSearch;
+import org.chocosolver.solver.search.strategy.selectors.values.IntDomainRandom;
 
 /**
  ** Created by teamgraphe
@@ -265,7 +266,9 @@ public class AchroSolver_k {
                             }
                         },
                         // value selector
-                        new IntDomainRandom(242353595353L),
+                        //new IntDomainRandom(242353595353L),
+                        new IntValueSelect(B),
+
                         // variables to branch on
                         B
                 ), Search.defaultSearch(model));

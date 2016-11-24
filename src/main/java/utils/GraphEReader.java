@@ -36,21 +36,23 @@ public class GraphEReader {
             String line = sc.nextLine();
             if(line.length() > 2){
                 String[] edge = line.split(" ");
-                String node1=edge[0];
-                String node2=edge[1];
+                if(edge.length > 1){
+                    String node1=edge[0];
+                    String node2=edge[1];
 
-                if (!nodes.contains(node1)){
-                    g.addNode(node1);
-                    nodes.add(node1);
-                }
+                    if (!nodes.contains(node1)){
+                        g.addNode(node1);
+                        nodes.add(node1);
+                    }
 
-                if (!nodes.contains(node2)){
-                    g.addNode(node2);
-                    nodes.add(node2);
+                    if (!nodes.contains(node2)){
+                        g.addNode(node2);
+                        nodes.add(node2);
+                    }
+                    if (!g.getNode(node1).hasEdgeBetween((ColoredNode) g.getNode(node2)))
+                        g.addEdge(node1+"-"+node2,node1, node2);
+                    }
                 }
-                if (!g.getNode(node1).hasEdgeBetween((ColoredNode) g.getNode(node2)))
-                    g.addEdge(node1+"-"+node2,node1, node2);
-            }
             }
 
         sc.close();

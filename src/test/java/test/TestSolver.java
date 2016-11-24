@@ -6,11 +6,14 @@ import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
 import search.SearchType;
 import solver.AchroSolver;
+import solver.exception.SolverTimeOutException;
 import utils.GraphEReader;
 
 /**
@@ -44,7 +47,7 @@ public class TestSolver {
 
     public void testGraphFile(String filename, int expectedAchromaticNumber){
         testGraphFile(filename, SearchType.DEFAULT, expectedAchromaticNumber);
-        //testGraphFile(filename, SearchType.GREEDY, expectedAchromaticNumber);
+//        testGraphFile(filename, SearchType.GREEDY, expectedAchromaticNumber);
         //testGraphFile(filename, SearchType.MINDOM, expectedAchromaticNumber);
         //testGraphFile(filename, SearchType.MAXCONSTRAINTS, expectedAchromaticNumber);
     }
@@ -65,44 +68,39 @@ public class TestSolver {
         results.setNbEdges(g.getEdgeCount());
         results.setNbVertices(g.getNodeCount());
 
-        // No constraint
-//        results.setElapsedTimeInMsNoConstraint(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, false, false)));
-
-        // UseConstraintFirstAffectation
-//        results.setElapsedTimeInMsUseConstraintFirstAffectation(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(true, false, false, false)));
-
-        // UseHeuristicMaxClique
-//        results.setElapsedTimeInMsUseHeuristicMaxClique(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, true, false, false)));
-
-//        // UseHeuristicNValue
-//        results.setElapsedTimeInMsUseHeuristicNValue(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, true, false)));
-
         // Without UseHeuristicNValue
-        results.setElapsedTimeWithoutHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, false));
-
-        // UseHeuristicSortedNode
-//        results.setElapsedTimeInMsUseHeuristicSortedNode(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, false, true)));
+        long[] resNoNvalue = testGraphWithConstraints(g, expectedAchromaticNumber, strategy, false);
+        results.setElapsedTimeWithoutHeuristicNValue(resNoNvalue[0]);
+        results.setNbAchro((int)resNoNvalue[1]);
 
         // All constraints
-        //results.setElapsedTimeWithHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, true));
+        long[] resNvalue = testGraphWithConstraints(g, expectedAchromaticNumber, strategy, true);
+        results.setElapsedTimeWithHeuristicNValue(resNvalue[0]);
+        results.setNbAchro((int)resNvalue[1]);
         summary.add(results);
-        g.display();
     }
     
-    public long testGraphWithConstraints(ColoredGraph g, int expectedAchromaticNumber, boolean useNvalueHeuristic){
+    public long[] testGraphWithConstraints(ColoredGraph g, int expectedAchromaticNumber, SearchType strategy, boolean useNvalueHeuristic){
 //    public long testGraphWithConstraints(AchroSolver solver, int expectedAchromaticNumber, SolverConstraints cstr){
         AchroSolver solver = new AchroSolver(g);
         solver.setConstraintSupp(true, useNvalueHeuristic);
         Instant startTime = Instant.now(); // Measure duration
 
-        int achromaticNumber = solver.solve(); // Start solver
-        if(ASSERT){
+        int achromaticNumber = 0;
+        try {
+            achromaticNumber = solver.solve(strategy); // Start solver
+            
+            if(ASSERT){
             String nvalueUsed = useNvalueHeuristic?"w/ Nvalue":"w/o Nvalue";
             Assert.assertEquals("[" + nvalueUsed + "] Achromatic number differs from expected value", expectedAchromaticNumber, achromaticNumber);
         }
+        } catch (SolverTimeOutException ex) {
+            Assert.fail(ex.getMessage());
+        }
+        
 
         Instant stopTime = Instant.now(); // Measure duration
-        return Duration.between(startTime, stopTime).toMillis();
+        return new long[]{Duration.between(startTime, stopTime).toMillis(), achromaticNumber};
     }
 
     @Test
@@ -170,11 +168,11 @@ public class TestSolver {
         testGraphFile("k15", 15);
     }
 
-//    @Test
-//    public void testK16(){
-//	testGraphFile("k16", 16);
-//    }
-//    
+    @Test
+    public void testK16(){
+	testGraphFile("k16", 16);
+    }
+    
 //    @Test
 //    public void testK17(){
 //	testGraphFile("k17", 17);
