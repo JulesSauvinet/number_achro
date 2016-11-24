@@ -196,9 +196,6 @@ public class AchroSolver_k {
 
     Model bestModel = null;
     
-    public Boolean solve(){
-        return solve(SearchType.DEFAULT);
-    }
 
     public Boolean solve(SearchType strategy){
         

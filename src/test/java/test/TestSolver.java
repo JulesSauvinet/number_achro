@@ -1,6 +1,5 @@
 package test;
 
-import benchmark.SolverConstraints;
 import benchmark.TestResult;
 import graphmodel.ColoredGraph;
 import java.io.IOException;
@@ -78,25 +77,26 @@ public class TestSolver {
 //        results.setElapsedTimeInMsUseHeuristicNValue(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, true, false)));
 
         // Without UseHeuristicNValue
-        results.setElapsedTimeWithoutHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, new SolverConstraints(false)));
+        results.setElapsedTimeWithoutHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, false));
 
         // UseHeuristicSortedNode
 //        results.setElapsedTimeInMsUseHeuristicSortedNode(testGraphWithConstraints(solver, expectedAchromaticNumber, new SolverConstraints(false, false, false, true)));
 
         // All constraints
-        results.setElapsedTimeWithHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, new SolverConstraints(true)));
+        results.setElapsedTimeWithHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, true));
         summary.add(results);
     }
 
-    public long testGraphWithConstraints(ColoredGraph g, int expectedAchromaticNumber, SolverConstraints cstr){
+    public long testGraphWithConstraints(ColoredGraph g, int expectedAchromaticNumber, boolean useNvalueHeuristic){
 //    public long testGraphWithConstraints(AchroSolver solver, int expectedAchromaticNumber, SolverConstraints cstr){
         AchroSolver solver = new AchroSolver(g, true);
-        solver.setConstraintSupp(cstr.UseConstraintFirstAffectation, cstr.UseHeuristicMaxClique, cstr.UseHeuristicNValue);
+        solver.setConstraintSupp(true, useNvalueHeuristic);
         Instant startTime = Instant.now(); // Measure duration
 
         int achromaticNumber = solver.solve(); // Start solver
         if(ASSERT){
-            Assert.assertEquals("[" + cstr.toString() + "] Achromatic number differs from expected value", expectedAchromaticNumber, achromaticNumber);
+            String nvalueUsed = useNvalueHeuristic?"w/ Nvalue":"w/o Nvalue";
+            Assert.assertEquals("[" + nvalueUsed + "] Achromatic number differs from expected value", expectedAchromaticNumber, achromaticNumber);
         }
 
         Instant stopTime = Instant.now(); // Measure duration
