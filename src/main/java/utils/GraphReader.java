@@ -9,7 +9,8 @@ import java.util.Scanner;
 
 /**
  * Created by jules on 16/11/2016.
- * Cette classe permet de lire nos fichiers de donnees et ainsi charger un graphe
+ * Cette classe permet de parser les fichiers de notre benchmark1
+ * Nous listons le nombre de sommets et les sommets, le nombre d'arcs et les arcs de graphe
  */
 public class GraphReader {
     public static ColoredGraph buildGraphFromFile(String fileName) throws IOException, NullPointerException {
