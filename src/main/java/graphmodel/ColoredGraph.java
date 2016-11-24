@@ -29,6 +29,18 @@ public class ColoredGraph extends SingleGraph {
         setNodeFactory((String id1, Graph graph) -> new ColoredNode(graph, id1));
     }
 
+    public java.util.List<Node> getMaximalClique() {
+        return maximalClique;
+    }
+
+    public ColoredNode[] getSortedNodes() {
+        return sortedNodes;
+    }
+
+    public java.util.List<java.util.List<Node>> getMaximalCliques() {
+        return maximalesCliques;
+    }
+
     // cette fonction inialise nos donnees utiles a l'optimisation de la recherche
     public void buildGraph() {
         int N = this.getNodeCount();
@@ -82,17 +94,5 @@ public class ColoredGraph extends SingleGraph {
                 "fill-mode: gradient-radial;\n" +
                 "fill-color: #FFF8, #FFF0;\n" +
                 "}\n");
-    }
-
-    public java.util.List<Node> getMaximalClique() {
-        return maximalClique;
-    }
-
-    public ColoredNode[] getSortedNodes() {
-        return sortedNodes;
-    }
-
-    public java.util.List<java.util.List<Node>> getMaximalCliques() {
-        return maximalesCliques;
     }
 }
