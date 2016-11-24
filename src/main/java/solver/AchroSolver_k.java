@@ -24,6 +24,7 @@ import search.IntValueSelect;
 import search.SearchType;
 
 import static org.chocosolver.solver.search.strategy.Search.intVarSearch;
+import org.chocosolver.solver.search.strategy.selectors.values.IntDomainRandom;
 
 /**
  ** Created by teamgraphe
@@ -31,7 +32,7 @@ import static org.chocosolver.solver.search.strategy.Search.intVarSearch;
  */
 public class AchroSolver_k {
 
-    private final static int TIME_LIMIT = 10;
+    private final static int TIME_LIMIT = 30;
 
     private ColoredGraph g;
     private int k;
@@ -277,6 +278,7 @@ public class AchroSolver_k {
                         },
                         // value selector
                         new IntValueSelect(B),
+//                        new IntDomainRandom(3674241975l),
                         // variables to branch on
                         B
                 ), Search.defaultSearch(model));
