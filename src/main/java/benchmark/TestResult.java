@@ -18,6 +18,7 @@ public class TestResult {
     private SearchType strategy;
     private int nbVertices;
     private int nbEdges;
+    private int nbAchro;
 
     public TestResult(String filename, SearchType strategy) {
         this.filename = filename;
@@ -63,6 +64,22 @@ public class TestResult {
     public void setElapsedTimeWithoutHeuristicNValue(long elapsedTimeWithoutHeuristicNValue) {
         this.elapsedTimeWithoutHeuristicNValue = elapsedTimeWithoutHeuristicNValue;
     }
+
+    public SearchType getStrategy() {
+        return strategy;
+    }
+
+    public void setStrategy(SearchType strategy) {
+        this.strategy = strategy;
+    }
+
+    public int getNbAchro() {
+        return nbAchro;
+    }
+
+    public void setNbAchro(int nbAchro) {
+        this.nbAchro = nbAchro;
+    }
     
     public String toString(boolean csvOutput){
         if(csvOutput){
@@ -70,6 +87,7 @@ public class TestResult {
                     strategy.name() + ";" + 
                     nbVertices + ";" + 
                     nbEdges + ";" + 
+                    nbAchro + ";" + 
                     elapsedTimeWithoutHeuristicNValue + ";" + 
                     elapsedTimeWithHeuristicNValue;
 
@@ -83,6 +101,7 @@ public class TestResult {
                 + String.format("%-15s", strategy.name())
                 + String.format("%-15s", nbVertices)
                 + String.format("%-15s", nbEdges)
+                + String.format("%-15s", nbAchro)
                 + String.format("%-15s", elapsedTimeWithoutHeuristicNValue)
                 + String.format("%-15s", elapsedTimeWithHeuristicNValue);
 	
