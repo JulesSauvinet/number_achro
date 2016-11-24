@@ -12,7 +12,7 @@ public class BenchParser {
     public static void main(String[] args) throws FileNotFoundException {
         try {
             String fileName = "mathematica/graphs";
-            ClassLoader classLoader = GraphReader.class.getClassLoader();
+            ClassLoader classLoader = BenchParser.class.getClassLoader();
             URL urlFile = classLoader.getResource(fileName);
             File file = new File(urlFile.getFile()); // Throws NullPointerException if file does not exist
 
