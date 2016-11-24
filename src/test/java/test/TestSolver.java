@@ -13,7 +13,6 @@ import org.junit.Test;
 import search.SearchType;
 import solver.AchroSolver;
 import utils.GraphEReader;
-import utils.GraphReader;
 
 /**
  *
@@ -45,10 +44,11 @@ public class TestSolver {
 
     public void testGraphFile(String filename, int expectedAchromaticNumber){
         testGraphFile(filename, SearchType.DEFAULT, expectedAchromaticNumber);
-        testGraphFile(filename, SearchType.GREEDY, expectedAchromaticNumber);
-        testGraphFile(filename, SearchType.MINDOM, expectedAchromaticNumber);
+        //testGraphFile(filename, SearchType.GREEDY, expectedAchromaticNumber);
+        //testGraphFile(filename, SearchType.MINDOM, expectedAchromaticNumber);
         testGraphFile(filename, SearchType.MAXCONSTRAINTS, expectedAchromaticNumber);
     }
+
     public void testGraphFile(String filename, SearchType strategy, int expectedAchromaticNumber){
         System.out.println("\nTesting " + filename + "...");
         TestResult results = new TestResult(filename, strategy);

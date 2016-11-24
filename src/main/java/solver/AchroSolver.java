@@ -66,13 +66,6 @@ public class AchroSolver {
                         g.getNode(i).addAttribute("ui.style", "fill-color: " + ColorMapping.colorsMap[color%32]+";");
                 }
 
-                //Affichage personnalise selon le graphe
-                //clebshLayout(g);
-                //Affichage de toutes les solutions : nécessaire?
-                //solver.findAllSolutions();
-                //solver.showSolutions();
-                //solver.showStatistics();
-
                 //Affichage en continu
                 // g.display();
                 if (k==bSupNbAchro){
