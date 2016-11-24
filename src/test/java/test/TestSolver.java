@@ -48,8 +48,9 @@ public class TestSolver {
     public void testGraphFile(String filename, int expectedAchromaticNumber){
         testGraphFile(filename, SearchType.DEFAULT, expectedAchromaticNumber);
 //        testGraphFile(filename, SearchType.GREEDY, expectedAchromaticNumber);
-        //testGraphFile(filename, SearchType.MINDOM, expectedAchromaticNumber);
-        //testGraphFile(filename, SearchType.MAXCONSTRAINTS, expectedAchromaticNumber);
+//        testGraphFile(filename, SearchType.MINDOM, expectedAchromaticNumber);
+        testGraphFile(filename, SearchType.MAXCONS_RAND, expectedAchromaticNumber);
+        testGraphFile(filename, SearchType.MAXCONSTRAINTS, expectedAchromaticNumber);
     }
 
     public void testGraphFile(String filename, SearchType strategy, int expectedAchromaticNumber){
@@ -248,11 +249,11 @@ public class TestSolver {
         testGraphFile("contiguous-usa", 11);
     }
 
-//    @Test
-//    public void testGraphs(){
-//        for (int i = 0; i < 100; i++) {
-//            if (i != 59 && i != 60)
-//                testGraphFile("graph" + i, -2);
-//        }
-//    }
+    @Test
+    public void testGraphs(){
+        for (int i = 0; i < 100; i++) {
+            if (i != 59 && i != 60)
+                testGraphFile("graph" + i, -2);
+        }
+    }
 }
