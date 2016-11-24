@@ -41,7 +41,7 @@ public class AchroSolver {
         }
     
     public void setConstraintSupp(Boolean UseHeuristicMaxClique,
-                               Boolean UseHeuristicNValue){
+                                  Boolean UseHeuristicNValue){
         solveur.setUseHeuristicMaxClique(UseHeuristicMaxClique);
         solveur.setUseHeuristicNValue(UseHeuristicNValue);
     }
