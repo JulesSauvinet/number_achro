@@ -11,7 +11,6 @@ import org.junit.Test;
 import search.SearchType;
 import solver.AchroSolver;
 import utils.GraphEReader;
-import utils.GraphReader;
 
 /**
  *
@@ -52,11 +51,8 @@ public class TestSolver {
 //        AchroSolver solver;
         ColoredGraph g;
         try {
-            if(filename.equals("contiguous-usa")){
-                g = GraphEReader.buildGraphFromFile(resourcePath + "/" + filename);
-            } else {
-                g = GraphReader.buildGraphFromFile(resourcePath + "/" + filename);
-            }
+            g = GraphEReader.buildGraphFromFile(resourcePath + "/" + filename);
+
             g.setUiProps();
 //            solver = new AchroSolver(g, false);
         } catch (IOException | NullPointerException ex) {
@@ -91,8 +87,8 @@ public class TestSolver {
 
     public long testGraphWithConstraints(ColoredGraph g, int expectedAchromaticNumber, SolverConstraints cstr){
 //    public long testGraphWithConstraints(AchroSolver solver, int expectedAchromaticNumber, SolverConstraints cstr){
-        AchroSolver solver = new AchroSolver(g, false);
-        solver.setConstraintSupp(cstr.UseConstraintFirstAffectation, false/*cstr.UseHeuristicMaxClique*/, cstr.UseHeuristicNValue);
+        AchroSolver solver = new AchroSolver(g, true);
+        solver.setConstraintSupp(true, true, cstr.UseHeuristicNValue);
         Instant startTime = Instant.now(); // Measure duration
 
         int achromaticNumber = solver.solve(); // Start solver

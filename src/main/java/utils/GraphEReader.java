@@ -26,7 +26,7 @@ public class GraphEReader {
             fileName = "benchmark/contiguous-usa";
 
 
-        ClassLoader classLoader = GraphReader.class.getClassLoader();
+        ClassLoader classLoader = GraphEReader.class.getClassLoader();
         URL urlFile = classLoader.getResource(fileName);
         File file = new File(urlFile.getFile()); // Throws NullPointerException if file does not exist
 
