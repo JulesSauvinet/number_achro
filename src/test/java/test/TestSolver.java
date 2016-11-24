@@ -26,13 +26,14 @@ public class TestSolver {
     @AfterClass
     public static void displaySummary(){
         if(CSV_OUTPUT){
-            System.out.println("File_name;Strategy;Vertices;Edges;w/ NValue (ms);w/o NValue (ms)");
+            System.out.println("File_name;Strategy;Vertices;Edges;NbAchro;w/ NValue (ms);w/o NValue (ms)");
         } else {
             System.out.println("\n##################################################");
             System.out.println(String.format("%-30s", "File_name")
                     + String.format("%-15s", "Strategy")
                     + String.format("%-15s", "Vertices")
                     + String.format("%-15s", "Edges")
+                    + String.format("%-15s", "NbAchro")
                     + String.format("%-15s", "w/ NValue (ms)")
                     + String.format("%-15s", "w/o NValue (ms)"));
         }
