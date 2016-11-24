@@ -24,10 +24,10 @@ import org.chocosolver.solver.variables.Variable;
 import org.chocosolver.solver.variables.impl.FixedIntVarImpl;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.Node;
-import search.CustomSearch;
 import search.IntValueSelect;
 import search.SearchType;
 
+import static org.chocosolver.solver.search.strategy.Search.defaultSearch;
 import static org.chocosolver.solver.search.strategy.Search.intVarSearch;
 import org.chocosolver.solver.search.strategy.selectors.values.IntDomainRandom;
 
@@ -215,7 +215,7 @@ public class AchroSolver_k {
             case DEFAULT:
                 solver.setSearch(Search.defaultSearch(model));
                 break;
-            case GREEDY:
+            case DOMOVERWDEG:
                 solver.setSearch(Search.domOverWDegSearch(B));
                 break;
             case ACTIVITY:
@@ -224,8 +224,8 @@ public class AchroSolver_k {
             case MINDOM:
                 solver.setSearch(Search.minDomLBSearch(B));
                 break;
-            case CUSTOM:
-                solver.setSearch(new CustomSearch(model));
+            case GREEDY:
+                solver.setSearch(Search.greedySearch(defaultSearch(model)));
                 break;
             case INTVAR:
                 solver.setSearch(intVarSearch(
@@ -272,6 +272,27 @@ public class AchroSolver_k {
                         // variables to branch on
                         B
                 ), Search.defaultSearch(model));
+            case RANDOM:
+                solver.setSearch(intVarSearch(
+                        // variable selector
+                        (VariableSelector<IntVar>) variables -> {
+                            IntVar next = null;
+                            for(int i = 0; i < variables.length; i++){
+                                if(!variables[i].isInstantiated()){
+                                    next = variables[i];
+                                }
+                            }
+                            if(next == null){
+                                return null;
+                            }
+                            return next;
+                        },
+                        // value selector
+                        new IntDomainRandom(242353595353L),
+                        // variables to branch on
+                        B
+                ), Search.defaultSearch(model));
+                break;
         }
         //propagation de contraintes
         try {
