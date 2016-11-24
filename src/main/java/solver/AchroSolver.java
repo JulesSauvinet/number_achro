@@ -2,6 +2,7 @@ package solver;
 
 import graphmodel.ColoredGraph;
 import org.chocosolver.solver.variables.IntVar;
+import search.SearchType;
 import utils.ColorMapping;
 
 
@@ -39,7 +40,8 @@ public class AchroSolver {
             this.bInfNbAchro = g.getMaximalClique().size();
             this.solveur = new AchroSolver_k(g);
         }
-    
+
+        
     public void setConstraintSupp(Boolean UseHeuristicMaxClique,
                                   Boolean UseHeuristicNValue){
         solveur.setUseHeuristicMaxClique(UseHeuristicMaxClique);
@@ -47,11 +49,14 @@ public class AchroSolver {
     }
     
     public int solve(){
+        return solve(SearchType.DEFAULT);
+    }
+    public int solve(SearchType st){
         for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
             solveur.setK(k);
 
 
-            if(solveur.solve()){
+            if(solveur.solve(st)){
                 hasBeenComplete = true;
                 System.out.println("Une solution a été trouvé pour le nombre achromatique " + k);
                 for (int i = 0; i < N ; i++) {

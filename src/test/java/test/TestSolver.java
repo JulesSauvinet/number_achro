@@ -86,17 +86,18 @@ public class TestSolver {
         results.setElapsedTimeWithHeuristicNValue(testGraphWithConstraints(g, expectedAchromaticNumber, true));
         summary.add(results);
     }
-
-    public long testGraphWithConstraints(ColoredGraph g, int expectedAchromaticNumber, Boolean nvalue){
+    
+    public long testGraphWithConstraints(ColoredGraph g, int expectedAchromaticNumber, boolean useNvalueHeuristic){
 //    public long testGraphWithConstraints(AchroSolver solver, int expectedAchromaticNumber, SolverConstraints cstr){
         AchroSolver solver = new AchroSolver(g);
-        solver.setConstraintSupp(true, nvalue);
+        solver.setConstraintSupp(true, useNvalueHeuristic);
         Instant startTime = Instant.now(); // Measure duration
 
         int achromaticNumber = solver.solve(); // Start solver
-        /*if(ASSERT){
-            Assert.assertEquals("[" + cstr.toString() + "] Achromatic number differs from expected value", expectedAchromaticNumber, achromaticNumber);
-        }*/
+        if(ASSERT){
+            String nvalueUsed = useNvalueHeuristic?"w/ Nvalue":"w/o Nvalue";
+            Assert.assertEquals("[" + nvalueUsed + "] Achromatic number differs from expected value", expectedAchromaticNumber, achromaticNumber);
+        }
 
         Instant stopTime = Instant.now(); // Measure duration
         return Duration.between(startTime, stopTime).toMillis();
@@ -247,11 +248,11 @@ public class TestSolver {
         testGraphFile("contiguous-usa", 12);
     }
 
-    @Test
-    public void testGraphs(){
-        for (int i = 0; i < 100; i++) {
-            if (i != 59 && i != 60)
-                testGraphFile("graph" + i, -2);
-        }
-    }
+//    @Test
+//    public void testGraphs(){
+//        for (int i = 0; i < 100; i++) {
+//            if (i != 59 && i != 60)
+//                testGraphFile("graph" + i, -2);
+//        }
+//    }
 }
