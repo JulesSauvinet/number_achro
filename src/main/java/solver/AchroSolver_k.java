@@ -42,47 +42,20 @@ public class AchroSolver_k {
     public Integer[] mapping;
     public Integer[] mappingInv;
 
-    Boolean UseConstraintFirstAffectation = true;
     Boolean UseHeuristicMaxClique = true;
     Boolean UseHeuristicNValue = true;
-    Boolean UseHeuristicSortedNode = true;
 
-    public AchroSolver_k(ColoredGraph g, boolean UHSN) {
+    public AchroSolver_k(ColoredGraph g) {
         this.g = g;
         this.N = g.getNodeCount();
 
-        //Construction d'une matrice d'adjacence
-        UseHeuristicSortedNode = UHSN;
-        if (UseHeuristicSortedNode){
-            matAdj = new int[N][N];
-            for (int i1=0; i1 < g.getSortedNodes().length; i1++){
-                for (int i2=0; i2 < g.getSortedNodes().length; i2++) {
-                    int hasEdge = g.getSortedNodes()[i1].hasEdgeBetween(g.getSortedNodes()[i2]) ? 1 : 0;
-                    matAdj[i1][i2]= hasEdge;
-                }
-            }
-            this.mapping = new Integer[N];
-            this.mappingInv = new Integer[N];
-
-            int cpt2 = 0;
-            for (Node sortedNode: g.getSortedNodes()){
-                mapping[sortedNode.getIndex()] = cpt2;
-                mappingInv[cpt2] = sortedNode.getIndex();
-                cpt2++;
-            }
-        }
-        else{
-            matAdj = Toolkit.getAdjacencyMatrix(g);
-        }
+        this.matAdj = Toolkit.getAdjacencyMatrix(g);
     }
 
     public void setK(int k) {
         this.k = k;
     }
 
-    public void setUseConstraintFirstAffectation(Boolean UseHeuristicFirstAffectation) {
-        this.UseConstraintFirstAffectation = UseHeuristicFirstAffectation;
-    }
 
     public void setUseHeuristicNValue(Boolean UseHeuristicNValue) {
         this.UseHeuristicNValue = UseHeuristicNValue;
@@ -91,16 +64,7 @@ public class AchroSolver_k {
     public void setUseHeuristicMaxClique(Boolean UseHeuristicMaxClique) {
         this.UseHeuristicMaxClique = UseHeuristicMaxClique;
     }
-    
-    public void setUseHeuristicSortedNode(Boolean UseHeuristicSortedNode) {
-        this.UseHeuristicSortedNode = UseHeuristicSortedNode;
-    }
-    /*
-    * Optimisation    
-    */
-    private void ConstraintFirstAffectation(Model model, IntVar[] B){
-        model.arithm( B[g.getSortedNodes()[0].getIndex()],"=",0).post();
-    }
+
 
     private void heuristicMaxClique(Model model, IntVar[] B){
         for (List<Node> nodes : g.getMaximalCliques()){
@@ -108,12 +72,7 @@ public class AchroSolver_k {
             IntVar[] C = model.intVarArray("the maximal clique vertices color",sizeClique, 0, Math.max(k-1,sizeClique), true);
             int idx=0;
             for (Node node : nodes){
-                if (UseHeuristicSortedNode){
-                    C[idx]=B[mapping[node.getIndex()]];
-                }
-                else{
-                    C[idx]=B[node.getIndex()];
-                }
+                C[idx]=B[node.getIndex()];
                 idx++;
             }
             model.allDifferent(C).post();
@@ -235,10 +194,6 @@ public class AchroSolver_k {
         //OPTI1
         if(UseHeuristicNValue)
             heuristicNValue(model , B);
-
-        //Petite OPTI on a la droit?
-        if(UseConstraintFirstAffectation)
-            ConstraintFirstAffectation(model , B);
 
         //Contraintes sur les cliques
         if(UseHeuristicMaxClique)
