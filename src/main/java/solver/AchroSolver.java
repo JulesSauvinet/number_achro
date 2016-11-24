@@ -3,6 +3,7 @@ package solver;
 import graphmodel.ColoredGraph;
 import org.chocosolver.solver.variables.IntVar;
 import search.SearchType;
+import solver.exception.SolverTimeOutException;
 import utils.ColorMapping;
 
 
@@ -47,10 +48,10 @@ public class AchroSolver {
         solveur.setUseHeuristicNValue(UseHeuristicNValue);
     }
     
-    public int solve(){
+    public int solve() throws SolverTimeOutException{
         return solve(SearchType.DEFAULT);
     }
-    public int solve(SearchType st){
+    public int solve(SearchType st) throws SolverTimeOutException{
         for (int k = bInfNbAchro; k <= bSupNbAchro; k++){
             solveur.setK(k);
 
@@ -85,7 +86,7 @@ public class AchroSolver {
                     }
                     else{
                         System.out.println("Le solveur n'a pas pu determiner s'il existait une coloration complete" + " en " + (TIME_LIMIT) +" secondes");
-                        return -1;
+                        throw new SolverTimeOutException("Le solveur n'a pas pu determiner s'il existait une coloration complete" + " en " + (TIME_LIMIT) +" secondes");
                     }
                 }
                 else {
