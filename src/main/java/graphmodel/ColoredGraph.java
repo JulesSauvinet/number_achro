@@ -20,9 +20,6 @@ public class ColoredGraph extends SingleGraph {
     // La liste de toutes les clique maximales accessibles à partir de chaque noeud du graphe
     // on récupère la plus grande pour maximalClique
     private List<List<Node>> maximalesCliques = new ArrayList<>();
-    
-    // Tableau des noeuds du graphe ordonnes par ordre decroissant de leur degre
-    private ColoredNode[] sortedNodes;
 
     public ColoredGraph(String name) {
         super(name);
@@ -33,9 +30,6 @@ public class ColoredGraph extends SingleGraph {
         return maximalClique;
     }
 
-    public ColoredNode[] getSortedNodes() {
-        return sortedNodes;
-    }
 
     public java.util.List<java.util.List<Node>> getMaximalCliques() {
         return maximalesCliques;
@@ -44,23 +38,7 @@ public class ColoredGraph extends SingleGraph {
     // cette fonction inialise nos donnees utiles a l'optimisation de la recherche
     public void buildGraph() {
         int N = this.getNodeCount();
-        sortedNodes = new ColoredNode[N];
         int cpt = 0;
-        
-        // on remplit notre tableau de noeuds que l'on trie ensuite
-        for (Node node : this.getNodeSet()){
-            sortedNodes[cpt]=(ColoredNode) node;
-            cpt++;
-        }
-        Arrays.sort(sortedNodes, (o1, o2) -> {
-            if (o1.getDegree()>o2.getDegree()){
-                return -1;
-            }
-            else if (o1.getDegree()<o2.getDegree()){
-                return 1;
-            }
-            return 0;
-        });
 
         // on recupere ici toutes les cliques maximales du graphe
         // en faisant une recherche de taille maximale pour maximalClique
