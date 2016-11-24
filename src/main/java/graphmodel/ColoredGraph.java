@@ -14,8 +14,14 @@ import java.util.List;
  */
 public class ColoredGraph extends SingleGraph {
 
+    // La clique maximale du graphe
     private List<Node> maximalClique = new ArrayList<>();
+    
+    // La liste de toutes les clique maximales accessibles à partir de chaque noeud du graphe
+    // on récupère la plus grande pour maximalClique
     private List<List<Node>> maximalCliques = new ArrayList<>();
+    
+    // Tableau des noeuds du graphe ordonnes par ordre decroissant de leur degre
     private ColoredNode[] sortedNodes;
 
     public ColoredGraph(String name) {
