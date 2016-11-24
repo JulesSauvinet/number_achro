@@ -1,5 +1,7 @@
 package test;
 
+import benchmark.SolverConstraints;
+import benchmark.TestResult;
 import graphmodel.ColoredGraph;
 import java.io.IOException;
 import java.time.Duration;
