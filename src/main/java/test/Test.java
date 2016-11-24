@@ -3,7 +3,6 @@ package test;
 import graphmodel.ColoredGraph;
 import solver.AchroSolver;
 import utils.GraphEReader;
-import utils.GraphReader;
 
 import java.io.IOException;
 
@@ -13,7 +12,7 @@ import java.io.IOException;
  */
 public class Test {
 
-    static String GRAPHNAME = "benchmark2/graph1";
+    static String GRAPHNAME = "benchmark/graph1";
     public static void main (String[] args) throws IOException {
         //AchroSolver.testSolver1();
         ColoredGraph g = GraphEReader.buildGraphFromFile(GRAPHNAME);
