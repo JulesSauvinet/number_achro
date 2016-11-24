@@ -12,6 +12,9 @@ import java.util.Set;
 
 /**
  * Created by jules on 16/11/2016.
+ * Cette classe permet de parser les fichiers de notre benchmark2
+ * Nous ne listons que les arcs de graphe dans nos fichiers 
+ * et a partir de cela nous créons tous les sommets et tous les arcs
  */
 public class GraphEReader {
     public static ColoredGraph buildGraphFromFile(String fileName) throws IOException, NullPointerException {
