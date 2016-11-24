@@ -1,9 +1,7 @@
 package search;
 
-import org.chocosolver.solver.search.strategy.assignments.DecisionOperator;
 import org.chocosolver.solver.search.strategy.selectors.values.IntValueSelector;
 import org.chocosolver.solver.variables.IntVar;
-import org.chocosolver.solver.variables.Variable;
 
 import java.util.*;
 
@@ -12,9 +10,11 @@ import java.util.*;
  */
 public class IntValueSelect implements IntValueSelector {
     IntVar[] vars;
+    
     public IntValueSelect(IntVar[] vars){
         this.vars = vars;
     }
+    
     @Override
     public int selectValue(IntVar intVar) {
         Map<Integer,Integer> valuesAffected = new HashMap();
@@ -30,7 +30,7 @@ public class IntValueSelect implements IntValueSelector {
             }
         }
         for (int i = intVar.getLB();i<=intVar.getUB();i++){
-            Integer I = new Integer(i);
+            Integer I = i;
             if (!valuesAffected.containsKey(I))
                 valuesToAffect.add(I);
         }

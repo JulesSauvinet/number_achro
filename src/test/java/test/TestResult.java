@@ -5,6 +5,8 @@
  */
 package test;
 
+import search.SearchType;
+
 /**
  *
  * @author Bruno
@@ -13,13 +15,13 @@ public class TestResult {
     private long elapsedTimeWithHeuristicNValue;
     private long elapsedTimeWithoutHeuristicNValue;
     private String filename;
+    private SearchType strategy;
     private int nbVertices;
     private int nbEdges;
 
-    public TestResult(String filename) {
+    public TestResult(String filename, SearchType strategy) {
         this.filename = filename;
-        this.nbVertices = nbVertices;
-        this.nbEdges = nbEdges;
+        this.strategy = strategy;
     }
 
     public String getFilename() {
@@ -62,11 +64,23 @@ public class TestResult {
         this.elapsedTimeWithoutHeuristicNValue = elapsedTimeWithoutHeuristicNValue;
     }
     
-    
+    public String toString(boolean csvOutput){
+        if(csvOutput){
+            String out = filename + ";" + 
+                    strategy.name() + ";" + 
+                    nbVertices + ";" + 
+                    nbEdges + ";" + 
+                    elapsedTimeWithoutHeuristicNValue + ";" + 
+                    elapsedTimeWithHeuristicNValue;
+
+            return out;
+        } else return this.toString();
+    }
 
     @Override
     public String toString() {
         String out = String.format("%-30s", filename)
+                + String.format("%-15s", strategy.name())
                 + String.format("%-15s", nbVertices)
                 + String.format("%-15s", nbEdges)
                 + String.format("%-15s", elapsedTimeWithoutHeuristicNValue)
