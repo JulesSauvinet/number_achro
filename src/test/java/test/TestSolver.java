@@ -24,7 +24,7 @@ public class TestSolver {
     private static final String resourcePath = "benchmark/";
     private static final ArrayList<TestResult> summary = new ArrayList<>();
     private static final boolean CSV_OUTPUT = true;
-    private static final boolean ASSERT = true;
+    private static final boolean ASSERT = false;
 
     @AfterClass
     public static void displaySummary(){
@@ -202,11 +202,6 @@ public class TestSolver {
 //    }
 
     @Test
-    public void testMarine(){
-        testGraphFile("marine", 7);
-    }
-
-    @Test
     public void testClebsh(){
         testGraphFile("clebsh", 8);
     }
@@ -254,8 +249,7 @@ public class TestSolver {
     @Test
     public void testGraphs(){
         for (int i = 0; i < 20; i++) {
-            if (i != 59 && i != 60)
-                testGraphFile("graph" + i, -2);
+            testGraphFile("graph" + i, -2);
         }
     }
 }
