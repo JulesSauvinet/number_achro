@@ -24,7 +24,7 @@ public class TestSolver {
     private static final String resourcePath = "benchmark/";
     private static final ArrayList<TestResult> summary = new ArrayList<>();
     private static final boolean CSV_OUTPUT = true;
-    private static final boolean ASSERT = true;
+    private static final boolean ASSERT = false;
 
     @AfterClass
     public static void displaySummary(){
