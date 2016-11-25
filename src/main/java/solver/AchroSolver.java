@@ -46,7 +46,7 @@ public class AchroSolver {
 
         Double upperBound = new Double(0.0);
         for (Edge edge : g.getEdgeSet()) {
-            upperBound += 1.0/(Math.sqrt((double)edge.getSourceNode().getDegree()*(double)edge.getTargetNode().getDegree()));
+            upperBound += 1.0/(Math.max((double)edge.getSourceNode().getDegree(),(double)edge.getTargetNode().getDegree()));
         }
         upperBound=2.0*upperBound;
 
