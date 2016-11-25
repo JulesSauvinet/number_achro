@@ -47,7 +47,7 @@ public class TestSolver {
 
     public void testGraphFile(String filename, int expectedAchromaticNumber){
         testGraphFile(filename, SearchType.DEFAULT, expectedAchromaticNumber);
-        testGraphFile(filename, SearchType.MINDOM, expectedAchromaticNumber);
+        //testGraphFile(filename, SearchType.MINDOM, expectedAchromaticNumber);
         //testGraphFile(filename, SearchType.MAXCONSTRAINTS, expectedAchromaticNumber);
         testGraphFile(filename, SearchType.DOMOVERWDEG, expectedAchromaticNumber);
         testGraphFile(filename, SearchType.ACTIVITY, expectedAchromaticNumber);
@@ -78,16 +78,16 @@ public class TestSolver {
         results.setNbAchro((int)resNoNvalue[1]);
 
         // All constraints
-        long[] resNvalue = testGraphWithConstraints(g, expectedAchromaticNumber, strategy, true);
+        /*long[] resNvalue = testGraphWithConstraints(g, expectedAchromaticNumber, strategy, true);
         results.setElapsedTimeWithHeuristicNValue(resNvalue[0]);
-        results.setNbAchro((int)resNvalue[1]);
+        results.setNbAchro((int)resNvalue[1]);*/
         summary.add(results);
     }
     
     public long[] testGraphWithConstraints(ColoredGraph g, int expectedAchromaticNumber, SearchType strategy, boolean useNvalueHeuristic){
 //    public long testGraphWithConstraints(AchroSolver solver, int expectedAchromaticNumber, SolverConstraints cstr){
         AchroSolver solver = new AchroSolver(g);
-        solver.setConstraintSupp(true, useNvalueHeuristic);
+        solver.setConstraintSupp(/*true, */useNvalueHeuristic);
         Instant startTime = Instant.now(); // Measure duration
 
         int achromaticNumber = 0;
@@ -202,10 +202,6 @@ public class TestSolver {
 //        testGraphFile("k21", 21);
 //    }
 
-    @Test
-    public void testMarine(){
-        testGraphFile("marine", 7);
-    }
 
     @Test
     public void testClebsh(){
@@ -255,7 +251,7 @@ public class TestSolver {
     @Test
     public void testGraphs(){
         for (int i = 0; i < 20; i++) {
-            if (i != 59 && i != 60)
+            if (i ==10)
                 testGraphFile("graph" + i, -2);
         }
     }

@@ -46,7 +46,7 @@ public class AchroSolver_k {
     private int N;
     private int[][] matAdj;
 
-    Boolean UseHeuristicMaxClique = true;
+    //Boolean UseHeuristicMaxClique = true;
     Boolean UseHeuristicNValue = true;
 
     public AchroSolver_k(ColoredGraph g) {
@@ -65,12 +65,12 @@ public class AchroSolver_k {
         this.UseHeuristicNValue = UseHeuristicNValue;
     }
 
-    public void setUseHeuristicMaxClique(Boolean UseHeuristicMaxClique) {
+    /*public void setUseHeuristicMaxClique(Boolean UseHeuristicMaxClique) {
         this.UseHeuristicMaxClique = UseHeuristicMaxClique;
-    }
+    }*/
 
 
-    private void heuristicMaxClique(Model model, IntVar[] B){
+    /*private void heuristicMaxClique(Model model, IntVar[] B){
         for (List<Node> nodes : g.getMaximalCliques()){
             int sizeClique = nodes.size();
             IntVar[] C = model.intVarArray("the maximal clique vertices color",sizeClique, 0, Math.max(k-1,sizeClique), true);
@@ -81,7 +81,7 @@ public class AchroSolver_k {
             }
             model.allDifferent(C).post();
         }
-    }
+    }*/
 
     private void heuristicNValue(Model model, IntVar[] B){
         IntVar nValues  = new FixedIntVarImpl("nValues",k,model);
@@ -200,8 +200,8 @@ public class AchroSolver_k {
             heuristicNValue(model , B);
 
         //Contraintes sur les cliques
-        if(UseHeuristicMaxClique)
-            heuristicMaxClique(model , B);
+        /*if(UseHeuristicMaxClique)
+            heuristicMaxClique(model , B);*/
 
         Solver solver = model.getSolver();
 
