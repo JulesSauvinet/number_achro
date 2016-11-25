@@ -48,11 +48,12 @@ public class TestSolver {
     public void testGraphFile(String filename, int expectedAchromaticNumber){
         testGraphFile(filename, SearchType.DEFAULT, expectedAchromaticNumber);
         testGraphFile(filename, SearchType.MINDOM, expectedAchromaticNumber);
-        testGraphFile(filename, SearchType.MAXCONSTRAINTS, expectedAchromaticNumber);
+        //testGraphFile(filename, SearchType.MAXCONSTRAINTS, expectedAchromaticNumber);
         testGraphFile(filename, SearchType.DOMOVERWDEG, expectedAchromaticNumber);
         testGraphFile(filename, SearchType.ACTIVITY, expectedAchromaticNumber);
         testGraphFile(filename, SearchType.INTVAR, expectedAchromaticNumber);
-        testGraphFile(filename, SearchType.RANDOM, expectedAchromaticNumber);
+        //testGraphFile(filename, SearchType.RANDOM, expectedAchromaticNumber);
+        testGraphFile(filename, SearchType.MAXCONS_RAND, expectedAchromaticNumber);
     }
 
     public void testGraphFile(String filename, SearchType strategy, int expectedAchromaticNumber){
