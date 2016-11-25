@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class Test {
 
-    static String GRAPHNAME = "benchmark/graph10";
+    static String GRAPHNAME = "benchmark/graph7";
     public static void main (String[] args) throws IOException, SolverTimeOutException {
         //AchroSolver.testSolver1();
         ColoredGraph g = GraphEReader.buildGraphFromFile(GRAPHNAME);

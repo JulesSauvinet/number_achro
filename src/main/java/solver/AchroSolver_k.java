@@ -221,13 +221,10 @@ public class AchroSolver_k {
             case ACTIVITY:
                 solver.setSearch(Search.activityBasedSearch(B));
                 break;
-            case MINDOM:
-                solver.setSearch(Search.minDomLBSearch(B));
-                break;
             case GREEDY:
                 solver.setSearch(Search.greedySearch(defaultSearch(model)));
                 break;
-            case INTVAR:
+            case INTVARMIN:
                 solver.setSearch(intVarSearch(
                         // selects the variable of smallest domain size
                         new FirstFail(model),
@@ -243,52 +240,16 @@ public class AchroSolver_k {
                 solver.setSearch(intVarSearch(
                         // variable selector
                         (VariableSelector<IntVar>) variables -> {
-                            int maxCount = Integer.MIN_VALUE;
-                            int maxVar = -1;
-                            for(int i = 0; i < variables.length; i++){
-                                if(!variables[i].isInstantiated()){
-                                    int countInstanciatedNeighbours = 0;
-                                    for (int j = 0; j < variables.length; j++) {
-                                        if(i != j && matAdj[i][j] == 1 && variables[j].isInstantiated()){
-                                            countInstanciatedNeighbours++;
-                                        }
-                                    }
-                                    if(countInstanciatedNeighbours > maxCount){
-                                        maxCount = countInstanciatedNeighbours;
-                                        maxVar = i;
-                                    }
-                                }
-                            }
-                            if(maxVar != -1){
-                                return variables[maxVar];
-                            } else{
-                                return null;
-                            }
-                        },
-                        // value selector
-                        new IntDomainMin(),
-//                        new IntValueSelect(B),
-
-                        // variables to branch on
-                        B
-                ), Search.defaultSearch(model));
-            case RANDOM:
-                solver.setSearch(intVarSearch(
-                        // variable selector
-                        (VariableSelector<IntVar>) variables -> {
                             IntVar next = null;
                             for(int i = 0; i < variables.length; i++){
                                 if(!variables[i].isInstantiated()){
-                                    next = variables[i];break;
+                                    next = variables[i];
                                 }
-                            }
-                            if(next == null){
-                                return null;
                             }
                             return next;
                         },
-                        // value selector
-                        new IntDomainRandom(242353595353L),
+                        // value selectornew IntDomainMin(),
+                       new IntValueSelect(B),
                         // variables to branch on
                         B
                 ), Search.defaultSearch(model));
@@ -325,6 +286,7 @@ public class AchroSolver_k {
                         // variables to branch on
                         B
                 ), Search.defaultSearch(model));
+                break;
         }
         //propagation de contraintes
         try {
