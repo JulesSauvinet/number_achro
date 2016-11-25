@@ -266,8 +266,8 @@ public class AchroSolver_k {
                             }
                         },
                         // value selector
-                        //new IntDomainRandom(242353595353L),
-                        new IntValueSelect(B),
+                        new IntDomainMin(),
+//                        new IntValueSelect(B),
 
                         // variables to branch on
                         B
