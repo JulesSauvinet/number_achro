@@ -2,9 +2,15 @@ package solver;
 
 import graphmodel.ColoredGraph;
 import org.chocosolver.solver.variables.IntVar;
+import org.graphstream.graph.Edge;
+import org.graphstream.graph.Node;
 import search.SearchType;
 import solver.exception.SolverTimeOutException;
 import utils.ColorMapping;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 
 /**
@@ -32,20 +38,31 @@ public class AchroSolver {
     private int N;
 
     public AchroSolver(ColoredGraph g) {
-            this.g=g;
-            this.N = g.getNodeCount();
-            //Determination des bornes pour k, le nombre achromatique
-            //La borne inf est la taille de la clique maximale (grossier)
-            //La borne sup est le nombre de noeud (grossier)
-            this.bSupNbAchro = g.getNodeSet().size();
-            this.bInfNbAchro = g.getMaximalClique().size();
-            this.solveur = new AchroSolver_k(g);
+        this.g=g;
+        this.N = g.getNodeCount();
+        //Determination des bornes pour k, le nombre achromatique
+        //La borne inf est la taille de la clique maximale (grossier)
+        //La borne sup est le nombre de noeud (grossier)
+
+        Double upperBound = new Double(0.0);
+        for (Edge edge : g.getEdgeSet()) {
+            upperBound += 1.0/(Math.sqrt((double)edge.getSourceNode().getDegree()*(double)edge.getTargetNode().getDegree()));
         }
+        upperBound=2.0*upperBound;
+
+        upperBound = (double)Math.round(upperBound * 10000000d) / 10000000d;
+
+        System.out.println(upperBound);
+        this.bSupNbAchro = upperBound.intValue();
+        System.out.println(bSupNbAchro);
+        this.bInfNbAchro = g.getMaximalClique().size();
+        this.solveur = new AchroSolver_k(g);
+    }
 
 
-    public void setConstraintSupp(Boolean UseHeuristicMaxClique,
-                                  Boolean UseHeuristicNValue){
-        solveur.setUseHeuristicMaxClique(UseHeuristicMaxClique);
+    public void setConstraintSupp(/*Boolean UseHeuristicMaxClique,
+                                  */Boolean UseHeuristicNValue){
+        //solveur.setUseHeuristicMaxClique(UseHeuristicMaxClique);
         solveur.setUseHeuristicNValue(UseHeuristicNValue);
     }
     

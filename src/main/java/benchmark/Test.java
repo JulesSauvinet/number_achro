@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class Test {
 
-    static String GRAPHNAME = "benchmark/marine";
+    static String GRAPHNAME = "benchmark/graph10";
     public static void main (String[] args) throws IOException, SolverTimeOutException {
         //AchroSolver.testSolver1();
         ColoredGraph g = GraphEReader.buildGraphFromFile(GRAPHNAME);
@@ -23,8 +23,8 @@ public class Test {
         //g.display();
 
         AchroSolver solver = new AchroSolver(g);
-        solver.setConstraintSupp(false,true);
-        int achroNumber = solver.solve(SearchType.MAXCONSTRAINTS);
+        solver.setConstraintSupp(/*false,*/true);
+        int achroNumber = solver.solve(SearchType.ACTIVITY);
 
         System.out.println("Achromatic number : " + achroNumber);
         g.display();
