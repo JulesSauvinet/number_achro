@@ -279,7 +279,7 @@ public class AchroSolver_k {
                             IntVar next = null;
                             for(int i = 0; i < variables.length; i++){
                                 if(!variables[i].isInstantiated()){
-                                    next = variables[i];
+                                    next = variables[i];break;
                                 }
                             }
                             if(next == null){
