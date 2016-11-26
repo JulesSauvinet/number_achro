@@ -1,0 +1,3195 @@
+Testing k5_minus_3_focused...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_3_focused...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_3_focused...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_3_focused...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_3_focused...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k10...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 10
+Une solution a été trouvé pour le nombre achromatique 10
+Le nombre achromatique du graphe est egal a 10
+
+Testing k10...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 10
+Une solution a été trouvé pour le nombre achromatique 10
+Le nombre achromatique du graphe est egal a 10
+
+Testing k10...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 10
+Une solution a été trouvé pour le nombre achromatique 10
+Le nombre achromatique du graphe est egal a 10
+
+Testing k10...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 10
+Une solution a été trouvé pour le nombre achromatique 10
+Le nombre achromatique du graphe est egal a 10
+
+Testing k10...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 10
+Une solution a été trouvé pour le nombre achromatique 10
+Le nombre achromatique du graphe est egal a 10
+
+Testing k11...
+11.0
+11
+Recherche d'une solution pour le nombre achromatique 11
+Une solution a été trouvé pour le nombre achromatique 11
+Le nombre achromatique du graphe est egal a 11
+
+Testing k11...
+11.0
+11
+Recherche d'une solution pour le nombre achromatique 11
+Une solution a été trouvé pour le nombre achromatique 11
+Le nombre achromatique du graphe est egal a 11
+
+Testing k11...
+11.0
+11
+Recherche d'une solution pour le nombre achromatique 11
+Une solution a été trouvé pour le nombre achromatique 11
+Le nombre achromatique du graphe est egal a 11
+
+Testing k11...
+11.0
+11
+Recherche d'une solution pour le nombre achromatique 11
+Une solution a été trouvé pour le nombre achromatique 11
+Le nombre achromatique du graphe est egal a 11
+
+Testing k11...
+11.0
+11
+Recherche d'une solution pour le nombre achromatique 11
+Une solution a été trouvé pour le nombre achromatique 11
+Le nombre achromatique du graphe est egal a 11
+
+Testing k12...
+12.0
+12
+Recherche d'une solution pour le nombre achromatique 12
+Une solution a été trouvé pour le nombre achromatique 12
+Le nombre achromatique du graphe est egal a 12
+
+Testing k12...
+12.0
+12
+Recherche d'une solution pour le nombre achromatique 12
+Une solution a été trouvé pour le nombre achromatique 12
+Le nombre achromatique du graphe est egal a 12
+
+Testing k12...
+12.0
+12
+Recherche d'une solution pour le nombre achromatique 12
+Une solution a été trouvé pour le nombre achromatique 12
+Le nombre achromatique du graphe est egal a 12
+
+Testing k12...
+12.0
+12
+Recherche d'une solution pour le nombre achromatique 12
+Une solution a été trouvé pour le nombre achromatique 12
+Le nombre achromatique du graphe est egal a 12
+
+Testing k12...
+12.0
+12
+Recherche d'une solution pour le nombre achromatique 12
+Une solution a été trouvé pour le nombre achromatique 12
+Le nombre achromatique du graphe est egal a 12
+
+Testing k13...
+13.0
+13
+Recherche d'une solution pour le nombre achromatique 13
+Une solution a été trouvé pour le nombre achromatique 13
+Le nombre achromatique du graphe est egal a 13
+
+Testing k13...
+13.0
+13
+Recherche d'une solution pour le nombre achromatique 13
+Une solution a été trouvé pour le nombre achromatique 13
+Le nombre achromatique du graphe est egal a 13
+
+Testing k13...
+13.0
+13
+Recherche d'une solution pour le nombre achromatique 13
+Une solution a été trouvé pour le nombre achromatique 13
+Le nombre achromatique du graphe est egal a 13
+
+Testing k13...
+13.0
+13
+Recherche d'une solution pour le nombre achromatique 13
+Une solution a été trouvé pour le nombre achromatique 13
+Le nombre achromatique du graphe est egal a 13
+
+Testing k13...
+13.0
+13
+Recherche d'une solution pour le nombre achromatique 13
+Une solution a été trouvé pour le nombre achromatique 13
+Le nombre achromatique du graphe est egal a 13
+
+Testing k14...
+14.0
+14
+Recherche d'une solution pour le nombre achromatique 14
+Une solution a été trouvé pour le nombre achromatique 14
+Le nombre achromatique du graphe est egal a 14
+
+Testing k14...
+14.0
+14
+Recherche d'une solution pour le nombre achromatique 14
+Une solution a été trouvé pour le nombre achromatique 14
+Le nombre achromatique du graphe est egal a 14
+
+Testing k14...
+14.0
+14
+Recherche d'une solution pour le nombre achromatique 14
+Une solution a été trouvé pour le nombre achromatique 14
+Le nombre achromatique du graphe est egal a 14
+
+Testing k14...
+14.0
+14
+Recherche d'une solution pour le nombre achromatique 14
+Une solution a été trouvé pour le nombre achromatique 14
+Le nombre achromatique du graphe est egal a 14
+
+Testing k14...
+14.0
+14
+Recherche d'une solution pour le nombre achromatique 14
+Une solution a été trouvé pour le nombre achromatique 14
+Le nombre achromatique du graphe est egal a 14
+
+Testing k15...
+15.0
+15
+Recherche d'une solution pour le nombre achromatique 15
+Une solution a été trouvé pour le nombre achromatique 15
+Le nombre achromatique du graphe est egal a 15
+
+Testing k15...
+15.0
+15
+Recherche d'une solution pour le nombre achromatique 15
+Une solution a été trouvé pour le nombre achromatique 15
+Le nombre achromatique du graphe est egal a 15
+
+Testing k15...
+15.0
+15
+Recherche d'une solution pour le nombre achromatique 15
+Une solution a été trouvé pour le nombre achromatique 15
+Le nombre achromatique du graphe est egal a 15
+
+Testing k15...
+15.0
+15
+Recherche d'une solution pour le nombre achromatique 15
+Une solution a été trouvé pour le nombre achromatique 15
+Le nombre achromatique du graphe est egal a 15
+
+Testing k15...
+15.0
+15
+Recherche d'une solution pour le nombre achromatique 15
+Une solution a été trouvé pour le nombre achromatique 15
+Le nombre achromatique du graphe est egal a 15
+
+Testing k16...
+16.0
+16
+Recherche d'une solution pour le nombre achromatique 16
+Le solveur n'a pas pu determiner s'il existait une coloration complete en 60 secondes
+
+Testing k3...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing k3...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing k3...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing k3...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing k3...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing k4...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k4...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k4...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k4...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k4...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 5
+
+Testing k5...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 5
+
+Testing k5...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 5
+
+Testing k5...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 5
+
+Testing k5...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 5
+
+Testing k6...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 6
+
+Testing k6...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 6
+
+Testing k6...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 6
+
+Testing k6...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 6
+
+Testing k6...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 6
+
+Testing k7...
+7.0
+7
+Recherche d'une solution pour le nombre achromatique 7
+Une solution a été trouvé pour le nombre achromatique 7
+Le nombre achromatique du graphe est egal a 7
+
+Testing k7...
+7.0
+7
+Recherche d'une solution pour le nombre achromatique 7
+Une solution a été trouvé pour le nombre achromatique 7
+Le nombre achromatique du graphe est egal a 7
+
+Testing k7...
+7.0
+7
+Recherche d'une solution pour le nombre achromatique 7
+Une solution a été trouvé pour le nombre achromatique 7
+Le nombre achromatique du graphe est egal a 7
+
+Testing k7...
+7.0
+7
+Recherche d'une solution pour le nombre achromatique 7
+Une solution a été trouvé pour le nombre achromatique 7
+Le nombre achromatique du graphe est egal a 7
+
+Testing k7...
+7.0
+7
+Recherche d'une solution pour le nombre achromatique 7
+Une solution a été trouvé pour le nombre achromatique 7
+Le nombre achromatique du graphe est egal a 7
+
+Testing k8...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 8
+Une solution a été trouvé pour le nombre achromatique 8
+Le nombre achromatique du graphe est egal a 8
+
+Testing k8...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 8
+Une solution a été trouvé pour le nombre achromatique 8
+Le nombre achromatique du graphe est egal a 8
+
+Testing k8...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 8
+Une solution a été trouvé pour le nombre achromatique 8
+Le nombre achromatique du graphe est egal a 8
+
+Testing k8...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 8
+Une solution a été trouvé pour le nombre achromatique 8
+Le nombre achromatique du graphe est egal a 8
+
+Testing k8...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 8
+Une solution a été trouvé pour le nombre achromatique 8
+Le nombre achromatique du graphe est egal a 8
+
+Testing k9...
+9.0
+9
+Recherche d'une solution pour le nombre achromatique 9
+Une solution a été trouvé pour le nombre achromatique 9
+Le nombre achromatique du graphe est egal a 9
+
+Testing k9...
+9.0
+9
+Recherche d'une solution pour le nombre achromatique 9
+Une solution a été trouvé pour le nombre achromatique 9
+Le nombre achromatique du graphe est egal a 9
+
+Testing k9...
+9.0
+9
+Recherche d'une solution pour le nombre achromatique 9
+Une solution a été trouvé pour le nombre achromatique 9
+Le nombre achromatique du graphe est egal a 9
+
+Testing k9...
+9.0
+9
+Recherche d'une solution pour le nombre achromatique 9
+Une solution a été trouvé pour le nombre achromatique 9
+Le nombre achromatique du graphe est egal a 9
+
+Testing k9...
+9.0
+9
+Recherche d'une solution pour le nombre achromatique 9
+Une solution a été trouvé pour le nombre achromatique 9
+Le nombre achromatique du graphe est egal a 9
+
+Testing k5_minus_2_linked...
+4.1666667
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_2_linked...
+4.1666667
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_2_linked...
+4.1666667
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_2_linked...
+4.1666667
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_2_linked...
+4.1666667
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_2_independant...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing k5_minus_2_independant...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing k5_minus_2_independant...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing k5_minus_2_independant...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing k5_minus_2_independant...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing contiguous-usa...
+39.6785714
+39
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Une solution a été trouvé pour le nombre achromatique 7
+Recherche d'une solution pour le nombre achromatique 8
+Une solution a été trouvé pour le nombre achromatique 8
+Recherche d'une solution pour le nombre achromatique 9
+Une solution a été trouvé pour le nombre achromatique 9
+Recherche d'une solution pour le nombre achromatique 10
+Une solution a été trouvé pour le nombre achromatique 10
+Recherche d'une solution pour le nombre achromatique 11
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 10
+
+Testing contiguous-usa...
+39.6785714
+39
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Une solution a été trouvé pour le nombre achromatique 7
+Recherche d'une solution pour le nombre achromatique 8
+Une solution a été trouvé pour le nombre achromatique 8
+Recherche d'une solution pour le nombre achromatique 9
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 8
+
+Testing contiguous-usa...
+39.6785714
+39
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Une solution a été trouvé pour le nombre achromatique 7
+Recherche d'une solution pour le nombre achromatique 8
+Une solution a été trouvé pour le nombre achromatique 8
+Recherche d'une solution pour le nombre achromatique 9
+Une solution a été trouvé pour le nombre achromatique 9
+Recherche d'une solution pour le nombre achromatique 10
+Une solution a été trouvé pour le nombre achromatique 10
+Recherche d'une solution pour le nombre achromatique 11
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 10
+
+Testing contiguous-usa...
+39.6785714
+39
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Une solution a été trouvé pour le nombre achromatique 7
+Recherche d'une solution pour le nombre achromatique 8
+Une solution a été trouvé pour le nombre achromatique 8
+Recherche d'une solution pour le nombre achromatique 9
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 8
+
+Testing contiguous-usa...
+39.6785714
+39
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Une solution a été trouvé pour le nombre achromatique 7
+Recherche d'une solution pour le nombre achromatique 8
+Une solution a été trouvé pour le nombre achromatique 8
+Recherche d'une solution pour le nombre achromatique 9
+Une solution a été trouvé pour le nombre achromatique 9
+Recherche d'une solution pour le nombre achromatique 10
+Une solution a été trouvé pour le nombre achromatique 10
+Recherche d'une solution pour le nombre achromatique 11
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 10
+
+Testing myciel3.col...
+9.5
+9
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 6
+
+Testing myciel3.col...
+9.5
+9
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 6
+
+Testing myciel3.col...
+9.5
+9
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Le nombre achromatique du graphe est egal a 6
+
+Testing myciel3.col...
+9.5
+9
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Le nombre achromatique du graphe est egal a 6
+
+Testing myciel3.col...
+9.5
+9
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 6
+
+Testing petersen...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing petersen...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing petersen...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing petersen...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing petersen...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 5
+
+Testing clebsh...
+16.0
+16
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Une solution a été trouvé pour le nombre achromatique 7
+Recherche d'une solution pour le nombre achromatique 8
+Une solution a été trouvé pour le nombre achromatique 8
+Recherche d'une solution pour le nombre achromatique 9
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 8
+
+Testing clebsh...
+16.0
+16
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 6
+
+Testing clebsh...
+16.0
+16
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 6
+
+Testing clebsh...
+16.0
+16
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 6
+
+Testing clebsh...
+16.0
+16
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Une solution a été trouvé pour le nombre achromatique 6
+Recherche d'une solution pour le nombre achromatique 7
+Une solution a été trouvé pour le nombre achromatique 7
+Recherche d'une solution pour le nombre achromatique 8
+Une solution a été trouvé pour le nombre achromatique 8
+Recherche d'une solution pour le nombre achromatique 9
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 8
+
+Testing graph0...
+4.3333333
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph0...
+4.3333333
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph0...
+4.3333333
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph0...
+4.3333333
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph0...
+4.3333333
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph1...
+5.5
+5
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph1...
+5.5
+5
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph1...
+5.5
+5
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph1...
+5.5
+5
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph1...
+5.5
+5
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph2...
+7.5
+7
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing graph2...
+7.5
+7
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing graph2...
+7.5
+7
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing graph2...
+7.5
+7
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing graph2...
+7.5
+7
+Recherche d'une solution pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing graph3...
+3.6
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph3...
+3.6
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph3...
+3.6
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph3...
+3.6
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph3...
+3.6
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph4...
+5.2
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph4...
+5.2
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph4...
+5.2
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph4...
+5.2
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph4...
+5.2
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph5...
+6.8666667
+6
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph5...
+6.8666667
+6
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph5...
+6.8666667
+6
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph5...
+6.8666667
+6
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph5...
+6.8666667
+6
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph6...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph6...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph6...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph6...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph6...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph7...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph7...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph7...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph7...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph7...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph8...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph8...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph8...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph8...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph8...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph9...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph9...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph9...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph9...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph9...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph10...
+7.3333333
+7
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph10...
+7.3333333
+7
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph10...
+7.3333333
+7
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph10...
+7.3333333
+7
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph10...
+7.3333333
+7
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph11...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph11...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph11...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph11...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph11...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph12...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph12...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph12...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph12...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph12...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 4
+
+Testing graph13...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph13...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph13...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph13...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph13...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 4
+
+Testing graph14...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph14...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph14...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph14...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph14...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph15...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph15...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph15...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph15...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph15...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph16...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph16...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph16...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph16...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph16...
+10.0
+10
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph17...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph17...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph17...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph17...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph17...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph18...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph18...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph18...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph18...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph18...
+8.0
+8
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph19...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph19...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph19...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph19...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph19...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph20...
+7.3333333
+7
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing graph20...
+7.3333333
+7
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing graph20...
+7.3333333
+7
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing graph20...
+7.3333333
+7
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le nombre achromatique du graphe est egal a 5
+
+Testing graph20...
+7.3333333
+7
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Une solution a été trouvé pour le nombre achromatique 5
+Recherche d'une solution pour le nombre achromatique 6
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 5
+
+Testing graph21...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph21...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph21...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph21...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph21...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph22...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph22...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph22...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph22...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph22...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph23...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph23...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph23...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph23...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph23...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 4
+
+Testing graph24...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph24...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph24...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph24...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph24...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph25...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph25...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph25...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph25...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph25...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph26...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph26...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph26...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph26...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph26...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph27...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph27...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph27...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph27...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph27...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph28...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph28...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph28...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph28...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph28...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph29...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph29...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph29...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph29...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph29...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph30...
+6.6666667
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph30...
+6.6666667
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph30...
+6.6666667
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph30...
+6.6666667
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph30...
+6.6666667
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le solveur n'a pas pu trouver de solutions dans le temps limite de 60 secondes, le nombre achromatique est au moins egal a 4
+
+Testing graph31...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph31...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph31...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph31...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph31...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph32...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph32...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph32...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph32...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph32...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph33...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph33...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph33...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph33...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph33...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 2
+
+Testing graph34...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph34...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph34...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph34...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph34...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph35...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph35...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph35...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph35...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph35...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph36...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph36...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph36...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph36...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph36...
+3.0
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph37...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph37...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph37...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph37...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph37...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph38...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph38...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph38...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph38...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph38...
+6.0
+6
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph39...
+7.0
+7
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph39...
+7.0
+7
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph39...
+7.0
+7
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph39...
+7.0
+7
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph39...
+7.0
+7
+Recherche d'une solution pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph40...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph40...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph40...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph40...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph40...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph41...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph41...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph41...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph41...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph41...
+3.3333333
+3
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph42...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph42...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph42...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph42...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph42...
+5.3333333
+5
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph43...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph43...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph43...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph43...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph43...
+4.0
+4
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph44...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph44...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph44...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph44...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph44...
+5.0
+5
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Recherche d'une solution pour le nombre achromatique 5
+Le nombre achromatique du graphe est egal a 4
+
+Testing graph45...
+3.5
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph45...
+3.5
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph45...
+3.5
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph45...
+3.5
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing graph45...
+3.5
+3
+Recherche d'une solution pour le nombre achromatique 2
+Une solution a été trouvé pour le nombre achromatique 2
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Le nombre achromatique du graphe est egal a 3
+
+Testing k5_minus_3_linked...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing k5_minus_3_linked...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing k5_minus_3_linked...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing k5_minus_3_linked...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing k5_minus_3_linked...
+4.6666667
+4
+Recherche d'une solution pour le nombre achromatique 3
+Une solution a été trouvé pour le nombre achromatique 3
+Recherche d'une solution pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 3
+
+Testing k5_minus_1...
+4.5
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_1...
+4.5
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_1...
+4.5
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_1...
+4.5
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4
+
+Testing k5_minus_1...
+4.5
+4
+Recherche d'une solution pour le nombre achromatique 4
+Une solution a été trouvé pour le nombre achromatique 4
+Le nombre achromatique du graphe est egal a 4

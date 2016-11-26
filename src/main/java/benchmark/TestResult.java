@@ -88,8 +88,8 @@ public class TestResult {
                     nbVertices + ";" + 
                     nbEdges + ";" + 
                     nbAchro + ";" + 
-                    elapsedTimeWithoutHeuristicNValue + ";" + 
-                    elapsedTimeWithHeuristicNValue;
+                    elapsedTimeWithHeuristicNValue + ";" + 
+                    elapsedTimeWithoutHeuristicNValue;
 
             return out;
         } else return this.toString();

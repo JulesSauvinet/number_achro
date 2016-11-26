@@ -252,7 +252,6 @@ public class TestSolver {
     @Test
     public void testGraphs(){
         for (int i = 0; i < 46; i++) {
-            if (i==10)
                 testGraphFile("graph" + i, -2);
         }
     }
