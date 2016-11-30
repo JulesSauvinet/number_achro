@@ -224,6 +224,8 @@ public class AchroSolver_k {
             case GREEDY:
                 solver.setSearch(Search.greedySearch(defaultSearch(model)));
                 break;
+            case MINDOM:
+                break;
             case INTVARMIN:
                 solver.setSearch(intVarSearch(
                         // selects the variable of smallest domain size
