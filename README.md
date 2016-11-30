@@ -1,16 +1,16 @@
-# number_achro
-A simple solver to find the number achromatic of a graph, which is a NP-Comple problem, based on CSP constraints.
-
+# number_achro</br>
+A simple solver to find the number achromatic of a graph, which is a NP-Comple problem, based on CSP constraints.</br>
+</br></br>
 /***************************************************************/
 </br>
-28 novembre 2016
-
-/*** Membres du projet ***/
-Bruno Dumas
-Gregory Howard
-Marine Ruiz
-Jules Sauvinet
+28 novembre 2016</br>
 </br>
+/*** Membres du projet ***/</br>
+Bruno Dumas</br>
+Gregory Howard</br>
+Marine Ruiz</br>
+Jules Sauvinet</br>
+</br></br>
 REPERTOIRE MAIN</br>
 java/benchmark/Test       : Lance la résultion sur le graphe contigence des Etat-Unis. On conseille de regarder ce fichier et de l'éxécuter.</br>
 java/solver/Achrosolver   : Implémentation du problème décisionnel : est-ce que le graphe G admet une coloration complete de taille k? </br>
